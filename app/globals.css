@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-head: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+html, body { height: 100%; }
+body { @apply bg-page text-ink font-body; }
+
+.container-page { @apply mx-auto max-w-7xl px-6; }
+.section { @apply py-16 md:py-24; }
+.h-gradient { background: linear-gradient(180deg, rgba(233,225,213,0.7) 0%, rgba(250,248,245,0) 100%); }
+.border-soft { @apply border border-pebble/50; }
+.card { @apply bg-white/70 backdrop-blur-sm border-soft rounded-l shadow-soft; }
+.link-underline { text-underline-offset: 4px; text-decoration-thickness: 1px; }
+
+@media (prefers-reduced-motion: reduce) { .animate-marquee { animation: none !important; } }
+
+
+/* Accent serif for editorial sections */
+:root { --font-accent: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", serif; }
+
+.accent-head { font-family: var(--font-accent); }
+
+
+/* --- Motion tokens & helpers --- */
+:root {
+  --ease-smooth: cubic-bezier(.22,.61,.36,1);
+  --ease-soft: cubic-bezier(.2,.6,.0,1);
+}
+
+.ease-smooth { transition-timing-function: var(--ease-smooth); }
+.ease-soft { transition-timing-function: var(--ease-soft); }
+.will-t { will-change: transform; }
+.will-o { will-change: opacity; }
+
+
+/* soft pulse for hero logo */
+@keyframes pulse-soft {
+  0% { transform: scale(1); opacity: .95; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: .95; }
+}
+.pulse-soft { animation: pulse-soft 2.2s var(--ease-soft, cubic-bezier(.2,.6,0,1)) infinite; }
+
+
+/* === Boho Beige Theme === */
+:root{
+  --beige-bg: #EFE8E2;       /* soft beige background */
+  --beige-100:#F5EFE9;
+  --sand:#D6C4B4;
+  --tan:#B59676;
+  --coffee:#5B4133;          /* dark brown */
+}
+html, body { background: var(--beige-bg); }
+.bg-beige { background-color: var(--beige-bg); }
+.text-coffee { color: var(--coffee); }
+.bg-coffee { background-color: var(--coffee); }
+.border-coffee { border-color: var(--coffee); }
+
+/* Animations: spin + gentle bounce */
+@keyframes spin360 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.spin-slow { animation: spin360 34s linear infinite; transform-origin: center; }
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.bounce-soft { animation: bounceSoft 1.8s var(--ease-soft, cubic-bezier(.2,.6,0,1)) infinite; }
+

@@ -1,0 +1,1 @@
+export function Navbar() { return <nav className='p-4 border-b border-pebble'>Navbar</nav> }

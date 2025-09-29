@@ -1,0 +1,1 @@
+export function Badge({ children }) { return <span className='px-2 py-1 bg-fawn rounded-pill text-mocha text-sm'>{children}</span> }
