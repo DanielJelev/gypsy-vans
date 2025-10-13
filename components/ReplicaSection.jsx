@@ -35,7 +35,7 @@ export function ReplicaSection({ heightVh = 78, layers = [] }) {
         const rect = el.getBoundingClientRect();
         const vh = window.innerHeight || 1;
         const center = rect.top + rect.height / 2;
-        const progress = (center - vh/2) / vh; // -1..1
+        const progress = (center - vh / 2) / vh; // -1..1
         nodes.current.forEach((n) => {
           if (!n) return;
           const travel = n.dataset.travel ? parseFloat(n.dataset.travel) : 0;
@@ -92,7 +92,8 @@ export function ReplicaSection({ heightVh = 78, layers = [] }) {
             <div key={i} {...commonProps}>
               <Reveal threshold={r.threshold ?? 0.25} delay={r.delay ?? 0} yOffset={r.yOffset ?? 10}>
                 <div className={"bg-white/80 backdrop-blur-[2px] rounded-l shadow-soft px-6 py-6 border border-pebble/50 text-ink/90 " + (L.className || '')}
-                     dangerouslySetInnerHTML={{ __html: L.html || '' }} />
+                  dangerouslySetInnerHTML={{ __html: L.html || '' }} >
+                </div>
               </Reveal>
             </div>
           );

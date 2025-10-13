@@ -30,6 +30,7 @@ body { @apply bg-page text-ink font-body; }
 :root {
   --ease-smooth: cubic-bezier(.22,.61,.36,1);
   --ease-soft: cubic-bezier(.2,.6,.0,1);
+  scroll-behavior: smooth;
 }
 
 .ease-smooth { transition-timing-function: var(--ease-smooth); }
@@ -37,6 +38,21 @@ body { @apply bg-page text-ink font-body; }
 .will-t { will-change: transform; }
 .will-o { will-change: opacity; }
 
+@keyframes reveal {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-reveal {
+  opacity: 0;
+  animation: reveal 1s ease 1.5s forwards;
+}
 
 /* soft pulse for hero logo */
 @keyframes pulse-soft {
