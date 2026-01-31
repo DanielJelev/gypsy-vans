@@ -88,7 +88,7 @@ export function ParallaxLogoMarqueeSection({
           style={{
             x,
             rotate,
-            width: 'clamp(110px, 18vw, 320px)',
+            width: 'clamp(164px, 18vw, 320px)',
             willChange: 'transform',
             transform: 'translateZ(0)',
             pointerEvents: 'none',
