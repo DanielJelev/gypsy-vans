@@ -82,7 +82,7 @@ export function ParallaxLogoMarqueeSection({
 
         {/* Logo */}
         <motion.img
-          src="/logo-04.svg"
+          src="/Logo-04.svg"
           alt="Logo"
           style={{
             x,
