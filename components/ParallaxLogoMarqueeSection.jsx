@@ -2,9 +2,10 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { WaveDivider } from './WaveDivider';
 
 export function ParallaxLogoMarqueeSection({
-  heightVh = 70,
+  heightVh = 90,
 
   fromXvw = -55,
   toXvw = 55,
@@ -91,10 +92,17 @@ export function ParallaxLogoMarqueeSection({
             willChange: 'transform',
             transform: 'translateZ(0)',
             pointerEvents: 'none',
-            zIndex: 20,
           }}
         />
       </div>
+       <WaveDivider
+        fill="var(--coffee)"
+        height={150}
+        frequency={4}
+        amplitude={35}
+        baseline={65}
+        overlap={-60}
+      />
     </section>
   );
 }

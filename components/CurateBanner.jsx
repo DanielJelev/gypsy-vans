@@ -1,33 +1,46 @@
 'use client';
 
-import { WaveDivider } from '../components/WaveDivider'
-export function CurateBanner() {
+import { WaveDivider } from '../components/WaveDivider';
+
+export function CurateBanner({
+  variant = 'bg-orange',        // 👈 background variant
+  waveFill = 'var(--beige-bg)', // 👈 wave color (separate on purpose)
+  title = '',
+  text = '',
+}) {
   return (
-    <section className="relative bg-orange min-h-[70vh] flex items-center justify-center overflow-hidden pb-[150px] md:pb-[150px]">
-      {/* Text content – perfectly centered */}
+    <section
+      className={`
+        relative
+        ${variant}
+        min-h-[70vh]
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+        pb-[150px]
+        md:pb-[150px]
+      `}
+    >
+      {/* Text content */}
       <div className="w-full text-center px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="accent-head text-4xl md:text-6xl mt-6 md:mt-10 font-medium text-white">
-            Кемперванът - Лукс, уют и свобода в едно
+          {title}
           </h2>
 
           <p className="mt-6 text-white/90 text-lg md:text-xl">
-            Нашият Mercedes Sprinter 2020 е оборудван с най-висок клас системи за комфорт и автономност, така че да се чувстваш у дома, където и да си.
-            Интериорът е в модерен boho & minimalistic стил – топли натурални цветове, качествени естествени материали, меки форми и внимание към светлината и атмосферата.
-            <br /><br />
-            Тук уютът среща функционалността, а простотата – щастието да се насладиш на пътя.
+            {text}
           </p>
         </div>
       </div>
 
       <WaveDivider
-        fill="var(--beige-bg)"
+        fill={waveFill}
         height={150}
-        frequency={4}
-        amplitude={35}
-        baseline={65}
-        variant='smooth'
         overlap={-2}
+        animate
+        duration={10}
       />
     </section>
   );
