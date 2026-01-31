@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate h-[100vh] min-h-[640px] w-full overflow-hidden"
+      className="relative isolate min-h-[100svh] h-[100dvh] w-full overflow-hidden"
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/45 z-0" />
