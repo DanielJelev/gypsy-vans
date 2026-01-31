@@ -65,16 +65,16 @@ body { @apply bg-page text-ink font-body; }
 
 /* === Boho Beige Theme === */
 :root{
-  --beige-bg: #EFE8E2;       /* soft beige background */
-  --beige-100:#F5EFE9;
-  --sand:#D6C4B4;
-  --tan:#B59676;
-  --coffee:#5B4133;          /* dark brown */
+  --beige-bg: #fff7ec;     
+  --tan:#fee5cf;
+  --coffee:#453336;          /* dark brown */
+  --orange:#ef432a;          /* orange */
 }
 html, body { background: var(--beige-bg); }
 .bg-beige { background-color: var(--beige-bg); }
 .text-coffee { color: var(--coffee); }
 .bg-coffee { background-color: var(--coffee); }
+.bg-orange { background-color: var(--orange); }
 .border-coffee { border-color: var(--coffee); }
 
 /* Animations: spin + gentle bounce */

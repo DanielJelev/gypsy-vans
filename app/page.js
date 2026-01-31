@@ -1,6 +1,8 @@
 import { Hero } from '../components/Hero'
 import { CurateBanner } from '../components/CurateBanner'
-import { ReplicaShow } from '../components/ReplicaShow'
+import { ParallaxLogoSection } from '../components/ParallaxLogoSection'
+import { ParallaxLogoMarqueeSection } from '../components/ParallaxLogoMarqueeSection'
+import { WavyStrokeBackground } from '../components/WavyStrokeBackground'
 import { Carousel } from '../components/Carousel'
 import { ParallaxShowcase } from '../components/ParallaxShowcase'
 import { ShopFooter } from '../components/ShopFooter'
@@ -8,13 +10,15 @@ import { Header } from '../components/Header'
 
 export default function Page() {
   return (
-    <main>
+    <main className="relative z-20">
       <Header />
       <Hero />
+      {/* <WavyStrokeBackground /> */}
       <CurateBanner />
-      <ReplicaShow />
-      <ParallaxShowcase />
-      <Carousel />
+      {/* <ReplicaShow /> */}
+      <ParallaxLogoMarqueeSection/>
+      {/* <ParallaxLogoSection rotateDeg={720} toScale={0.25} caption={'asdasd'}/> */}
+      {/* <Carousel /> */}
       <section id="prices" className="container-page section">
         <h2 className="font-head text-3xl mb-2">Цени</h2>
         <div className="card p-6 text-cocoa/90">Ценови пакети и оферти — попълни формата за персонална оферта.</div>

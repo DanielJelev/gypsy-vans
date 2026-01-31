@@ -2,12 +2,17 @@
 
 export function Hero() {
   return (
-    <section id="home" className="relative isolate h-[100vh] min-h-[640px] w-full overflow-hidden mt">
-      {/* Full-bleed video background */}
-      <div className='absolute h-full w-full bg-black/45'></div>
+    <section
+      id="home"
+      className="relative isolate h-[100vh] min-h-[640px] w-full overflow-hidden"
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/45 z-0" />
+
+      {/* Video background */}
       <video
         className="absolute inset-0 -z-10 h-full w-full object-cover"
-        src="/hero.webm"
+        src="/hero.mp4"
         autoPlay
         muted
         loop
@@ -16,19 +21,33 @@ export function Hero() {
         aria-label="Background hero video"
       />
 
-      {/* Headline */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex p-16 justify-between items-end w-full">
-        <div className='flex flex-col w-[60%]'>
-          <h1 className="accent-head text-white text-[6vw] md:text-[4vw] leading-[0.95] drop-shadow mb-8">
-            Как изглежда твоят свят?
+      {/* ✅ CENTERED TEXT (horizontal + vertical) */}
+      <div className="relative z-10 h-full grid place-items-center px-6 md:px-16 text-center">
+        <div className="max-w-4xl">
+          <h1 className="accent-head text-white text-[11vw] md:text-[4vw] leading-[0.92] md:leading-[0.95] drop-shadow mb-4">
+            Пътят е дом
           </h1>
-          <h2 className="text-white text-[2.5vw] md:text-[1.5vw] leading-10 drop-shadow w-full">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis aliquam soluta, fuga, odio cupiditate ad itaque assumenda nulla beatae quam molestiae porro ratione quas?
+
+          <h2 className="text-white text-[4.2vw] md:text-[1.5vw] leading-[1.18] md:leading-10 drop-shadow">
+            Луксозен кемперван Mercedes Sprinter, създаден за свободата да откриваш.
+            <br className="hidden md:block" />
+            От семейство влюбено в приключенията – за всички, които искат да пътуват с комфорт, стил и душа.
           </h2>
         </div>
-        <div className="w-24 h-24 md:w-28 md:h-28 flex flex-col gap-2 items-center">
-          <img src="/logo-gypsy-white.png" alt="Gypsy Vans rosette" className="w-full h-full spin-slow drop-shadow" />
-        </div>
+      </div>
+
+      {/* ✅ SPINNING LOGO — bottom center, smaller */}
+      <div className="absolute inset-x-0 bottom-6 md:bottom-10 flex justify-center z-20">
+        <img
+          src="/logo-gypsy-white.svg"
+          alt="Gypsy Vans rosette"
+          className="
+            spin-slow
+            drop-shadow
+            w-16 h-16
+            md:w-20 md:h-20
+          "
+        />
       </div>
     </section>
   );
