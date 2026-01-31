@@ -23,6 +23,7 @@ export function Hero() {
 
       {/* ✅ CENTERED TEXT (horizontal + vertical) */}
       <div className="relative z-10 h-full grid place-items-center px-6 md:px-16 text-center">
+        <div className="animate-reveal max-w-4xl mx-auto">
         <div className="max-w-4xl">
           <h1 className="accent-head text-white text-[11vw] md:text-[4vw] leading-[0.92] md:leading-[0.95] drop-shadow mb-4">
             Пътят е дом
@@ -33,6 +34,7 @@ export function Hero() {
             <br className="hidden md:block" />
             От семейство влюбено в приключенията – за всички, които искат да пътуват с комфорт, стил и душа.
           </h2>
+        </div>
         </div>
       </div>
 

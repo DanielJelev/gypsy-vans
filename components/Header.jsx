@@ -18,10 +18,7 @@ export function Header() {
     <header className="fixed top-0 left-0 z-20 w-full bg-white/50 backdrop-blur-sm border-b border-b-white/70" >
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <img src="/logo-gypsy-white.svg" alt="logo" className="w-6 h-6 opacity-95 drop-shadow" />
-          <span className="font-head text-xl tracking-[0.02em] text-black drop-shadow">
-            Gypsy<span className="text-sienna">Vans</span>
-          </span>
+          <img src="/logo-header.svg" alt="logo" className="w-55 h-8 opacity-95 drop-shadow" />
         </a>
         <nav className="hidden md:flex gap-6 lg:gap-10 text-[15px] text-black">
           {LINKS.map((l) => (

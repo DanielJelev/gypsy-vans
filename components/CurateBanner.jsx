@@ -6,8 +6,8 @@ export function CurateBanner() {
     <section className="relative bg-orange min-h-[70vh] flex items-center justify-center overflow-hidden pb-[150px] md:pb-[150px]">
       {/* Text content – perfectly centered */}
       <div className="w-full text-center px-6">
-        <div className="animate-reveal max-w-4xl mx-auto">
-          <h2 className="accent-head text-4xl md:text-6xl font-medium text-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="accent-head text-4xl md:text-6xl mt-6 md:mt-10 font-medium text-white">
             Кемперванът - Лукс, уют и свобода в едно
           </h2>
 

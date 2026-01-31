@@ -51,7 +51,7 @@ body { @apply bg-page text-ink font-body; }
 
 .animate-reveal {
   opacity: 0;
-  animation: reveal 1s ease 1.5s forwards;
+  animation: reveal 1s ease 0.5s forwards;
 }
 
 /* soft pulse for hero logo */
