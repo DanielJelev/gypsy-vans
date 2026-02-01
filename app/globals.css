@@ -75,6 +75,7 @@ html, body { background: var(--beige-bg); }
 .text-coffee { color: var(--coffee); }
 .bg-coffee { background-color: var(--coffee); }
 .bg-orange { background-color: var(--orange); }
+.bg-tan { background-color: var(--tan); }
 .border-coffee { border-color: var(--coffee); }
 
 /* Animations: spin + gentle bounce */

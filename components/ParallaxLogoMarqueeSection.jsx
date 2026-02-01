@@ -58,7 +58,7 @@ export function ParallaxLogoMarqueeSection({
         {/* Text (soft revealed) */}
         <div className="relative z-10 w-full px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+            {/* <motion.div
               style={{
                 opacity: textOpacity,
                 x: textX,
@@ -73,11 +73,11 @@ export function ParallaxLogoMarqueeSection({
                 WebkitMaskSize: maskSize,
                 maskSize: maskSize,
               }}
-            >
+            > */}
             <h2 className="accent-head text-4xl md:text-6xl font-medium text-coffee">
                 {title}
               </h2>
-            </motion.div>
+            {/* </motion.div> */}
           </div>
         </div>
 

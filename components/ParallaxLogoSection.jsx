@@ -6,47 +6,49 @@ export function ParallaxLogoSection({
   heightVh = 100,
   rotateDeg = 720,
   toScale = 0.5,
-  caption,
+  onCtaClick,
 }) {
   return (
     <section
-      style={{
-        height: `${heightVh}vh`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
+      className="relative overflow-hidden flex items-center justify-center bg-tan"
+      style={{ height: `${heightVh}vh` }}
     >
+      {/* Logo (keep it behind CTA) */}
       <Parallax
         rotate={[0, rotateDeg]}
         scale={[1, toScale]}
         opacity={[1, 0.7]}
+        className="pointer-events-none z-0"
       >
         <img
           src="/logo-04.svg"
           alt="Logo"
-          style={{
-            width: '700px',
-            height: 'auto',
-            willChange: 'transform',
-          }}
+          className="w-[600px] h-auto will-t"
         />
       </Parallax>
 
-      {caption && (
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '10%',
-            opacity: 0.6,
-            fontSize: '0.9rem',
-          }}
+      {/* CTA (force on top) */}
+      <div className="absolute bottom-[10%] left-0 right-0 flex justify-center px-6">
+        <button
+          type="button"
+          onClick={onCtaClick}
+          className="
+            bg-coffee
+            text-[var(--beige-bg)]
+            px-14 py-5
+            text-lg md:text-xl
+            font-medium
+            rounded-xl
+            border border-white/10
+            transition-transform ease-soft
+            hover:-translate-y-0.5
+            active:translate-y-0
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beige-bg)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+          "
         >
-          {caption}
-        </div>
-      )}
+          Резервирай Сега
+        </button>
+      </div>
     </section>
   );
 }
