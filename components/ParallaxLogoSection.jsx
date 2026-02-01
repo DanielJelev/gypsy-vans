@@ -21,7 +21,7 @@ export function ParallaxLogoSection({
         className="pointer-events-none z-0"
       >
         <img
-          src="/logo-04.svg"
+          src="/Logo-04.svg"
           alt="Logo"
           className="w-[600px] h-auto will-t"
         />
