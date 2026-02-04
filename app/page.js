@@ -11,6 +11,7 @@ import { Header } from '../components/Header'
 import { WaveDivider } from '../components/WaveDivider'
 import { FeatureCards } from '../components/FeatureCards'
 import { InsideDiscoverSection } from '../components/InsideDiscoverSection'
+import { Footer } from '../components/Footer'
 
 export default function Page() {
   return (
@@ -47,5 +48,6 @@ Gypsy Vans са не просто кемперванове под наем. То
         <h2 className="font-head text-3xl mb-2">Контакти</h2>
         <div className="card p-6 text-cocoa/90">Пишете ни на hello@example.com</div>
       </section>
+      <Footer />
 </main> )
 }

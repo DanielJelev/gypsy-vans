@@ -78,8 +78,8 @@ export function CurateSplitBanner({
             <div className="relative w-full max-w-[560px] aspect-[4/3]">
 
               {/* MAIN IMAGE CONTAINER */}
-              <Parallax translateY={mainTranslate} className="absolute inset-0">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+              <Parallax translateY={mainTranslate} className="absolute inset-0 z-10">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden z-10">
                   <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none z-10" />
 
                   <Image
@@ -103,16 +103,19 @@ export function CurateSplitBanner({
                   ${isLeft ? 'right-[-6%]' : 'left-[-6%]'}
                   w-[42%]
                   aspect-[3/4]
+                  z-20
                 `}
               >
-                <div className="relative w-full h-full rounded-xl overflow-hidden bg-black">
+                <div className="relative w-full h-full rounded-xl bg-black z-20">
                   <div className="absolute inset-0 border border-white/15 rounded-xl pointer-events-none z-10" />
+
+                  <div className="absolute top-[-15px] left-[-15px] w-[calc(100%+30px)] h-[calc(100%+30px)] border border-white/15 rounded-2xl pointer-events-none z-20 backdrop-blur-sm" />
 
                   <Image
                     src={imageSecondary}
                     alt={imageAltSecondary}
                     fill
-                    className="object-cover"
+                    className="object-cover z-30 rounded-2xl"
                     sizes="(max-width: 768px) 40vw, 240px"
                   />
                 </div>

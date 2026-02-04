@@ -1,4 +1,5 @@
 'use client';
+import { SocialWidget } from './SocialWidget';
 
 export function Hero() {
   return (
@@ -6,6 +7,11 @@ export function Hero() {
       id="home"
       className="relative isolate min-h-[100svh] h-[100dvh] w-full overflow-hidden"
     >
+      <div className='absolute top-1/2 left-4 translate-y-[-50%] flex flex-col gap-4 z-20'>
+        <SocialWidget img='/logos/instagram-logo.png' alt='Instagram Page' href='https://www.google.com' />
+        <SocialWidget img='/logos/facebook-logo.png' alt='Facebook Page' href='https://www.google.com' />
+        <SocialWidget img='/logos/tiktok-logo.png' alt='TikTok Page' href='https://www.google.com' />
+      </div>
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/45 z-0" />
 

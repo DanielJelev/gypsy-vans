@@ -88,3 +88,11 @@ html, body { background: var(--beige-bg); }
 }
 .bounce-soft { animation: bounceSoft 1.8s var(--ease-soft, cubic-bezier(.2,.6,0,1)) infinite; }
 
+@keyframes logoRotate {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+.logo-rotate {
+  animation: logoRotate 10s linear forwards infinite
+}
