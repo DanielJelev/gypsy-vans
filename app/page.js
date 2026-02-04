@@ -12,6 +12,7 @@ import { WaveDivider } from '../components/WaveDivider'
 import { FeatureCards } from '../components/FeatureCards'
 import { InsideDiscoverSection } from '../components/InsideDiscoverSection'
 import { Footer } from '../components/Footer'
+import PricePlans from '../components/Plans'
 
 export default function Page() {
   return (
@@ -33,8 +34,9 @@ Gypsy Vans са не просто кемперванове под наем. То
 
       {/* <Carousel /> */}
       <section id="prices" className="container-page section">
-        <h2 className="font-head text-3xl mb-2">Цени</h2>
-        <div className="card p-6 text-cocoa/90">Ценови пакети и оферти — попълни формата за персонална оферта.</div>
+      
+        <PricePlans/>
+        {/* <div className="card p-6 text-cocoa/90">Ценови пакети и оферти — попълни формата за персонална оферта.</div> */}
       </section>
       <section id="terms" className="container-page section">
         <h2 className="font-head text-3xl mb-2">Условия</h2>

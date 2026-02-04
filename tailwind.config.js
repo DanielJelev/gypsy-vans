@@ -6,7 +6,8 @@ module.exports = {
       colors: {
         page: '#FAF8F5', card: '#E9E1D5', cocoa: '#6A4B3C', clay: '#8C6148',
         sienna: '#C47A5A', olive: '#8C8A6F', ink: '#2D221B', pebble: '#D6CEC3',
-        fawn: '#EEDFCC', mocha: '#4E3B2F'
+        fawn: '#EEDFCC', mocha: '#4E3B2F',
+        coffee: '#453336', tan: '#fee5cf', orange: '#ef432a', beige: '#fff7ec'
       },
       boxShadow: {
         soft: '0 1px 1px rgba(45,34,27,0.05), 0 2px 6px rgba(45,34,27,0.06)',
