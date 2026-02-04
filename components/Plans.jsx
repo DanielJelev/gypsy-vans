@@ -84,7 +84,7 @@ const PricePlans = () => {
                                 <ul className='space-y-4 mb-8'>
                                     {plan.features.map((feature, idx) => (
                                         <li key={idx} className='flex items-center gap-3 text-ink/80'>
-                                            <svg className="w-5 h-5 text-olive flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                            <svg className="w-5 h-5 text-coffee/80 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                                                 <circle cx="12" cy="12" r="6" />
                                             </svg>
                                             {feature}
