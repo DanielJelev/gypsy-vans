@@ -1,3 +1,4 @@
+import { CiCircleInfo } from "react-icons/ci";
 
 
 const PricePlans = () => {
@@ -36,7 +37,7 @@ const PricePlans = () => {
 
     return (
         <section className='section bg-page'>
-            <div className='container-page'>
+            <div className='container-page bg-tan p-6 rounded-2xl'>
                 <div className='mb-16 text-center max-w-3xl mx-auto'>
                     <h2 className='text-4xl md:text-5xl font-head text-coffee mb-6'>Ценови пакети</h2>
                     <p className='text-lg text-mocha/80 mb-3'>
@@ -47,6 +48,16 @@ const PricePlans = () => {
                     </p>
                     <p className='text-lg text-mocha/80 mb-6'>
                         Преди да направите резервацията, моля, запознайте се с нашите условия за наемане и прегледайте най-често задаваните въпроси.
+                    </p>
+                    <p className='text-lg text-coffee/90 mb-6'>
+                        Ако искате вашето пътуване да стартира от друга точка, различна от София - пишете ни. Предлагаме гъвкави опции за доставка на Gypsy van-а в различни точки на страната. 
+                    </p>
+                    <p className='text-lg text-mocha/80 mb-6'>
+                        Благодарим ви, че избирате да създаватe незабравими спомени с Gypsy vans!
+                    </p>
+                    <p className='bg-beige p-4 rounded-2xl text-lg text-mocha/90 mb-6' >
+                        <CiCircleInfo className='inline-block mr-2' />
+                        <span className='font-bold'>Минималното време, за което може да бъде нает кемпервана е 2 нощувки.</span>
                     </p>  
                 </div>
 
@@ -55,23 +66,23 @@ const PricePlans = () => {
                         <div 
                             key={plan.name} 
                             className={`
-                                relative rounded-2xl overflow-hidden border-6 border-black transition-all duration-300 transform hover:-translate-y-2
+                                relative rounded-2xl overflow-hidden border-6 border-black mb-8 transition-all duration-300 transform hover:-translate-y-2
                                 ${plan.type === 'primary' ? 'shadow-deep scale-105 z-10' : 'shadow-soft hover:shadow-lg bg-white/60'}
                             `}
                         >
                             {/* Header */}
-                            <div className={`p-8 text-center ${plan.type === 'primary' ? 'bg-orange text-page' : 'bg-coffee text-page'}`}>
+                            <div className={`p-8 text-center ${plan.type === 'primary' ? 'bg-coffee text-page' : 'bg-mocha text-page'}`}>
                                 <h3 className='text-2xl font-head font-bold mb-2'>{plan.name}</h3>
                                 <div className='flex justify-center items-baseline gap-1 mb-2'>
                                     <span className='text-4xl font-bold'>{plan.price}</span>
                                     <span className='text-xl opacity-80'>{plan.currency}</span>
-                                    <span className='text-sm opacity-60'>{plan.frequency}</span>
+                                    <span className='text-sm opacity-80'>{plan.frequency}</span>
                                 </div>
                                 
                                 {plan.badge && (
                                     <span className={`
                                         inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-2
-                                        ${plan.type === 'primary' ? 'bg-coffee text-white' : 'bg-tan text-coffee'}
+                                        ${plan.type === 'primary' ? 'bg-orange text-white' : 'bg-tan text-coffee'}
                                     `}>
                                         {plan.badge}
                                     </span>
