@@ -45,14 +45,14 @@ export function MobileMenu({ termsOpen, setTermsOpen }) {
         </button>
       </div>
       <div
-        className='fixed inset-0 w-dvw h-dvh flex justify-center items-center pt-20 gap-8 bg-beige transition-all duration-300 delay-100 z-10'
-        style={{ opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none" }}
+        className='fixed inset-0 w-dvw h-dvh flex justify-center items-center pt-20 gap-8 bg-beige transition-all duration-500 delay-100 z-10'
+        style={{ clipPath: open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)', pointerEvents: open ? "auto" : "none" }}
       >
         <nav className='flex flex-col gap-12 text-4xl text-black justify-center items-center w-full pb-20'>
           {LINKS.map((l) => (
             <div key={l.href} className='hover:opacity-70 z-30'>
               {l.action ? (
-                <button onClick={termsOpen ? closeTerms : openTerms}>
+                <button onClick={termsOpen ? open ? () => setOpen(false) : closeTerms : openTerms}>
                   {l.label}
                 </button>
               ) : (

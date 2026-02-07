@@ -16,6 +16,7 @@ import { InsideDiscoverSection } from '../components/InsideDiscoverSection'
 import { Footer } from '../components/Footer'
 import PricePlans from '../components/Plans'
 import { useState } from 'react'
+import { Faq } from '../components/Faq/Faq'
 
 export default function Page() {
   const [termsOpen, setTermsOpen] = useState(false);
@@ -51,6 +52,7 @@ Gypsy Vans са не просто кемперванове под наем. То
         <h2 className="font-head text-3xl mb-2">Контакти</h2>
         <div className="card p-6 text-cocoa/90">Пишете ни на hello@example.com</div>
       </section>
+      <Faq />
       <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen}/>
 </main> )
 }

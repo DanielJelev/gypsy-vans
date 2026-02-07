@@ -7,8 +7,8 @@ import { IoCloseSharp } from "react-icons/io5";
 export function Terms({ open, close }) {
   return (
     <div
-      className='fixed inset-0 w-dvw h-dvh flex justify-center pt-20 bg-beige transition-all duration-300 overflow-auto'
-      style={{ opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none" }}
+      className='fixed inset-0 w-dvw h-dvh flex justify-center pt-20 bg-beige transition-all duration-500 overflow-auto'
+      style={{ clipPath: open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)', pointerEvents: open ? "auto" : "none" }}
     >
       <div className='relative max-w-[1280px] md:pl-8 pl-6 pr-4 md:mx-16 mx-2 border-l-4 border-l-black flex flex-col gap-8 overflow-auto mb-8'>
         <div className='flex justify-between items-center sticky top-[-2px] pb-2 md:pr-4 w-full bg-beige border-b-2 border-b-coffee/20'>
