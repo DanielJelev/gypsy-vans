@@ -3,7 +3,18 @@
 import { SocialWidget } from './SocialWidget';
 import { LINKS } from './Header';
 
-export function Footer() { 
+export function Footer({ termsOpen, setTermsOpen }) { 
+
+  const openTerms = () => {
+    document.body.style.overflow = "hidden";
+    setTermsOpen(true);
+  };
+
+  const closeTerms = () => {
+    document.body.style.overflow = "auto";
+    setTermsOpen(false);
+  };
+
   return (
     <footer className='h-50 p-8 border-t border-pebble bg-coffee flex lg:flex-row flex-col justify-around lg:px-32 px-8 gap-12'>
       <div className='flex gap-8 text-white justify-center'>
@@ -21,10 +32,20 @@ export function Footer() {
       <div className='flex flex-col gap-6'>
         <nav className="flex lg:gap-12 lg:w-auto text-lg text-white underline justify-center w-full gap-2">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="hover:opacity-70 transition-all duration-300">{l.label}</a>
+            <div key={l.href} className='hover:opacity-70 transition-all duration-300'>
+              {l.action ? (
+                <button className='underline' onClick={termsOpen ? closeTerms : openTerms}>
+                  {l.label}
+                </button>
+              ) : (
+                <a href={l.href} onClick={closeTerms}>
+                  {l.label}
+                </a>
+              )}
+            </div>
           ))}
         </nav>
-        <div className='flex lg:gap-12 w-full lg:justify-end justify-center items-center gap-6'>
+        <div className='flex lg:gap-4 w-full lg:justify-end justify-center items-center gap-6'>
           <SocialWidget img='/logos/instagram-logo.png' alt='Instagram Page' href='https://www.google.com' />
           <SocialWidget img='/logos/facebook-logo.png' alt='Facebook Page' href='https://www.google.com' />
           <SocialWidget img='/logos/tiktok-logo.png' alt='TikTok Page' href='https://www.google.com' />

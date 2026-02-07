@@ -10,9 +10,9 @@ export function Terms({ open, close }) {
       className='fixed inset-0 w-dvw h-dvh flex justify-center pt-20 bg-beige transition-all duration-300 overflow-auto'
       style={{ opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none" }}
     >
-      <div className='relative max-w-[1280px] pl-8 pr-4 mx-16 border-l-4 border-l-black flex flex-col gap-8 overflow-auto mb-8'>
-        <div className='flex justify-between items-center sticky top-0 pb-2 pr-4 w-full bg-beige border-b-2 border-b-coffee/20'>
-          <p className='text-4xl font-bold'>
+      <div className='relative max-w-[1280px] md:pl-8 pl-6 pr-4 md:mx-16 mx-2 border-l-4 border-l-black flex flex-col gap-8 overflow-auto mb-8'>
+        <div className='flex justify-between items-center sticky top-[-2px] pb-2 md:pr-4 w-full bg-beige border-b-2 border-b-coffee/20'>
+          <p className='md:text-4xl text-2xl font-bold'>
             Условия за наем на кемперван от Gypsy vans
           </p>
           <button className='text-5xl' onClick={close}>

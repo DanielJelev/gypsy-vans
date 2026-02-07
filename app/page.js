@@ -1,3 +1,5 @@
+'use client'
+
 import { Hero } from '../components/Hero'
 import { CurateBanner } from '../components/CurateBanner'
 import { CurateSplitBanner } from '../components/CurateSplitBanner'
@@ -13,11 +15,14 @@ import { FeatureCards } from '../components/FeatureCards'
 import { InsideDiscoverSection } from '../components/InsideDiscoverSection'
 import { Footer } from '../components/Footer'
 import PricePlans from '../components/Plans'
+import { useState } from 'react'
 
 export default function Page() {
+  const [termsOpen, setTermsOpen] = useState(false);
+
   return (
     <main className="relative z-20">
-      <Header />
+      <Header termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
       <Hero />
       <CurateBanner title='Кемперванът - Лукс, уют и свобода в едно' text=' Нашият Mercedes Sprinter 2020 е оборудван с най-висок клас системи за комфорт и автономност, така че да се чувстваш у дома, където и да си.
             Интериорът е в модерен boho & minimalistic стил – топли натурални цветове, качествени естествени материали, меки форми и внимание към светлината и атмосферата.
@@ -46,6 +51,6 @@ Gypsy Vans са не просто кемперванове под наем. То
         <h2 className="font-head text-3xl mb-2">Контакти</h2>
         <div className="card p-6 text-cocoa/90">Пишете ни на hello@example.com</div>
       </section>
-      <Footer />
+      <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen}/>
 </main> )
 }

@@ -64,12 +64,12 @@ export function InsideDiscoverSection() {
                 />
                 <div className="flex items-start gap-3">
                   <div
-                    className="mt-0.5 grid h-9 w-9 place-items-center rounded-full bg-pebble/40 text-xl"
+                    className="flex w-fit h-fit p-2.5 py-1.5 justify-center items-center rounded-full bg-pebble/40 text-xl"
                     aria-hidden
                   >
-                    {b.icon}
+                    <p className='leading-0'>{b.icon}</p>
                   </div>
-                  <p className="text-cocoa/95 leading-relaxed">{b.text}</p>
+                  <p className="text-cocoa/95 leading-relaxed text-lg pt-1">{b.text}</p>
                 </div>
               </motion.div>
             ))}
