@@ -58,7 +58,7 @@ export function Hero() {
 
           <a
             href='#contact'
-            className='inline-block mt-8 px-8 py-3 rounded-full bg-orange border border-orange text-white text-sm md:text-base tracking-widest uppercase'
+            className='hidden md:inline-block mt-8 px-8 py-3 rounded-full bg-orange border border-orange text-white text-sm md:text-base tracking-widest uppercase'
           >
             Резервирай
           </a>
@@ -66,12 +66,18 @@ export function Hero() {
       </div>
 
       {/* Spinning logo — bottom center */}
-      <div className='absolute inset-x-0 bottom-20 md:bottom-10 flex justify-center z-20'>
+      <div className='absolute inset-x-0 bottom-20 md:bottom-10 flex flex-col items-center z-20 gap-4'>
         <img
           src='/logo-gypsy-white.svg'
           alt='Gypsy Vans rosette'
           className='spin-slow drop-shadow-lg w-10 h-10 md:w-14 md:h-14'
         />
+        <a
+          href='#contact'
+          className='md:hidden px-8 py-3 rounded-full bg-orange border border-orange text-white text-sm tracking-widest uppercase'
+        >
+          Резервирай
+        </a>
       </div>
     </section>
   );
