@@ -36,7 +36,7 @@ export function Hero() {
         muted
         loop
         playsInline
-        poster='/van/_DSC6440.JPG'
+        poster='/van/_DSC6440.webp'
         aria-label='Background hero video'
       />
 

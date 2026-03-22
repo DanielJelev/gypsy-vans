@@ -29,7 +29,7 @@ export function BohoIntroSection() {
             <Parallax translateY={[-8, 8]}>
               <div className="arch-frame overflow-hidden shadow-deep border-4 border-white">
                 <img
-                  src="/van/_DSC6430.JPG"
+                  src="/van/_DSC6430.webp"
                   alt="Gypsy Vans интериор"
                   className="w-full aspect-[3/4] object-cover"
                   loading="lazy"
@@ -41,7 +41,7 @@ export function BohoIntroSection() {
             <Parallax translateY={[14, -14]} className="absolute -bottom-4 -right-4 md:-right-10 z-10">
               <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-cream shadow-deep">
                 <img
-                  src="/van/_DSC6468.JPG"
+                  src="/van/_DSC6468.webp"
                   alt="Детайл от кемпера"
                   className="w-full h-full object-cover"
                   loading="lazy"

@@ -4,16 +4,29 @@ import { Parallax } from 'react-scroll-parallax';
 import { WaveDivider } from './WaveDivider';
 
 export function ParallaxLogoSection({
-  heightVh = 100,
+  heightVh = 130,
   rotateDeg = 720,
   toScale = 0.5,
   onCtaClick,
 }) {
   return (
     <section
-      className="relative overflow-hidden flex flex-col items-center justify-center gap-10 bg-tan"
+      className="relative overflow-hidden flex flex-col items-center justify-center gap-10"
       style={{ height: `${heightVh}vh` }}
     >
+      {/* Background banner image */}
+      <img
+        src="/van/_DSC6486.webp"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      {/* Tinted overlay to keep logo + CTA readable */}
+      <div className="absolute inset-0 bg-tan/60" />
+
+      {/* Top wave from about section */}
+      <WaveDivider fill="var(--coffee)" height={140} position="top" overlap={-1} />
+
       {/* Logo */}
       <Parallax
         rotate={[0, rotateDeg]}
@@ -36,8 +49,7 @@ export function ParallaxLogoSection({
       >
         Резервирай Сега
       </button>
-
-      {/* Wave transition to services */}
+       {/* Wave transition to services */}
       <WaveDivider fill="var(--beige-bg)" height={140} overlap={-2} />
     </section>
   );

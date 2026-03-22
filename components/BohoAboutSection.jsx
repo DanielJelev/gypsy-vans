@@ -26,7 +26,7 @@ export function BohoAboutSection() {
             <Parallax translateY={[-6, 6]}>
               <div className="rounded-2xl overflow-hidden shadow-deep w-[68%]">
                 <img
-                  src="/van/_DSC6497.JPG"
+                  src="/van/_DSC6497.webp"
                   alt="Семейство Gypsy Vans"
                   className="w-full aspect-[3/4] object-cover"
                   loading="lazy"
@@ -38,7 +38,7 @@ export function BohoAboutSection() {
             <Parallax translateY={[12, -12]} className="absolute top-20 right-0 w-[55%] z-10">
               <div className="arch-frame overflow-hidden shadow-deep border-4 border-coffee">
                 <img
-                  src="/van/_DSC6520.JPG"
+                  src="/van/_DSC6520.webp"
                   alt="На път с кемпера"
                   className="w-full aspect-[3/4] object-cover"
                   loading="lazy"
@@ -50,7 +50,7 @@ export function BohoAboutSection() {
             <Parallax translateY={[8, -8]} className="absolute -bottom-2 left-[25%] z-20">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
                 <img
-                  src="/van/_DSC6534.JPG"
+                  src="/van/_DSC6534.webp"
                   alt="Детайл"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -108,7 +108,6 @@ export function BohoAboutSection() {
         </div>
       </div>
 
-      <WaveDivider fill="var(--tan)" height={140} overlap={-2} />
     </section>
   );
 }
