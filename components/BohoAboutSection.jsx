@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Parallax } from 'react-scroll-parallax';
 import { WaveDivider } from './WaveDivider';
+import Image from 'next/image';
 
 export function BohoAboutSection() {
   return (
@@ -23,37 +24,45 @@ export function BohoAboutSection() {
           {/* Images Side */}
           <div className="relative mx-auto w-full max-w-[480px] min-h-[400px] md:min-h-[540px]">
             {/* Main rectangular image */}
-            <Parallax translateY={[-6, 6]}>
+            <Parallax translateY={[-3, 3]} easing="easeOutQuad">
               <div className="rounded-2xl overflow-hidden shadow-deep w-[68%]">
-                <img
+                <Image
                   src="/van/_DSC6497.webp"
                   alt="Семейство Gypsy Vans"
+                  width={327}
+                  height={436}
                   className="w-full aspect-[3/4] object-cover"
-                  loading="lazy"
+                  sizes="(max-width: 768px) 68vw, 327px"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzI3IiBoZWlnaHQ9IjQzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNDUzMzM2Ii8+PC9zdmc+"
                 />
               </div>
             </Parallax>
 
             {/* Overlapping arch image */}
-            <Parallax translateY={[12, -12]} className="absolute top-20 right-0 w-[55%] z-10">
+            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-20 right-0 w-[55%] z-10">
               <div className="arch-frame overflow-hidden shadow-deep border-4 border-coffee">
-                <img
+                <Image
                   src="/van/_DSC6520.webp"
                   alt="На път с кемпера"
+                  width={264}
+                  height={352}
                   className="w-full aspect-[3/4] object-cover"
-                  loading="lazy"
+                  sizes="(max-width: 768px) 55vw, 264px"
                 />
               </div>
             </Parallax>
 
             {/* Small circular accent image */}
-            <Parallax translateY={[8, -8]} className="absolute -bottom-2 left-[25%] z-20">
+            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-2 left-[25%] z-20">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
-                <img
+                <Image
                   src="/van/_DSC6534.webp"
                   alt="Детайл"
+                  width={96}
+                  height={96}
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  sizes="96px"
                 />
               </div>
             </Parallax>

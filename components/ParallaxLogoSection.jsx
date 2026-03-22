@@ -2,6 +2,7 @@
 
 import { Parallax } from 'react-scroll-parallax';
 import { WaveDivider } from './WaveDivider';
+import Image from 'next/image';
 
 export function ParallaxLogoSection({
   heightVh = 130,
@@ -15,11 +16,15 @@ export function ParallaxLogoSection({
       style={{ height: `${heightVh}vh` }}
     >
       {/* Background banner image */}
-      <img
+      <Image
         src="/van/_DSC6486.webp"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
+        fill
+        className="object-cover"
+        priority={false}
+        sizes="100vw"
+        placeholder="blur"
+        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI5MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZlZTVjZiIvPjwvc3ZnPg=="
       />
       {/* Tinted overlay to keep logo + CTA readable */}
       <div className="absolute inset-0 bg-tan/60" />

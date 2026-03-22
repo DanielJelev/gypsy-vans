@@ -181,3 +181,16 @@ html, body { background: var(--beige-bg); }
     margin-bottom: 4px;
   }
 }
+
+/* Scroll performance: contain paint for offscreen sections */
+section {
+  contain: paint style;
+}
+
+/* GPU-promote parallax containers to prevent recalc jank */
+.parallax-outer, .parallax-inner {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}

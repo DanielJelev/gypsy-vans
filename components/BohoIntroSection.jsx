@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Parallax } from 'react-scroll-parallax';
 import { WaveDivider } from './WaveDivider';
+import Image from 'next/image';
 
 export function BohoIntroSection() {
   return (
@@ -26,25 +27,31 @@ export function BohoIntroSection() {
 
           {/* Image Side */}
           <div className="relative mx-auto w-full max-w-[380px] md:max-w-[420px] order-2 md:order-1">
-            <Parallax translateY={[-8, 8]}>
+            <Parallax translateY={[-4, 4]} easing="easeOutQuad">
               <div className="arch-frame overflow-hidden shadow-deep border-4 border-white">
-                <img
+                <Image
                   src="/van/_DSC6430.webp"
                   alt="Gypsy Vans интериор"
+                  width={420}
+                  height={560}
                   className="w-full aspect-[3/4] object-cover"
-                  loading="lazy"
+                  sizes="(max-width: 768px) 380px, 420px"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDIwIiBoZWlnaHQ9IjU2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjYzRhMDg4Ii8+PC9zdmc+"
                 />
               </div>
             </Parallax>
 
             {/* Small circular overlapping image */}
-            <Parallax translateY={[14, -14]} className="absolute -bottom-4 -right-4 md:-right-10 z-10">
+            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute -bottom-4 -right-4 md:-right-10 z-10">
               <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-cream shadow-deep">
-                <img
+                <Image
                   src="/van/_DSC6468.webp"
                   alt="Детайл от кемпера"
+                  width={128}
+                  height={128}
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  sizes="128px"
                 />
               </div>
             </Parallax>
