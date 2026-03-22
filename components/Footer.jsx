@@ -21,7 +21,7 @@ export function Footer({ termsOpen, setTermsOpen }) {
         <img
           src="/Logo-04.svg"
           alt="Logo"
-          className="w-[130px] h-auto logo-rotate"
+          className="w-[90px] h-auto"
         />
         <p className='leading-9 text-[20px] font-bold'>
           Създаден с любов. <br />

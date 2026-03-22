@@ -17,6 +17,7 @@ import { Footer } from '../components/Footer'
 import PricePlans from '../components/Plans'
 import { useState } from 'react'
 import { Faq } from '../components/Faq/Faq'
+import { ContactForm } from '../components/ContactForm'
 
 export default function Page() {
   const [termsOpen, setTermsOpen] = useState(false);
@@ -44,13 +45,12 @@ Gypsy Vans са не просто кемперванове под наем. То
         <PricePlans/>
         {/* <div className="card p-6 text-cocoa/90">Ценови пакети и оферти — попълни формата за персонална оферта.</div> */}
       </section>
-      <section id="about" className="container-page section">
-        <h2 className="font-head text-3xl mb-2">За нас</h2>
-        <div className="card p-6 text-cocoa/90">Boho дух, свобода и уют — Gypsy Vans.</div>
-      </section>
       <section id="contact" className="container-page section">
-        <h2 className="font-head text-3xl mb-2">Контакти</h2>
-        <div className="card p-6 text-cocoa/90">Пишете ни на hello@example.com</div>
+        <h2 className="font-head text-3xl mb-4 text-center">Свържете се с нас</h2>
+        <p className="text-cocoa/70 text-center max-w-xl mx-auto mb-8">Имате въпроси или искате да резервирате? Пишете ни!</p>
+        <div className="card p-8">
+          <ContactForm />
+        </div>
       </section>
       <Faq />
       <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen}/>
