@@ -36,7 +36,7 @@ export default function Page() {
 Нашият Mercedes Sprinter е конвертиран изцяло по наш проект - с внимание към всеки детайл, с любов към природата и с желание да дадем на другите свободата, която ние самите търсим.
 Gypsy Vans са не просто кемперванове под наем. Това е покана да излезеш извън рамките, да се свържеш със себе си и с пътя, и да създадеш спомени, които топлят цял живот."/>
      
-      <ParallaxLogoSection rotateDeg={720} toScale={0.25} caption={'asdasd'}/>
+      <ParallaxLogoSection rotateDeg={720} toScale={0.25} caption={'asdasd'} onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}/>
       <InsideDiscoverSection/>
 
       {/* <Carousel /> */}

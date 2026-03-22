@@ -102,14 +102,14 @@ const PricePlans = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <button className={`
-                                    w-full py-3 rounded-lg font-bold transition-colors duration-200
+                                <a href='/#contact' className={`
+                                    block text-center w-full py-3 rounded-lg font-bold transition-colors duration-200
                                     ${plan.type === 'primary' 
                                         ? 'bg-orange text-white hover:bg-mocha' 
                                         : 'border-2 border-coffee text-coffee hover:bg-coffee hover:text-white'}
                                 `}>
                                     РЕЗЕРВИРАЙ
-                                </button>
+                                </a>
                             </div>
                         </div>
                     ))}

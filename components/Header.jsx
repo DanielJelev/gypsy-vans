@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ReserveForm } from "./ReserveForm";
 import { Terms } from "./Terms/Terms";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 
@@ -15,7 +14,6 @@ export const LINKS = [
 ];
 
 export function Header({ termsOpen, setTermsOpen }) {
-  const [reserveOpen, setReserveOpen] = useState(false);
 
   const openTerms = () => {
     document.body.style.overflow = "hidden";
@@ -59,16 +57,15 @@ export function Header({ termsOpen, setTermsOpen }) {
           ))}
         </nav>
         <div className='flex gap-4 items-center z-10'>
-          <button
-            onClick={() => setReserveOpen(true)}
+          <a
+            href='/#contact'
             className='border border-black rounded-pill p-2 px-4 text-black text-sm font-bold'
           >
             РЕЗЕРВИРАЙ
-          </button>
+          </a>
           <MobileMenu termsOpen={termsOpen} setTermsOpen={setTermsOpen}/>
         </div>
       </div>
-      <ReserveForm open={reserveOpen} setOpen={setReserveOpen} />
       <Terms open={termsOpen} close={closeTerms} />
     </header>
   );
