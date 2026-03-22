@@ -6,11 +6,12 @@ import { Terms } from "./Terms/Terms";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 
 export const LINKS = [
-  { label: "Начало", href: "#home" },
-  { label: "Цени", href: "#prices" },
+  { label: "Начало", href: "/#home" },
+  { label: "Галерия", href: "/gallery" },
+  { label: "Цени", href: "/#prices" },
   { label: "Условия", href: "#", action: true },
-  { label: "За нас", href: "#about" },
-  { label: "Контакти", href: "#contact" },
+  { label: "За нас", href: "/#about" },
+  { label: "Контакти", href: "/#contact" },
 ];
 
 export function Header({ termsOpen, setTermsOpen }) {
@@ -32,7 +33,7 @@ export function Header({ termsOpen, setTermsOpen }) {
     <header className='fixed top-0 left-0 z-[100] w-full bg-[#fff7ec]/40 backdrop-blur-sm border-b border-b-white/70'>
       <div className='mx-auto max-w-7xl px-6 h-16 flex items-center justify-between z-50 relative'>
         <a
-          href='#home'
+          href='/#home'
           onClick={closeTerms}
           className='flex items-center gap-3'
         >

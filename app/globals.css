@@ -96,3 +96,57 @@ html, body { background: var(--beige-bg); }
 .logo-rotate {
   animation: logoRotate 10s linear forwards infinite
 }
+
+
+/* === Gallery masonry layout === */
+.gallery-grid {
+  columns: 5;
+  column-gap: 8px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 8px;
+}
+
+.gallery-frame {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-frame:hover {
+  opacity: 0.85;
+}
+
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 1023px) {
+  .gallery-grid {
+    columns: 3;
+    column-gap: 6px;
+  }
+  .gallery-item {
+    margin-bottom: 6px;
+  }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 640px) {
+  .gallery-grid {
+    columns: 2;
+    column-gap: 4px;
+  }
+  .gallery-item {
+    margin-bottom: 4px;
+  }
+}
