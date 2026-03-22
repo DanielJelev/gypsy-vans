@@ -1,6 +1,8 @@
+'use client';
+
 import { useLayoutEffect, useRef, useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
+import { motion } from "framer-motion";
+import { WaveDivider } from '../WaveDivider';
 import { debounce } from "../../app/utils/debounce";
 
 const sections = [
@@ -26,89 +28,126 @@ const sections = [
   },
 ];
 
-export function Faq(params) {
-  const [expandedSections, setExpandedSections] = useState({
-    0: false,
-    1: false,
-    2: false,
-    3: false,
-  });
-
-  const [sectionHeights, setSectionHeights] = useState({
-    0: 0,
-    1: 0,
-    2: 0,
-    3: 0,
-  });
-
-  const sectionRefs = useRef({
-    0: null,
-    1: null,
-    2: null,
-    3: null,
-  });
+export function Faq() {
+  const [expandedSections, setExpandedSections] = useState({});
+  const [sectionHeights, setSectionHeights] = useState({});
+  const sectionRefs = useRef({});
 
   const toggleSection = (index) => {
     setExpandedSections((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   useLayoutEffect(() => {
-    Object.values(sectionRefs.current).map((el, index) => {
-      setSectionHeights((prev) => ({ ...prev, [index]: el.offsetHeight }));
-    });
-
-    const handleResize = debounce(() => {
-      Object.values(sectionRefs.current).map((el, index) => {
-        setSectionHeights((prev) => ({ ...prev, [index]: el.offsetHeight }));
+    const measure = () => {
+      const heights = {};
+      Object.entries(sectionRefs.current).forEach(([key, el]) => {
+        if (el) heights[key] = el.offsetHeight;
       });
-    }, 200);
+      setSectionHeights(heights);
+    };
+    measure();
 
+    const handleResize = debounce(measure, 200);
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <section id='contact' className='container-page section'>
-      <div className='flex flex-col w-full items-center justify-center p-8 rounded-2xl bg-tan'>
-        <h2 className='font-head text-4xl mb-6'>Често задавани въпроси</h2>
-        <div className='flex flex-col gap-4'>
-          {sections.map((section, index) => (
-            <div
-              key={section.title}
-              className='card p-2 px-3 text-cocoa/90 flex flex-col'
-            >
-              <div
-                className='w-full p-2 flex gap-4 font-bold text-xl select-none cursor-pointer'
-                onClick={() => toggleSection(index)}
-              >
-                <p className='text-2xl pt-1'>
-                  {expandedSections[index] ? (
-                    <IoIosArrowUp />
-                  ) : (
-                    <IoIosArrowDown />
-                  )}
-                </p>
-                {section.title}
-              </div>
-              <div
-                className='w-full overflow-hidden transition-all duration-500'
-                style={{
-                  maxHeight: expandedSections[index]
-                    ? sectionHeights[index]
-                    : 0,
-                  opacity: expandedSections[index] ? 1 : 0
-                }}
-              >
-                <div
-                  ref={(el) => (sectionRefs.current[index] = el)}
-                  className='py-2 px-4 text-lg'
-                >
-                  {section.description}
-                </div>
-              </div>
+    <section className="relative pt-20 md:pt-32 pb-[160px] overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
+      {/* Decorative blobs */}
+      <div className="absolute top-10 -left-32 w-72 h-72 rounded-full bg-sand/20 blur-3xl pointer-events-none" aria-hidden />
+      <div className="absolute bottom-20 -right-24 w-60 h-60 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
+
+      <div className="container-page">
+        <div className="max-w-3xl mx-auto">
+
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-14"
+          >
+            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">Въпроси</p>
+            <h2 className="serif-head text-4xl md:text-6xl text-earth leading-tight">
+              Често задавани
+            </h2>
+            <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
+              <div className="w-3 h-3 rounded-full bg-terracotta" />
+              <div className="w-3 h-3 rounded-full bg-desert-rose" />
+              <div className="w-3 h-3 rounded-full bg-sand" />
+              <div className="w-3 h-3 rounded-full bg-sage" />
+              <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
             </div>
-          ))}
+          </motion.div>
+
+          {/* Accordion */}
+          <div className="space-y-4">
+            {sections.map((section, index) => {
+              const isOpen = !!expandedSections[index];
+              return (
+                <motion.div
+                  key={section.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className={`rounded-2xl border transition-all duration-300 ${
+                    isOpen
+                      ? 'bg-white shadow-boho border-terracotta/20'
+                      : 'bg-white/60 backdrop-blur-sm shadow-soft border-sand/60 hover:shadow-boho'
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleSection(index)}
+                    className="w-full flex items-center gap-4 p-6 md:p-7 text-left cursor-pointer"
+                  >
+                    {/* Dot indicator */}
+                    <div
+                      className={`w-3 h-3 rounded-full flex-shrink-0 transition-colors duration-300 ${
+                        isOpen ? 'bg-terracotta' : 'bg-sand'
+                      }`}
+                    />
+                    <span className="serif-head text-lg md:text-xl text-earth flex-1 leading-snug">
+                      {section.title}
+                    </span>
+                    {/* Arrow */}
+                    <svg
+                      className={`w-5 h-5 text-terracotta/60 flex-shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  <div
+                    className="overflow-hidden transition-all duration-500 ease-out"
+                    style={{
+                      maxHeight: isOpen ? (sectionHeights[index] || 500) : 0,
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                  >
+                    <div
+                      ref={(el) => (sectionRefs.current[index] = el)}
+                      className="px-6 md:px-7 pb-6 md:pb-7"
+                    >
+                      <div className="w-full h-px bg-sand/40 mb-5" />
+                      <p className="text-cocoa/70 text-base md:text-lg leading-relaxed">
+                        {section.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
         </div>
       </div>
     </section>

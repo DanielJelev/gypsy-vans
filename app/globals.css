@@ -5,6 +5,8 @@
 :root {
   --font-head: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-script: "Sacramento", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
 
 html, body { height: 100%; }
@@ -24,6 +26,35 @@ body { @apply bg-page text-ink font-body; }
 :root { --font-accent: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", serif; }
 
 .accent-head { font-family: var(--font-accent); }
+
+/* Boho font utilities */
+.script-head {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+.serif-head {
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+/* Arch shape frames */
+.arch-frame {
+  border-radius: 999px 999px 12px 12px;
+}
+.arch-frame-subtle {
+  border-radius: 200px 200px 12px 12px;
+}
+
+/* Decorative dot pattern background */
+.boho-dots {
+  background-image: radial-gradient(circle, rgba(184,101,74,0.15) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* Organic blob shape for decorative backgrounds */
+.boho-blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
 
 
 /* --- Motion tokens & helpers --- */

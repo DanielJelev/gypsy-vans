@@ -41,7 +41,7 @@ export function ReserveForm({ open, setOpen }) {
               <input type="date" className="rounded-s border border-pebble/60 px-4 py-3 bg-white/80" />
               <input type="date" className="rounded-s border border-pebble/60 px-4 py-3 bg-white/80" />
             </div>
-            <button className="px-5 py-3 rounded-pill bg-coffee text-white shadow-soft">РЕЗЕРВИРАЙ</button>
+            <button className="px-8 py-3 rounded-full bg-orange border border-orange text-white text-sm tracking-widest uppercase">РЕЗЕРВИРАЙ</button>
           </form>
         </div>
       </div>

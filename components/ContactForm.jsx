@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+const inputBase =
+  "w-full rounded-xl border border-sand/60 bg-white/50 backdrop-blur-sm px-6 py-5 text-earth text-xl placeholder:text-cocoa/40 focus:outline-none focus:border-terracotta/40 focus:ring-2 focus:ring-terracotta/10 transition-all duration-300 serif-head";
+
 export function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", nights: "", message: "" });
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
@@ -28,52 +31,79 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 max-w-xl mx-auto">
-      <input
-        required
-        placeholder="Име"
-        value={form.name}
-        onChange={update("name")}
-        className="rounded-lg border border-pebble/60 px-4 py-3 bg-white/80 focus:outline-none focus:ring-2 focus:ring-coffee/40"
-      />
-      <input
-        required
-        type="email"
-        placeholder="Имейл"
-        value={form.email}
-        onChange={update("email")}
-        className="rounded-lg border border-pebble/60 px-4 py-3 bg-white/80 focus:outline-none focus:ring-2 focus:ring-coffee/40"
-      />
-      <input
-        required
-        type="number"
-        min="1"
-        placeholder="Брой нощувки"
-        value={form.nights}
-        onChange={update("nights")}
-        className="rounded-lg border border-pebble/60 px-4 py-3 bg-white/80 focus:outline-none focus:ring-2 focus:ring-coffee/40"
-      />
-      <textarea
-        required
-        rows={4}
-        placeholder="Вашето съобщение..."
-        value={form.message}
-        onChange={update("message")}
-        className="rounded-lg border border-pebble/60 px-4 py-3 bg-white/80 resize-none focus:outline-none focus:ring-2 focus:ring-coffee/40"
-      />
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Name & Email row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="relative">
+          <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Име</label>
+          <input
+            required
+            placeholder="Вашето име"
+            value={form.name}
+            onChange={update("name")}
+            className={inputBase}
+          />
+        </div>
+        <div className="relative">
+          <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Имейл</label>
+          <input
+            required
+            type="email"
+            placeholder="email@example.com"
+            value={form.email}
+            onChange={update("email")}
+            className={inputBase}
+          />
+        </div>
+      </div>
+
+      {/* Nights */}
+      <div>
+        <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Брой нощувки</label>
+        <input
+          required
+          type="text"
+          placeholder="напр. 5"
+          value={form.nights}
+          onChange={update("nights")}
+          className={inputBase}
+        />
+      </div>
+
+      {/* Message */}
+      <div>
+        <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Съобщение</label>
+        <textarea
+          required
+          rows={4}
+          placeholder="Разкажете ни за вашето планирано приключение..."
+          value={form.message}
+          onChange={update("message")}
+          className={`${inputBase} resize-none`}
+        />
+      </div>
+
+      {/* Submit */}
       <button
         type="submit"
         disabled={status === "sending"}
-        className="px-5 py-3 rounded-full bg-coffee text-white font-bold shadow-soft hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="w-full py-3 rounded-full bg-orange border border-orange text-white text-sm tracking-widest uppercase disabled:opacity-50"
       >
-        {status === "sending" ? "Изпращане..." : "ИЗПРАТИ"}
+        {status === "sending" ? "Изпращане..." : "ИЗПРАТИ СЪОБЩЕНИЕ"}
       </button>
 
+      {/* Status messages */}
       {status === "sent" && (
-        <p className="text-green-700 text-center text-sm">Съобщението беше изпратено успешно!</p>
+        <div className="flex items-center justify-center gap-2 py-3 rounded-xl bg-sage/10 border border-sage/30">
+          <div className="w-2 h-2 rounded-full bg-sage" />
+          <p className="text-sage text-sm font-medium">Съобщението беше изпратено успешно!</p>
+        </div>
       )}
       {status === "error" && (
-        <p className="text-red-600 text-center text-sm">Грешка при изпращане. Опитайте отново.</p>
+        <div className="flex items-center justify-center gap-2 py-3 rounded-xl bg-terracotta/10 border border-terracotta/30">
+          <div className="w-2 h-2 rounded-full bg-terracotta" />
+          <p className="text-terracotta text-sm font-medium">Грешка при изпращане. Опитайте отново.</p>
+        </div>
       )}
     </form>
   );

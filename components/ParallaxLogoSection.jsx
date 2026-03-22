@@ -1,6 +1,7 @@
 'use client';
 
 import { Parallax } from 'react-scroll-parallax';
+import { WaveDivider } from './WaveDivider';
 
 export function ParallaxLogoSection({
   heightVh = 100,
@@ -10,15 +11,15 @@ export function ParallaxLogoSection({
 }) {
   return (
     <section
-      className="relative overflow-hidden flex items-center justify-center bg-tan"
+      className="relative overflow-hidden flex flex-col items-center justify-center gap-10 bg-tan"
       style={{ height: `${heightVh}vh` }}
     >
-      {/* Logo (keep it behind CTA) */}
+      {/* Logo */}
       <Parallax
         rotate={[0, rotateDeg]}
         scale={[1, toScale]}
         opacity={[1, 0.7]}
-        className="pointer-events-none z-0"
+        className="pointer-events-none"
       >
         <img
           src="/Logo-04.svg"
@@ -27,28 +28,17 @@ export function ParallaxLogoSection({
         />
       </Parallax>
 
-      {/* CTA (force on top) */}
-      <div className="absolute bottom-[10%] left-0 right-0 flex justify-center px-6">
-        <button
-          type="button"
-          onClick={onCtaClick}
-          className="
-            bg-coffee
-            text-[var(--beige-bg)]
-            px-14 py-5
-            text-lg md:text-xl
-            font-medium
-            rounded-xl
-            border border-white/10
-            transition-transform ease-soft
-            hover:-translate-y-0.5
-            active:translate-y-0
-            focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beige-bg)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
-          "
-        >
-          Резервирай Сега
-        </button>
-      </div>
+      {/* CTA below logo */}
+      <button
+        type="button"
+        onClick={onCtaClick}
+        className="relative z-10 rounded-full bg-orange border border-orange px-14 py-5 text-white text-lg md:text-xl tracking-widest uppercase"
+      >
+        Резервирай Сега
+      </button>
+
+      {/* Wave transition to services */}
+      <WaveDivider fill="var(--beige-bg)" height={140} overlap={-2} />
     </section>
   );
 }

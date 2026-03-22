@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Terms } from "./Terms/Terms";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 
@@ -14,6 +14,13 @@ export const LINKS = [
 ];
 
 export function Header({ termsOpen, setTermsOpen }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const openTerms = () => {
     document.body.style.overflow = "hidden";
@@ -59,7 +66,11 @@ export function Header({ termsOpen, setTermsOpen }) {
         <div className='flex gap-4 items-center z-10'>
           <a
             href='/#contact'
-            className='border border-black rounded-pill p-2 px-4 text-black text-sm font-bold'
+            className={`rounded-full px-6 py-2 text-sm tracking-widest uppercase transition-colors duration-300 ${
+              scrolled
+                ? 'bg-orange border border-orange text-white'
+                : 'border border-black text-black'
+            }`}
           >
             РЕЗЕРВИРАЙ
           </a>

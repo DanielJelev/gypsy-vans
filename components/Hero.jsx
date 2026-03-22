@@ -7,7 +7,10 @@ export function Hero() {
       id='home'
       className='relative isolate min-h-[100svh] h-[100dvh] w-full overflow-hidden'
     >
-      <div className='absolute bottom-4 left-1/2 translate-x-[-50%] md:top-1/2 md:left-4 md:translate-y-[-50%] md:translate-x-0 flex md:flex-col justify-center gap-4 z-20'>
+
+
+      {/* Social icons — left side on desktop, bottom on mobile */}
+      <div className='absolute bottom-4 left-1/2 translate-x-[-50%] md:top-1/2 md:left-6 md:translate-y-[-50%] md:translate-x-0 flex md:flex-col justify-center gap-4 z-20'>
         <SocialWidget
           img='/logos/instagram-logo.png'
           alt='Instagram Page'
@@ -24,51 +27,50 @@ export function Hero() {
           href='https://www.google.com'
         />
       </div>
-      {/* Overlay */}
-      <div className='absolute inset-0 bg-black/45 z-0' />
 
       {/* Video background */}
       <video
         className='absolute inset-0 -z-10 h-full w-full object-cover'
-        src='/hero.mp4'
+        src='/hero-banner-video.webm'
         autoPlay
         muted
         loop
         playsInline
-        poster='/eloura/parallax2.jpg'
+        poster='/van/_DSC6440.JPG'
         aria-label='Background hero video'
       />
 
-      {/* ✅ CENTERED TEXT (horizontal + vertical) */}
-      <div className='relative z-10 h-full grid place-items-center px-6 md:px-16 text-center'>
-        <div className='animate-reveal max-w-4xl mx-auto rounded-2xl border border-pebble/30 backdrop-blur-sm p-4 py-6'>
-          <div className='max-w-4xl'>
-            <h1 className='accent-head text-white text-[11vw] md:text-[4vw] leading-[0.92] md:leading-[0.95] drop-shadow mb-4'>
-              Пътят е дом
-            </h1>
+      {/* Right-side vignette overlay */}
+      <div className='absolute inset-y-0 right-0 w-1/2 z-[1] bg-gradient-to-l from-black/70 via-black/40 to-transparent pointer-events-none' />
 
-            <h2 className='text-white text-[4.2vw] md:text-[1.5vw] leading-[1.18] md:leading-10 drop-shadow'>
-              Луксозен кемперван Mercedes Sprinter, създаден за свободата да
-              откриваш.
-              <br className='hidden md:block' />
-              От семейство влюбено в приключенията – за всички, които искат да
-              пътуват с комфорт, стил и душа.
-            </h2>
-          </div>
+      {/* Right-aligned hero text */}
+      <div className='relative z-10 h-full flex items-center justify-end px-6 md:px-20 lg:px-28'>
+        <div className='animate-reveal text-right max-w-2xl'>
+          <h1 className='accent-head text-white text-[13vw] md:text-[5.5vw] lg:text-[4.5vw] leading-[0.88] tracking-tight drop-shadow-lg mb-5'>
+            Пътят е дом
+          </h1>
+
+          <p className='text-white/90 text-[3.8vw] md:text-[1.3vw] lg:text-[1.1vw] leading-[1.5] md:leading-[1.6] font-light drop-shadow max-w-xl ml-auto'>
+            Луксозен кемперван Mercedes Sprinter, създаден за свободата да
+            откриваш. От семейство влюбено в приключенията – за всички, които
+            искат да пътуват с комфорт, стил и душа.
+          </p>
+
+          <a
+            href='#contact'
+            className='inline-block mt-8 px-8 py-3 rounded-full bg-orange border border-orange text-white text-sm md:text-base tracking-widest uppercase'
+          >
+            Резервирай
+          </a>
         </div>
       </div>
 
-      {/* ✅ SPINNING LOGO — bottom center, smaller */}
+      {/* Spinning logo — bottom center */}
       <div className='absolute inset-x-0 bottom-20 md:bottom-10 flex justify-center z-20'>
         <img
           src='/logo-gypsy-white.svg'
           alt='Gypsy Vans rosette'
-          className='
-            spin-slow
-            drop-shadow
-            w-16 h-16
-            md:w-20 md:h-20
-          '
+          className='spin-slow drop-shadow-lg w-10 h-10 md:w-14 md:h-14'
         />
       </div>
     </section>
