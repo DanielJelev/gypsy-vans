@@ -27,7 +27,7 @@ export function BohoIntroSection() {
           {/* Image Side */}
           <div className="relative mx-auto w-full max-w-[380px] md:max-w-[420px] order-2 md:order-1">
             <Parallax translateY={[-8, 8]}>
-              <div className="arch-frame overflow-hidden shadow-deep">
+              <div className="arch-frame overflow-hidden shadow-deep border-4 border-white">
                 <img
                   src="/van/_DSC6430.JPG"
                   alt="Gypsy Vans интериор"
