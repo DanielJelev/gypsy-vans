@@ -53,7 +53,7 @@ export function Faq() {
   }, []);
 
   return (
-    <section className="relative pt-20 md:pt-32 pb-[160px] overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
+    <section className="relative pt-20 md:pt-32 pb-[160px] overflow-hidden bg-linen">
       {/* Decorative blobs */}
       <div className="absolute top-10 -left-32 w-72 h-72 rounded-full bg-sand/20 blur-3xl pointer-events-none" aria-hidden />
       <div className="absolute bottom-20 -right-24 w-60 h-60 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
@@ -150,6 +150,8 @@ export function Faq() {
 
         </div>
       </div>
+
+      <WaveDivider position="bottom" fill="var(--beige-bg)" height={120} overlap={-2} />
     </section>
   );
 }

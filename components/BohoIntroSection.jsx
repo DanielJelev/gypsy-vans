@@ -87,7 +87,7 @@ export function BohoIntroSection() {
               простотата – щастието да се насладиш на пътя.
             </p>
             <a
-              href="#discover"
+              href="/gallery"
               className="inline-flex items-center gap-2 text-cream/90 text-lg border-b border-cream/40 pb-1 hover:border-cream transition-colors group"
             >
               Разгледай отвътре

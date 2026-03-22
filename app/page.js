@@ -54,8 +54,11 @@ export default function Page() {
         <PricePlans />
       </section>
 
+      {/* ── FAQ ── */}
+      <Faq />
+
       {/* ── Contact ── */}
-      <section id="contact" className="relative pt-[100px] pb-[160px] overflow-hidden bg-linen">
+      <section id="contact" className="relative pt-[100px] pb-[160px] overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
         {/* Decorative blobs */}
         <div className="absolute top-10 -right-32 w-72 h-72 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
         <div className="absolute bottom-20 -left-24 w-64 h-64 rounded-full bg-sand/20 blur-3xl pointer-events-none" aria-hidden />
@@ -91,12 +94,9 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Bottom wave → FAQ */}
-        <WaveDivider position="bottom" fill="var(--beige-bg)" height={120} overlap={-2} />
+        {/* Bottom wave → Footer */}
+        <WaveDivider position="bottom" fill="var(--coffee)" height={120} overlap={-2} />
       </section>
-
-      {/* ── FAQ ── */}
-      <Faq />
 
       {/* ── Footer ── */}
       <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen} />

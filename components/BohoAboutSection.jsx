@@ -21,64 +21,13 @@ export function BohoAboutSection() {
       <div className="container-page py-12 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
-          {/* Images Side */}
-          <div className="relative mx-auto w-full max-w-[480px] min-h-[400px] md:min-h-[540px]">
-            {/* Main rectangular image */}
-            <Parallax translateY={[-3, 3]} easing="easeOutQuad">
-              <div className="rounded-2xl overflow-hidden shadow-deep w-[68%]">
-                <Image
-                  src="/van/_DSC6497.webp"
-                  alt="Семейство Gypsy Vans"
-                  width={327}
-                  height={436}
-                  className="w-full aspect-[3/4] object-cover"
-                  sizes="(max-width: 768px) 68vw, 327px"
-                  placeholder="blur"
-                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzI3IiBoZWlnaHQ9IjQzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNDUzMzM2Ii8+PC9zdmc+"
-                />
-              </div>
-            </Parallax>
-
-            {/* Overlapping arch image */}
-            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-20 right-0 w-[55%] z-10">
-              <div className="arch-frame overflow-hidden shadow-deep border-4 border-coffee">
-                <Image
-                  src="/van/_DSC6520.webp"
-                  alt="На път с кемпера"
-                  width={264}
-                  height={352}
-                  className="w-full aspect-[3/4] object-cover"
-                  sizes="(max-width: 768px) 55vw, 264px"
-                />
-              </div>
-            </Parallax>
-
-            {/* Small circular accent image */}
-            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-2 left-[25%] z-20">
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
-                <Image
-                  src="/van/_DSC6534.webp"
-                  alt="Детайл"
-                  width={96}
-                  height={96}
-                  className="w-full h-full object-cover"
-                  sizes="96px"
-                />
-              </div>
-            </Parallax>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-3 right-[40%] w-14 h-14 rounded-full border border-terracotta/20 pointer-events-none animate-float" aria-hidden />
-            <div className="absolute bottom-10 -left-3 w-10 h-10 rounded-full border border-white/10 pointer-events-none" aria-hidden />
-          </div>
-
           {/* Text Side */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
-            className="text-center md:text-left"
+            className="text-center md:text-left order-2 md:order-1"
           >
             <p className="script-head text-4xl md:text-5xl text-desert-rose mb-2">
               Запознайте се
@@ -113,6 +62,57 @@ export function BohoAboutSection() {
               <div className="w-5 h-5 rounded-full bg-cream" />
             </div>
           </motion.div>
+
+          {/* Images Side */}
+          <div className="relative mx-auto w-full max-w-[540px] min-h-[440px] md:min-h-[600px] order-1 md:order-2">
+            {/* Main rectangular image */}
+            <Parallax translateY={[-3, 3]} easing="easeOutQuad">
+              <div className="rounded-2xl overflow-hidden shadow-deep w-[78%]">
+                <Image
+                  src="/van/_DSC6497.webp"
+                  alt="Семейство Gypsy Vans"
+                  width={327}
+                  height={436}
+                  className="w-full aspect-[3/4] object-cover"
+                  sizes="(max-width: 768px) 68vw, 327px"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzI3IiBoZWlnaHQ9IjQzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNDUzMzM2Ii8+PC9zdmc+"
+                />
+              </div>
+            </Parallax>
+
+            {/* Overlapping arch image */}
+            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-20 -right-16 w-[62%] z-10">
+              <div className="arch-frame overflow-hidden shadow-deep border-4 border-coffee">
+                <Image
+                  src="/van/_DSC6520.webp"
+                  alt="На път с кемпера"
+                  width={264}
+                  height={352}
+                  className="w-full aspect-[3/4] object-cover"
+                  sizes="(max-width: 768px) 55vw, 264px"
+                />
+              </div>
+            </Parallax>
+
+            {/* Small circular accent image */}
+            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-2 left-[25%] z-20">
+              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
+                <Image
+                  src="/van/_DSC6534.webp"
+                  alt="Детайл"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover"
+                  sizes="96px"
+                />
+              </div>
+            </Parallax>
+
+            {/* Decorative elements */}
+            <div className="absolute -top-3 right-[40%] w-14 h-14 rounded-full border border-terracotta/20 pointer-events-none animate-float" aria-hidden />
+            <div className="absolute bottom-10 -left-3 w-10 h-10 rounded-full border border-white/10 pointer-events-none" aria-hidden />
+          </div>
 
         </div>
       </div>

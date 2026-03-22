@@ -75,21 +75,26 @@ export function InsideDiscoverSection() {
             ))}
           </motion.div>
 
-          {/* Caption */}
+          {/* Banner */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
-            className="mt-10"
+            className="mt-12"
           >
-            <div className="relative overflow-hidden rounded-l border border-pebble/60 bg-white/70 backdrop-blur-sm shadow-soft p-6 md:p-7">
-              <div className="pointer-events-none absolute -left-12 -bottom-12 h-40 w-40 rounded-full bg-pebble/35 blur-3xl" aria-hidden />
-              <p className="text-cocoa/90 text-base md:text-lg leading-relaxed">
-                Това е кемпер, създаден за хора, които ценят както свободата, така и комфорта.
-                <br />
-                Gypsy Vans - дом, който те следва навсякъде.
-                <br />
+            <div className="relative overflow-hidden rounded-2xl bg-coffee text-center py-12 md:py-16 px-8 md:px-14">
+              <div className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full bg-terracotta/15 blur-3xl" aria-hidden />
+              <div className="pointer-events-none absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-desert-rose/10 blur-3xl" aria-hidden />
+              <p className="script-head text-3xl md:text-4xl text-desert-rose mb-4">
+                Gypsy Vans
+              </p>
+              <p className="serif-head text-2xl md:text-3xl text-white leading-snug mb-6">
+                Това е кемпер, създаден за хора, които ценят<br className="hidden md:block" /> както свободата, така и комфорта.
+              </p>
+              <div className="w-16 h-px bg-terracotta/50 mx-auto mb-6" aria-hidden />
+              <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                Дом, който те следва навсякъде.<br />
                 Създаден с любов. Изживян с дух. Споделен с теб.
               </p>
             </div>

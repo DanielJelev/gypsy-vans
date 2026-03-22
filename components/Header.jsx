@@ -45,7 +45,7 @@ export function Header({ termsOpen, setTermsOpen }) {
           <img
             src='/logo-header.svg'
             alt='logo'
-            className='w-55 h-8 opacity-95 drop-shadow'
+            className='w-40 md:w-55 h-8 opacity-95 drop-shadow'
           />
         </a>
         <nav className='hidden md:flex gap-6 lg:gap-12 text-md text-black'>
@@ -63,10 +63,10 @@ export function Header({ termsOpen, setTermsOpen }) {
             </div>
           ))}
         </nav>
-        <div className='flex gap-4 items-center z-10'>
+        <div className='flex gap-2 md:gap-4 items-center z-10'>
           <a
             href='/#contact'
-            className={`rounded-full px-6 py-2 text-sm tracking-widest uppercase transition-colors duration-300 ${
+            className={`rounded-full px-3 py-1.5 text-[10px] md:px-6 md:py-2 md:text-sm tracking-widest uppercase transition-colors duration-300 ${
               scrolled
                 ? 'bg-orange border border-orange text-white'
                 : 'border border-black text-black'
