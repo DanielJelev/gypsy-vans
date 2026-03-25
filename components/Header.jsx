@@ -34,7 +34,11 @@ export function Header({ termsOpen, setTermsOpen }) {
 
 
   return (
-    <header className='fixed top-0 left-0 z-[100] w-full bg-[#fff7ec]/40 backdrop-blur-sm border-b border-b-white/70'>
+    <header className={`fixed top-0 left-0 z-[100] w-full transition-all duration-300 ${
+      scrolled
+        ? 'bg-[#fff7ec]/90 backdrop-blur-md shadow-soft border-b border-b-white/70'
+        : 'bg-[#fff7ec]/40 backdrop-blur-sm border-b border-b-white/70'
+    }`}>
       <div className='mx-auto max-w-7xl px-6 h-16 flex items-center justify-between z-50 relative'>
         <a
           href='/#home'

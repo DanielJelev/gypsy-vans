@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id='home'
-      className='relative isolate min-h-[100svh] h-[100dvh] w-full overflow-hidden'
+      className='relative min-h-[100svh] h-[100dvh] w-full overflow-hidden'
     >
 
 

@@ -182,9 +182,9 @@ html, body { background: var(--beige-bg); }
   }
 }
 
-/* Scroll performance: contain paint for offscreen sections */
+/* Scroll performance hint for offscreen sections */
 section {
-  contain: paint style;
+  content-visibility: auto;
 }
 
 /* GPU-promote parallax containers to prevent recalc jank */
@@ -243,12 +243,9 @@ section {
 
 .splash-content {
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.7s cubic-bezier(.22,.61,.36,1) 0.15s,
-              transform 0.7s cubic-bezier(.22,.61,.36,1) 0.15s;
+  transition: opacity 0.7s cubic-bezier(.22,.61,.36,1) 0.15s;
 }
 
 .splash-content-visible {
   opacity: 1;
-  transform: translateY(0);
 }

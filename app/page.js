@@ -20,9 +20,10 @@ export default function Page() {
   const [termsOpen, setTermsOpen] = useState(false);
 
   return (
-    <main className="relative z-20">
-      {/* <WavyOrangeLine /> */}
+    <>
       <Header termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
+      <main className="relative">
+      {/* <WavyOrangeLine /> */}
 
       {/* ── Hero (unchanged) ── */}
       <Hero />
@@ -103,5 +104,6 @@ export default function Page() {
       {/* ── Footer ── */}
       <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
     </main>
+    </>
   );
 }
