@@ -194,3 +194,44 @@ section {
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
 }
+
+/* === Splash Screen === */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--beige-bg, #fff7ec);
+  transition: opacity 0.5s ease;
+}
+
+.splash-fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes splash-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.splash-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-logo-spin {
+  animation: splash-spin 2.5s linear infinite;
+}
+
+.splash-content {
+  opacity: 0;
+  transition: opacity 0.4s ease 0.1s;
+}
+
+.splash-content-visible {
+  opacity: 1;
+}

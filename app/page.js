@@ -13,6 +13,7 @@ import PricePlans from '../components/Plans'
 import { ContactForm } from '../components/ContactForm'
 import { Faq } from '../components/Faq/Faq'
 import { WaveDivider } from '../components/WaveDivider'
+import { WavyOrangeLine } from '../components/WavyOrangeLine'
 import { useState } from 'react'
 
 export default function Page() {
@@ -20,6 +21,7 @@ export default function Page() {
 
   return (
     <main className="relative z-20">
+      {/* <WavyOrangeLine /> */}
       <Header termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
 
       {/* ── Hero (unchanged) ── */}

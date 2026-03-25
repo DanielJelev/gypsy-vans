@@ -32,7 +32,6 @@ export function Header({ termsOpen, setTermsOpen }) {
     setTermsOpen(false);
   };
 
-  // console.log(termsOpen)
 
   return (
     <header className='fixed top-0 left-0 z-[100] w-full bg-[#fff7ec]/40 backdrop-blur-sm border-b border-b-white/70'>
