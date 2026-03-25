@@ -27,7 +27,7 @@ export function BohoAboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
-            className="text-center md:text-left order-2 md:order-1"
+            className="text-center md:text-left order-1 md:order-1"
           >
             <p className="script-head text-4xl md:text-5xl text-desert-rose mb-2">
               Запознайте се
@@ -64,10 +64,10 @@ export function BohoAboutSection() {
           </motion.div>
 
           {/* Images Side */}
-          <div className="relative mx-auto w-full max-w-[540px] min-h-[440px] md:min-h-[600px] order-1 md:order-2">
+          <div className="relative mx-auto w-full max-w-[540px] min-h-[440px] md:min-h-[600px] order-2 md:order-2 overflow-hidden">
             {/* Main rectangular image */}
             <Parallax translateY={[-3, 3]} easing="easeOutQuad">
-              <div className="rounded-2xl overflow-hidden shadow-deep w-[78%]">
+              <div className="rounded-2xl overflow-hidden shadow-deep w-[65%] md:w-[78%]">
                 <Image
                   src="/van/_DSC6497.webp"
                   alt="Семейство Gypsy Vans"
@@ -82,7 +82,7 @@ export function BohoAboutSection() {
             </Parallax>
 
             {/* Overlapping arch image */}
-            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-20 -right-16 w-[62%] z-10">
+            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-16 right-2 sm:right-0 md:-right-0 w-[45%] sm:w-[50%] md:w-[55%] z-10">
               <div className="arch-frame overflow-hidden shadow-deep border-4 border-coffee">
                 <Image
                   src="/van/_DSC6520.webp"
@@ -90,14 +90,14 @@ export function BohoAboutSection() {
                   width={264}
                   height={352}
                   className="w-full aspect-[3/4] object-cover"
-                  sizes="(max-width: 768px) 55vw, 264px"
+                  sizes="(max-width: 768px) 45vw, 264px"
                 />
               </div>
             </Parallax>
 
             {/* Small circular accent image */}
-            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-2 left-[25%] z-20">
-              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
+            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute bottom-4 left-[20%] md:left-[25%] z-20">
+              <div className="w-28 h-28 sm:w-28 sm:h-28 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
                 <Image
                   src="/van/_DSC6534.webp"
                   alt="Детайл"

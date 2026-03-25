@@ -204,11 +204,13 @@ section {
   align-items: center;
   justify-content: center;
   background: var(--beige-bg, #fff7ec);
-  transition: opacity 0.5s ease;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(.22,.61,.36,1), visibility 0.8s;
 }
 
 .splash-fade-out {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -217,21 +219,36 @@ section {
   to { transform: rotate(360deg); }
 }
 
+@keyframes splash-scale-in {
+  0%   { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
 .splash-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: splash-scale-in 0.6s cubic-bezier(.22,.61,.36,1) forwards;
 }
 
 .splash-logo-spin {
-  animation: splash-spin 2.5s linear infinite;
+  animation: splash-spin 3s linear infinite;
+}
+
+.splash-fade-out .splash-logo-wrapper {
+  transition: transform 0.6s cubic-bezier(.22,.61,.36,1), opacity 0.5s ease;
+  transform: scale(0.85);
+  opacity: 0;
 }
 
 .splash-content {
   opacity: 0;
-  transition: opacity 0.4s ease 0.1s;
+  transform: translateY(8px);
+  transition: opacity 0.7s cubic-bezier(.22,.61,.36,1) 0.15s,
+              transform 0.7s cubic-bezier(.22,.61,.36,1) 0.15s;
 }
 
 .splash-content-visible {
   opacity: 1;
+  transform: translateY(0);
 }

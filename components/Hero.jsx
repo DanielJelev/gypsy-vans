@@ -41,7 +41,15 @@ export function Hero() {
       />
 
       {/* Right-side vignette overlay */}
-      <div className='absolute inset-y-0 right-0 w-1/2 z-[1] bg-gradient-to-l from-black/70 via-black/40 to-transparent pointer-events-none' />
+      <div
+        className='absolute inset-y-0 right-0 w-2/3 md:w-1/2 z-[1] pointer-events-none'
+        style={{
+          background: 'linear-gradient(to left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 40%, transparent 100%)',
+        }}
+      />
+      <div
+        className='hidden md:block absolute inset-y-0 right-0 w-1/2 z-[1] bg-gradient-to-l from-black/70 via-black/40 to-transparent pointer-events-none'
+      />
 
       {/* Right-aligned hero text */}
       <div className='relative z-10 h-full flex items-center justify-end px-6 md:px-20 lg:px-28'>

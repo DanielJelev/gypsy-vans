@@ -11,7 +11,7 @@ export default function SplashScreen({ children }) {
     const handleLoad = () => {
       setLoaded(true);
       // Wait for fade-out animation to finish before unmounting
-      setTimeout(() => setVisible(false), 600);
+      setTimeout(() => setVisible(false), 1000);
     };
 
     if (document.readyState === 'complete') {
