@@ -21,7 +21,7 @@ export default function SplashScreen({ children }) {
     window.addEventListener('heroReady', onHeroReady);
 
     // Fallback: dismiss after 1.5 seconds so users aren't stuck
-    const timeout = setTimeout(dismiss, 1500);
+    const timeout = setTimeout(dismiss, 1000);
 
     return () => {
       window.removeEventListener('heroReady', onHeroReady);

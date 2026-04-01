@@ -2,14 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Phenomena @font-face === */
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/fonts/Phenomena-Thin.woff2') format('woff2'),
+       url('/fonts/Phenomena-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/fonts/Phenomena-ExtraLight.woff2') format('woff2'),
+       url('/fonts/Phenomena-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/fonts/Phenomena-Light.woff2') format('woff2'),
+       url('/fonts/Phenomena-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/fonts/Phenomena-Regular.woff2') format('woff2'),
+       url('/fonts/Phenomena-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/fonts/Phenomena-Bold.woff2') format('woff2'),
+       url('/fonts/Phenomena-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/fonts/Phenomena-ExtraBold.woff2') format('woff2'),
+       url('/fonts/Phenomena-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/fonts/Phenomena-Black.woff2') format('woff2'),
+       url('/fonts/Phenomena-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-head: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-script: "Sacramento", cursive;
-  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-head: "Phenomena", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Phenomena", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Phenomena", cursive;
+  --font-serif: "Phenomena", Georgia, "Times New Roman", serif;
 }
 
 html, body { height: 100%; }
+html { font-size: 118%; }
 body { @apply bg-page text-ink font-body; }
 
 .container-page { @apply mx-auto max-w-7xl px-6; }
@@ -23,7 +82,7 @@ body { @apply bg-page text-ink font-body; }
 
 
 /* Accent serif for editorial sections */
-:root { --font-accent: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", serif; }
+:root { --font-accent: "Phenomena", ui-sans-serif, system-ui, sans-serif; }
 
 .accent-head { font-family: var(--font-accent); }
 
