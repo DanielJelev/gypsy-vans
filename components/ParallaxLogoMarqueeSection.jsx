@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { WaveDivider } from './WaveDivider';
 
 export function ParallaxLogoMarqueeSection({
-  heightVh = 90,
+  heightVh = 50,
 
   fromXvw = -55,
   toXvw = 55,
@@ -29,7 +29,7 @@ export function ParallaxLogoMarqueeSection({
       className="relative overflow-hidden"
       style={{ height: `${heightVh}vh` }}
     >
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center" style={{ marginTop: '-75px' }}>
         {/* Logo */}
         <motion.img
           src="/Logo-04.svg"
@@ -37,7 +37,7 @@ export function ParallaxLogoMarqueeSection({
           style={{
             x,
             rotate,
-            width: 'clamp(164px, 18vw, 320px)',
+            width: 'clamp(80px, 10vw, 160px)',
             willChange: 'transform',
             transform: 'translateZ(0)',
             pointerEvents: 'none',
