@@ -26,8 +26,7 @@ export function ParallaxLogoMarqueeSection({
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden"
-      style={{ height: `${heightVh}vh` }}
+      className="relative overflow-hidden h-[30vh] md:h-[50vh]"
     >
       <div className="absolute inset-0 flex items-center justify-center" style={{ marginTop: '-75px' }}>
         {/* Logo */}
