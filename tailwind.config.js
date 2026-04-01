@@ -31,11 +31,13 @@ module.exports = {
       keyframes: {
         marquee: { '0%':{ transform:'translateX(0)'}, '100%':{ transform:'translateX(-50%)'}},
         float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' }},
+        slideUp: { '0%': { transform: 'translateY(100%)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' }},
       },
       animation: {
         marquee: 'marquee 30s linear infinite',
         float: 'float 6s ease-in-out infinite',
         'float-slow': 'float 8s ease-in-out infinite',
+        slideUp: 'slideUp 0.5s cubic-bezier(.22,.61,.36,1) forwards',
       },
     }
   },
