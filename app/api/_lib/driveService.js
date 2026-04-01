@@ -24,7 +24,7 @@ export async function fetchDriveFiles(folder) {
   const q = encodeURIComponent(`'${folderId}' in parents and trashed = false`)
   const url = `https://www.googleapis.com/drive/v3/files?q=${q}&key=${API_KEY}&fields=${fields}&pageSize=200&orderBy=name`
 
-  const res = await fetch(url, { next: { revalidate: 3600 } })
+  const res = await fetch(url, { next: { revalidate: 60 } })
 
   if (!res.ok) {
     const text = await res.text()
