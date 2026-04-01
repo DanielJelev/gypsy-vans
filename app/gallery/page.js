@@ -1,29 +1,64 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Header } from '../../components/Header'
+
+const PAGE_SIZE = 12
 
 export default function GalleryPage() {
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(true)
+  const [loadingMore, setLoadingMore] = useState(false)
   const [error, setError] = useState(null)
+  const [hasMore, setHasMore] = useState(false)
+  const [page, setPage] = useState(1)
   const [lightbox, setLightbox] = useState(null)
   const [termsOpen, setTermsOpen] = useState(false)
+  const sentinelRef = useRef(null)
 
+  const fetchPage = useCallback(async (pageNum) => {
+    const res = await fetch(`/api/gallery?page=${pageNum}&limit=${PAGE_SIZE}`)
+    const data = await res.json()
+    if (data.error) throw new Error(data.error)
+    return data
+  }, [])
+
+  // Initial load
   useEffect(() => {
-    fetch('/api/gallery')
-      .then((res) => res.json())
+    fetchPage(1)
       .then((data) => {
-        if (data.error) {
-          setError(data.error)
-        } else {
-          setImages(data.images || [])
-        }
+        setImages(data.images || [])
+        setHasMore(data.hasMore)
+        setPage(1)
       })
       .catch(() => setError('Неуспешно зареждане на галерията'))
       .finally(() => setLoading(false))
-  }, [])
+  }, [fetchPage])
+
+  // Infinite scroll observer
+  useEffect(() => {
+    if (!sentinelRef.current || !hasMore) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore && !loadingMore) {
+          setLoadingMore(true)
+          const nextPage = page + 1
+          fetchPage(nextPage)
+            .then((data) => {
+              setImages((prev) => [...prev, ...(data.images || [])])
+              setHasMore(data.hasMore)
+              setPage(nextPage)
+            })
+            .catch(() => {})
+            .finally(() => setLoadingMore(false))
+        }
+      },
+      { rootMargin: '200px' }
+    )
+    observer.observe(sentinelRef.current)
+    return () => observer.disconnect()
+  }, [hasMore, loadingMore, page, fetchPage])
 
   const openLightbox = useCallback((idx) => setLightbox(idx), [])
   const closeLightbox = useCallback(() => setLightbox(null), [])
@@ -61,6 +96,7 @@ export default function GalleryPage() {
         )}
 
         {!loading && !error && images.length > 0 && (
+          <>
           <div className="gallery-grid">
             {images.map((img, i) => (
               <motion.div
@@ -85,6 +121,16 @@ export default function GalleryPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* Sentinel for infinite scroll */}
+          <div ref={sentinelRef} className="h-1" />
+
+          {loadingMore && (
+            <div className="flex justify-center py-10">
+              <div className="w-10 h-10 border-3 border-cocoa/30 border-t-cocoa rounded-full animate-spin" />
+            </div>
+          )}
+          </>
         )}
       </section>
 

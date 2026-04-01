@@ -3,6 +3,8 @@
 import { Parallax } from 'react-scroll-parallax';
 import { WaveDivider } from './WaveDivider';
 import Image from 'next/image';
+import { useLandingAssets } from '../app/contexts/LandingAssetsContext';
+import { useState, useEffect } from 'react';
 
 export function ParallaxLogoSection({
   heightVh = 130,
@@ -10,6 +12,17 @@ export function ParallaxLogoSection({
   toScale = 0.5,
   onCtaClick,
 }) {
+  const { getAsset, loaded } = useLandingAssets();
+  const [imgErr, setImgErr] = useState(false);
+
+  // Reset error state when assets finish loading so Drive URL isn't
+  // permanently blocked by an earlier fallback-image 404.
+  useEffect(() => {
+    if (loaded) setImgErr(false);
+  }, [loaded]);
+
+  const bgSrc = !imgErr && getAsset('van-image-interior') || '/van/van-image-interior.webp';
+
   return (
     <section
       className="relative overflow-hidden flex flex-col items-center justify-center gap-10"
@@ -17,7 +30,7 @@ export function ParallaxLogoSection({
     >
       {/* Background banner image */}
       <Image
-        src="/van/_DSC6486.webp"
+        src={bgSrc}
         alt=""
         fill
         className="object-cover"
@@ -25,6 +38,7 @@ export function ParallaxLogoSection({
         sizes="100vw"
         placeholder="blur"
         blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI5MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZlZTVjZiIvPjwvc3ZnPg=="
+        onError={() => setImgErr(true)}
       />
       {/* Tinted overlay to keep logo + CTA readable */}
       <div className="absolute inset-0 bg-tan/60" />

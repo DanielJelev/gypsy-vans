@@ -1,40 +1,29 @@
 import { NextResponse } from 'next/server'
+import { fetchDriveFiles } from '../_lib/driveService'
 
-const FOLDER_ID = process.env.GOOGLE_DRIVE_FOLDER_ID || '1pSRW896tisU5yVkyr1caCZr4clSv9iJU'
-const API_KEY = process.env.GOOGLE_API_KEY
+const DEFAULT_PAGE_SIZE = 12
 
-export async function GET() {
-  if (!API_KEY) {
+export async function GET(request) {
+  const { searchParams } = new URL(request.url)
+  const page = Math.max(1, parseInt(searchParams.get('page') || '1', 10))
+  const limit = Math.min(50, Math.max(1, parseInt(searchParams.get('limit') || String(DEFAULT_PAGE_SIZE), 10)))
+
+  const result = await fetchDriveFiles('gallery')
+
+  if (result.error) {
     return NextResponse.json(
-      { error: 'GOOGLE_API_KEY is not configured' },
-      { status: 500 }
+      { error: result.error, details: result.details },
+      { status: result.status }
     )
   }
 
-  const fields = 'files(id,name,mimeType,thumbnailLink,imageMediaMetadata)'
-  const q = encodeURIComponent(`'${FOLDER_ID}' in parents and trashed = false`)
-  const url = `https://www.googleapis.com/drive/v3/files?q=${q}&key=${API_KEY}&fields=${fields}&pageSize=200&orderBy=name`
+  // Gallery only returns images
+  const allImages = result.files.filter((f) => f.mimeType?.startsWith('image/'))
 
-  const res = await fetch(url, { next: { revalidate: 3600 } })
+  const start = (page - 1) * limit
+  const images = allImages.slice(start, start + limit)
+  const hasMore = start + limit < allImages.length
+  const total = allImages.length
 
-  if (!res.ok) {
-    const text = await res.text()
-    return NextResponse.json(
-      { error: 'Google Drive API error', details: text },
-      { status: res.status }
-    )
-  }
-
-  const data = await res.json()
-  const images = (data.files || [])
-    .filter((f) => f.mimeType?.startsWith('image/'))
-    .map((f) => ({
-      id: f.id,
-      name: f.name,
-      mimeType: f.mimeType,
-      thumbnail: `https://lh3.googleusercontent.com/d/${f.id}=w800`,
-      full: `https://lh3.googleusercontent.com/d/${f.id}=s1600`,
-    }))
-
-  return NextResponse.json({ images })
+  return NextResponse.json({ images, hasMore, total, page })
 }

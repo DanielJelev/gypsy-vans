@@ -3,8 +3,20 @@ const nextConfig = {
   experimental: { optimizePackageImports: ['react','react-dom'] },
   images: {
     remotePatterns: [
-      { protocol: 'https', hostname: 'lh3.googleusercontent.com', pathname: '/pw/**' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com', pathname: '/**' },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*.webm',
+        headers: [
+          { key: 'Content-Type', value: 'video/webm' },
+          { key: 'Accept-Ranges', value: 'bytes' },
+          { key: 'Cache-Control', value: 'public, max-age=86400, s-maxage=86400, immutable' },
+        ],
+      },
+    ];
   },
 };
 export default nextConfig;

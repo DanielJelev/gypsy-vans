@@ -4,10 +4,25 @@ import { motion } from 'framer-motion';
 import { Parallax } from 'react-scroll-parallax';
 import { WaveDivider } from './WaveDivider';
 import Image from 'next/image';
+import { useLandingAssets } from '../app/contexts/LandingAssetsContext';
+import { useState, useEffect } from 'react';
 
 export function BohoIntroSection() {
+  const { getAsset, loaded } = useLandingAssets();
+  const [err1, setErr1] = useState(false);
+  const [err2, setErr2] = useState(false);
+
+  // Reset error states when assets finish loading so Drive URLs aren't
+  // permanently blocked by earlier fallback-image 404s.
+  useEffect(() => {
+    if (loaded) { setErr1(false); setErr2(false); }
+  }, [loaded]);
+
+  const img1 = !err1 && getAsset('van-image-inside') || '/van/van-image-inside.webp';
+  const img2 = !err2 && getAsset('van-image-outside') || '/van/van-image-outside.webp';
+
   return (
-    <section className="relative bg-terracotta overflow-hidden pb-[140px]">
+    <section className="relative bg-tan overflow-hidden pb-[140px]">
       {/* Decorative concentric arches */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.06]">
         <svg width="900" height="560" viewBox="0 0 900 560" fill="none" aria-hidden>
@@ -30,7 +45,7 @@ export function BohoIntroSection() {
             <Parallax translateY={[-4, 4]} easing="easeOutQuad">
               <div className="arch-frame overflow-hidden shadow-deep border-4 border-white">
                 <Image
-                  src="/van/_DSC6430.webp"
+                  src={img1}
                   alt="Gypsy Vans интериор"
                   width={420}
                   height={560}
@@ -38,6 +53,7 @@ export function BohoIntroSection() {
                   sizes="(max-width: 768px) 380px, 420px"
                   placeholder="blur"
                   blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDIwIiBoZWlnaHQ9IjU2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjYzRhMDg4Ii8+PC9zdmc+"
+                  onError={() => setErr1(true)}
                 />
               </div>
             </Parallax>
@@ -46,12 +62,13 @@ export function BohoIntroSection() {
             <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute -bottom-4 -right-4 md:-right-10 z-10">
               <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-cream shadow-deep">
                 <Image
-                  src="/van/_DSC6468.webp"
+                  src={img2}
                   alt="Детайл от кемпера"
                   width={128}
                   height={128}
                   className="w-full h-full object-cover"
                   sizes="128px"
+                  onError={() => setErr2(true)}
                 />
               </div>
             </Parallax>
@@ -68,19 +85,19 @@ export function BohoIntroSection() {
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
             className="text-center md:text-left order-1 md:order-2"
           >
-            <p className="script-head text-4xl md:text-5xl text-cream/90 mb-2">
+            <p className="script-head text-4xl md:text-5xl text-cocoa mb-2">
               Добре дошли
             </p>
-            <h2 className="serif-head text-3xl md:text-[3.2rem] text-white leading-tight mb-6">
+            <h2 className="serif-head text-3xl md:text-[3.2rem] text-cocoa leading-tight mb-6">
               Кемперванът – Лукс, уют и свобода в едно
             </h2>
             <div className="w-16 h-px bg-cream/40 mx-auto md:mx-0 mb-6" aria-hidden />
-            <p className="text-white/85 text-base md:text-lg leading-relaxed mb-4">
+            <p className="text-cocoa text-base md:text-lg leading-relaxed mb-4">
               Нашият Mercedes Sprinter 2020 е оборудван с най-висок клас системи
               за комфорт и автономност, така че да се чувстваш у дома, където и
               да си.
             </p>
-            <p className="text-white/85 text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-cocoa text-base md:text-lg leading-relaxed mb-8">
               Интериорът е в модерен boho &amp; minimalistic стил – топли натурални
               цветове, качествени естествени материали, меки форми и внимание към
               светлината и атмосферата. Тук уютът среща функционалността, а
@@ -88,7 +105,7 @@ export function BohoIntroSection() {
             </p>
             <a
               href="/gallery"
-              className="inline-flex items-center gap-2 text-cream/90 text-lg border-b border-cream/40 pb-1 hover:border-cream transition-colors group"
+              className="inline-flex items-center gap-2 text-cocoa text-lg border-b border-cream/40 pb-1 hover:border-cream transition-colors group"
             >
               Разгледай отвътре
               <span className="group-hover:translate-x-1 transition-transform" aria-hidden>→</span>

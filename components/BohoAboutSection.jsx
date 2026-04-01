@@ -2,10 +2,26 @@
 
 import { motion } from 'framer-motion';
 import { Parallax } from 'react-scroll-parallax';
-import { WaveDivider } from './WaveDivider';
 import Image from 'next/image';
+import { useLandingAssets } from '../app/contexts/LandingAssetsContext';
+import { useState, useEffect } from 'react';
 
 export function BohoAboutSection() {
+  const { getAsset, loaded } = useLandingAssets();
+  const [err1, setErr1] = useState(false);
+  const [err2, setErr2] = useState(false);
+  const [err3, setErr3] = useState(false);
+
+  // Reset error states when assets finish loading so Drive URLs aren't
+  // permanently blocked by earlier fallback-image 404s.
+  useEffect(() => {
+    if (loaded) { setErr1(false); setErr2(false); setErr3(false); }
+  }, [loaded]);
+
+  const img1 = !err1 && getAsset('image-dari-and-meto') || '/van/image-dari-and-meto.webp';
+  const img2 = !err2 && getAsset('image-kaya-in-bed') || '/van/image-kaya-in-bed.webp';
+  const img3 = !err3 && getAsset('image-kaya-in-seat') || '/van/image-kaya-in-seat.webp';
+
   return (
     <section
       id="about"
@@ -69,7 +85,7 @@ export function BohoAboutSection() {
             <Parallax translateY={[-3, 3]} easing="easeOutQuad">
               <div className="rounded-2xl overflow-hidden shadow-deep w-[65%] md:w-[78%]">
                 <Image
-                  src="/van/_DSC6497.webp"
+                  src={img1}
                   alt="Семейство Gypsy Vans"
                   width={327}
                   height={436}
@@ -77,6 +93,7 @@ export function BohoAboutSection() {
                   sizes="(max-width: 768px) 68vw, 327px"
                   placeholder="blur"
                   blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzI3IiBoZWlnaHQ9IjQzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNDUzMzM2Ii8+PC9zdmc+"
+                  onError={() => setErr1(true)}
                 />
               </div>
             </Parallax>
@@ -85,12 +102,13 @@ export function BohoAboutSection() {
             <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-16 right-2 sm:right-0 md:-right-0 w-[45%] sm:w-[50%] md:w-[55%] z-10">
               <div className="arch-frame overflow-hidden shadow-deep border-4 border-coffee">
                 <Image
-                  src="/van/_DSC6520.webp"
+                  src={img2}
                   alt="На път с кемпера"
                   width={264}
                   height={352}
                   className="w-full aspect-[3/4] object-cover"
                   sizes="(max-width: 768px) 45vw, 264px"
+                  onError={() => setErr2(true)}
                 />
               </div>
             </Parallax>
@@ -99,12 +117,13 @@ export function BohoAboutSection() {
             <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute bottom-4 left-[20%] md:left-[25%] z-20">
               <div className="w-28 h-28 sm:w-28 sm:h-28 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
                 <Image
-                  src="/van/_DSC6534.webp"
+                  src={img3}
                   alt="Детайл"
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
                   sizes="96px"
+                  onError={() => setErr3(true)}
                 />
               </div>
             </Parallax>

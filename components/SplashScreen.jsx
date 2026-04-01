@@ -1,25 +1,32 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 export default function SplashScreen({ children }) {
   const [loaded, setLoaded] = useState(false);
   const [visible, setVisible] = useState(true);
+  const dismissed = useRef(false);
 
   useEffect(() => {
-    const handleLoad = () => {
+    const dismiss = () => {
+      if (dismissed.current) return;
+      dismissed.current = true;
       setLoaded(true);
-      // Wait for fade-out animation to finish before unmounting
-      setTimeout(() => setVisible(false), 1000);
+      setTimeout(() => setVisible(false), 500);
     };
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
-    }
+    const onHeroReady = () => dismiss();
+
+    window.addEventListener('heroReady', onHeroReady);
+
+    // Fallback: dismiss after 1.5 seconds so users aren't stuck
+    const timeout = setTimeout(dismiss, 1500);
+
+    return () => {
+      window.removeEventListener('heroReady', onHeroReady);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -41,9 +48,7 @@ export default function SplashScreen({ children }) {
           </div>
         </div>
       )}
-      <div
-        className={`splash-content ${loaded ? 'splash-content-visible' : ''}`}
-      >
+      <div className="splash-content">
         {children}
       </div>
     </>

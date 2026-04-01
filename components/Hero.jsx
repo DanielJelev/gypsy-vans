@@ -1,11 +1,33 @@
 "use client";
 import { SocialWidget } from "./SocialWidget";
+import { useLandingAssets } from "../app/contexts/LandingAssetsContext";
+import { useState, useEffect, useRef } from "react";
+
+function dispatchHeroReady() {
+  window.dispatchEvent(new CustomEvent('heroReady'));
+}
 
 export function Hero() {
+  const { getAsset, loaded } = useLandingAssets();
+  const [driveReady, setDriveReady] = useState(false);
+  const [driveFailed, setDriveFailed] = useState(false);
+  const readyFired = useRef(false);
+
+  const driveSrc = loaded && !driveFailed ? getAsset('hero-banner-video') : null;
+  // Show Drive video only once it can play; otherwise show local fallback
+  const showDrive = driveReady && !!driveSrc;
+
+  const fireReady = () => {
+    if (!readyFired.current) {
+      readyFired.current = true;
+      dispatchHeroReady();
+    }
+  };
+
   return (
     <section
       id='home'
-      className='relative min-h-[100svh] h-[100dvh] w-full overflow-hidden'
+      className='relative isolate min-h-[100svh] h-[100dvh] w-full overflow-hidden'
     >
 
 
@@ -14,7 +36,7 @@ export function Hero() {
         <SocialWidget
           img='/logos/instagram-logo.png'
           alt='Instagram Page'
-          href='https://www.google.com'
+          href='https://www.instagram.com/gypsyvans.bg'
         />
         <SocialWidget
           img='/logos/facebook-logo.png'
@@ -28,17 +50,42 @@ export function Hero() {
         />
       </div>
 
-      {/* Video background */}
-      <video
-        className='absolute inset-0 -z-10 h-full w-full object-cover'
-        src='/hero-banner-video.webm'
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster='/van/_DSC6440.webp'
-        aria-label='Background hero video'
-      />
+      {/* Video background — local fallback plays immediately */}
+      {!showDrive && (
+        <video
+          className='absolute inset-0 z-0 h-full w-full object-cover'
+          src='/hero-banner-video.webm'
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload='auto'
+          aria-label='Background hero video'
+          onCanPlay={fireReady}
+          onError={fireReady}
+        />
+      )}
+
+      {/* Drive video — loads in background, shown only when ready */}
+      {driveSrc && (
+        <video
+          className='absolute inset-0 z-0 h-full w-full object-cover'
+          src={driveSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload='auto'
+          aria-label='Background hero video'
+          style={showDrive ? undefined : { position: 'absolute', width: 0, height: 0, opacity: 0, pointerEvents: 'none' }}
+          onCanPlay={() => {
+            setDriveReady(true);
+          }}
+          onError={() => {
+            setDriveFailed(true);
+          }}
+        />
+      )}
 
       {/* Right-side vignette overlay */}
       <div

@@ -14,13 +14,14 @@ import { ContactForm } from '../components/ContactForm'
 import { Faq } from '../components/Faq/Faq'
 import { WaveDivider } from '../components/WaveDivider'
 import { WavyOrangeLine } from '../components/WavyOrangeLine'
+import { LandingAssetsProvider } from './contexts/LandingAssetsContext'
 import { useState } from 'react'
 
 export default function Page() {
   const [termsOpen, setTermsOpen] = useState(false);
 
   return (
-    <>
+    <LandingAssetsProvider>
       <Header termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
       <main className="relative">
       {/* <WavyOrangeLine /> */}
@@ -104,6 +105,6 @@ export default function Page() {
       {/* ── Footer ── */}
       <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
     </main>
-    </>
+    </LandingAssetsProvider>
   );
 }
