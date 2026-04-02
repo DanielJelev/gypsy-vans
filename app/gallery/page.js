@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
 
 const PAGE_SIZE = 12
 
@@ -13,6 +14,21 @@ const captions = [
   'Заспивай, където те отведе пътя',
   'Събуждай се свободен',
   'Готов ли си за приключение?',
+]
+// Cycling scale + span patterns for masonry-like variety
+const sizes = [
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-[0.88]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-100' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[0.92]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-[0.82]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-100' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[0.85]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[0.95]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-[0.78]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-100' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-[0.9]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[1.02]' },
+  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-[0.86]' },
 ]
 
 export default function GalleryPage() {
@@ -106,14 +122,16 @@ export default function GalleryPage() {
 
         {!loading && !error && images.length > 0 && (
           <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-12 gap-4 md:gap-6">
             {images.map((img, i) => {
               const rotation = rotations[i % rotations.length]
               const caption = captions[i % captions.length]
+              const size = sizes[i % sizes.length]
 
               return (
                 <motion.div
                   key={img.id}
+                  className={size.span}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
@@ -123,14 +141,10 @@ export default function GalleryPage() {
                     onClick={() => openLightbox(i)}
                     className="w-full group cursor-pointer"
                   >
-                    <div className="flex items-center justify-center py-2">
+                    <div className={`flex items-center justify-center py-2 ${size.scale}`}>
                       <div
                         className={`relative bg-white p-3 md:p-4 pb-3 md:pb-4 rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-[1.03] group-hover:rotate-0 w-full ${rotation}`}
                       >
-                        {/* Pin */}
-                        <div className="absolute -top-3 right-4 z-10 w-6 h-6 rounded-full bg-terracotta shadow-[0_2px_6px_rgba(0,0,0,0.25)] border border-terracotta/80" aria-hidden="true">
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white/60" />
-                        </div>
                         <div className="relative overflow-hidden aspect-[4/3]">
                           <img
                             src={img.thumbnail}
@@ -221,6 +235,8 @@ export default function GalleryPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
     </main>
   )
 }
