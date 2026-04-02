@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 export function ParallaxLogoSection({
   heightVh = 130,
-  rotateDeg = 720,
+  rotateDeg = 360,
   toScale = 0.5,
   onCtaClick,
 }) {
@@ -50,7 +50,6 @@ export function ParallaxLogoSection({
       <Parallax
         rotate={[0, rotateDeg]}
         scale={[1, toScale]}
-        opacity={[1, 0.7]}
         className="pointer-events-none"
       >
         <img

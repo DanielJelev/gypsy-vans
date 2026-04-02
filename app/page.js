@@ -40,7 +40,7 @@ export default function Page() {
 
       {/* ── Spinning logo parallax + CTA ── */}
       <ParallaxLogoSection
-        rotateDeg={720}
+        rotateDeg={360}
         toScale={0.25}
         onCtaClick={() =>
           document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
