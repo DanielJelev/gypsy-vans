@@ -6,6 +6,15 @@ import { Header } from '../../components/Header'
 
 const PAGE_SIZE = 12
 
+const rotations = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2', 'rotate-0', '-rotate-3']
+const captions = [
+  'За свободни души & диви сърца',
+  'Луксозен бохо кемпер ван за 4-ма',
+  'Заспивай, където те отведе пътя',
+  'Събуждай се свободен',
+  'Готов ли си за приключение?',
+]
+
 export default function GalleryPage() {
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(true)
@@ -97,29 +106,49 @@ export default function GalleryPage() {
 
         {!loading && !error && images.length > 0 && (
           <>
-          <div className="gallery-grid">
-            {images.map((img, i) => (
-              <motion.div
-                key={img.id}
-                className="gallery-item"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: (i % 6) * 0.08 }}
-              >
-                <button
-                  onClick={() => openLightbox(i)}
-                  className="gallery-frame"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {images.map((img, i) => {
+              const rotation = rotations[i % rotations.length]
+              const caption = captions[i % captions.length]
+
+              return (
+                <motion.div
+                  key={img.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: (i % 6) * 0.08 }}
                 >
-                  <img
-                    src={img.thumbnail}
-                    alt={img.name}
-                    loading="lazy"
-                    className="gallery-img"
-                  />
-                </button>
-              </motion.div>
-            ))}
+                  <button
+                    onClick={() => openLightbox(i)}
+                    className="w-full group cursor-pointer"
+                  >
+                    <div className="flex items-center justify-center py-2">
+                      <div
+                        className={`relative bg-white p-3 md:p-4 pb-3 md:pb-4 rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-[1.03] group-hover:rotate-0 w-full ${rotation}`}
+                      >
+                        {/* Pin */}
+                        <div className="absolute -top-3 right-4 z-10 w-6 h-6 rounded-full bg-terracotta shadow-[0_2px_6px_rgba(0,0,0,0.25)] border border-terracotta/80" aria-hidden="true">
+                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white/60" />
+                        </div>
+                        <div className="relative overflow-hidden aspect-[4/3]">
+                          <img
+                            src={img.thumbnail}
+                            alt={img.name}
+                            loading="lazy"
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-coffee/0 group-hover:bg-coffee/10 transition-colors duration-300" />
+                        </div>
+                        <div className="mt-3 md:mt-4 flex justify-center">
+                          <img src="/Logo-04.svg" alt="" className="h-6 md:h-8 w-auto opacity-60 select-none pointer-events-none" aria-hidden="true" />
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </motion.div>
+              )
+            })}
           </div>
 
           {/* Sentinel for infinite scroll */}
