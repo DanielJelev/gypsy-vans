@@ -7,6 +7,7 @@ import { BohoAboutSection } from '../components/BohoAboutSection'
 import { ParallaxLogoSection } from '../components/ParallaxLogoSection'
 import { BohoServicesGrid } from '../components/BohoServicesGrid'
 import { BohoTestimonial } from '../components/BohoTestimonial'
+import { GalleryCarouselSection } from '../components/GalleryCarouselSection'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import PricePlans from '../components/Plans'
@@ -49,6 +50,9 @@ export default function Page() {
 
       {/* ── What's inside: arch-topped feature cards ── */}
       <BohoServicesGrid />
+
+      {/* ── Gallery carousel ── */}
+      <GalleryCarouselSection />
 
       {/* ── Testimonial quote on terracotta ── */}
       <BohoTestimonial />

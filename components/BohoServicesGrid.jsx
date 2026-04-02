@@ -26,7 +26,7 @@ const fadeUp = {
 
 export function BohoServicesGrid() {
   return (
-    <section id="discover" className="relative py-20 md:py-32 overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
+    <section id="discover" className="relative overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
 
       {/* Decorative background blobs */}
       <div className="absolute top-20 -left-32 w-72 h-72 rounded-full bg-sand/20 blur-3xl pointer-events-none" aria-hidden />
