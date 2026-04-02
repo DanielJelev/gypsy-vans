@@ -43,7 +43,7 @@ export function BohoIntroSection() {
           {/* Image Side */}
           <div className="relative mx-auto w-full max-w-[380px] md:max-w-[420px] order-2 md:order-1">
             <Parallax translateY={[-4, 4]} easing="easeOutQuad">
-              <div className="arch-frame overflow-hidden shadow-deep border-4 border-white">
+                <div className="arch-frame overflow-hidden shadow-deep border-4 border-white">
                 <Image
                   src={img1}
                   alt="Gypsy Vans интериор"
@@ -59,15 +59,15 @@ export function BohoIntroSection() {
             </Parallax>
 
             {/* Small circular overlapping image */}
-            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute -bottom-4 -right-4 md:-right-10 z-10">
-              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-cream shadow-deep">
+            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute -bottom-32 -right-4 md:-right-10 z-10">
+              <div className="w-44 h-44 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-deep">
                 <Image
                   src={img2}
                   alt="Детайл от кемпера"
-                  width={128}
-                  height={128}
+                  width={176}
+                  height={176}
                   className="w-full h-full object-cover"
-                  sizes="128px"
+                  sizes="176px"
                   onError={() => setErr2(true)}
                 />
               </div>

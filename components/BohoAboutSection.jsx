@@ -80,7 +80,7 @@ export function BohoAboutSection() {
           </motion.div>
 
           {/* Images Side */}
-          <div className="relative mx-auto w-full max-w-[540px] min-h-[440px] md:min-h-[600px] order-2 md:order-2 overflow-hidden">
+          <div className="relative mx-auto w-full max-w-[640px] min-h-[500px] md:min-h-[700px] order-2 md:order-2">
             {/* Main rectangular image */}
             <Parallax translateY={[-3, 3]} easing="easeOutQuad">
               <div className="rounded-2xl overflow-hidden shadow-deep w-[65%] md:w-[78%]">
@@ -100,7 +100,7 @@ export function BohoAboutSection() {
 
             {/* Overlapping arch image */}
             <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-16 right-2 sm:right-0 md:-right-0 w-[45%] sm:w-[50%] md:w-[55%] z-10">
-              <div className="arch-frame overflow-hidden shadow-deep border-4 border-coffee">
+              <div className="arch-frame overflow-hidden shadow-deep border-4 border-sand">
                 <Image
                   src={img2}
                   alt="На път с кемпера"
@@ -114,15 +114,15 @@ export function BohoAboutSection() {
             </Parallax>
 
             {/* Small circular accent image */}
-            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute bottom-4 left-[20%] md:left-[25%] z-20">
-              <div className="w-28 h-28 sm:w-28 sm:h-28 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-terracotta/60 shadow-deep">
+            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-32 left-[20%] md:left-[25%] z-20">
+              <div className="w-44 h-44 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-sand shadow-deep">
                 <Image
                   src={img3}
                   alt="Детайл"
-                  width={96}
-                  height={96}
+                  width={176}
+                  height={176}
                   className="w-full h-full object-cover"
-                  sizes="96px"
+                  sizes="176px"
                   onError={() => setErr3(true)}
                 />
               </div>
