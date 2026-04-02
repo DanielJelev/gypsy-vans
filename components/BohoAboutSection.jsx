@@ -25,7 +25,7 @@ export function BohoAboutSection() {
   return (
     <section
       id="about"
-      className="relative bg-coffee overflow-hidden pb-[140px] pt-12 md:pt-20"
+      className="relative bg-coffee overflow-hidden pb-0 md:pb-[80px] pt-8 md:pt-20"
     >
       {/* Decorative blurred orbs */}
       <div className="absolute top-10 left-[5%] w-48 h-48 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
@@ -34,7 +34,7 @@ export function BohoAboutSection() {
       {/* Subtle dot pattern overlay */}
       <div className="absolute inset-0 boho-dots opacity-[0.04] pointer-events-none" aria-hidden />
 
-      <div className="container-page py-12 md:py-20">
+      <div className="container-page py-8 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
           {/* Text Side */}
@@ -80,7 +80,7 @@ export function BohoAboutSection() {
           </motion.div>
 
           {/* Images Side */}
-          <div className="relative mx-auto w-full max-w-[640px] min-h-[500px] md:min-h-[700px] order-2 md:order-2">
+          <div className="relative mx-auto w-full max-w-[640px] min-h-[380px] md:min-h-[700px] order-2 md:order-2">
             {/* Main rectangular image */}
             <Parallax translateY={[-3, 3]} easing="easeOutQuad">
               <div className="rounded-2xl overflow-hidden shadow-deep w-[65%] md:w-[78%]">
@@ -99,8 +99,8 @@ export function BohoAboutSection() {
             </Parallax>
 
             {/* Overlapping arch image */}
-            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-16 right-2 sm:right-0 md:-right-0 w-[45%] sm:w-[50%] md:w-[55%] z-10">
-              <div className="arch-frame overflow-hidden shadow-deep border-4 border-sand">
+            <Parallax translateY={[6, -6]} easing="easeOutQuad" className="absolute top-16 right-2 sm:right-0 md:-right-0 w-[50%] sm:w-[55%] md:w-[55%] z-10">
+              <div className="arch-frame overflow-hidden shadow-deep border-2 md:border-4 border-sand">
                 <Image
                   src={img2}
                   alt="На път с кемпера"
@@ -114,8 +114,8 @@ export function BohoAboutSection() {
             </Parallax>
 
             {/* Small circular accent image */}
-            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-32 left-[20%] md:left-[25%] z-20">
-              <div className="w-44 h-44 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-sand shadow-deep">
+            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute bottom-6 md:-bottom-32 left-[20%] md:left-[25%] z-20">
+              <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-56 md:h-56 rounded-full overflow-hidden border-2 md:border-4 border-sand shadow-deep">
                 <Image
                   src={img3}
                   alt="Детайл"
