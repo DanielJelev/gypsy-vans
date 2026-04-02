@@ -77,7 +77,7 @@ export function GalleryCarouselSection() {
                 <button
                   key={img.id}
                   onClick={() => openLightbox(i)}
-                  className="flex-[0_0_calc(100%/3)] min-w-0 group cursor-pointer pl-4 md:pl-6"
+                  className="flex-[0_0_85%] md:flex-[0_0_calc(100%/3)] min-w-0 group cursor-pointer pl-4 md:pl-6"
                 >
                   <div className="flex items-center justify-center py-4">
                     {/* Polaroid frame */}
