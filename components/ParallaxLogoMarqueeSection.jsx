@@ -26,9 +26,9 @@ export function ParallaxLogoMarqueeSection({
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden h-[30vh] md:h-[50vh]"
+      className="relative overflow-hidden h-[20vh] sm:h-[25vh] md:h-[30vh]"
     >
-      <div className="absolute inset-0 flex items-center justify-center" style={{ marginTop: '-75px' }}>
+      <div className="absolute inset-0 flex items-center justify-center" style={{ marginTop: '-40px' }}>
         {/* Logo */}
         <motion.img
           src="/Logo-04.svg"
@@ -36,7 +36,7 @@ export function ParallaxLogoMarqueeSection({
           style={{
             x,
             rotate,
-            width: 'clamp(160px, 14vw, 220px)',
+            width: 'clamp(100px, 15vw, 150px)',
             willChange: 'transform',
             transform: 'translateZ(0)',
             pointerEvents: 'none',
