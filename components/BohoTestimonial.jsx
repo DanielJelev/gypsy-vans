@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import { Parallax } from 'react-scroll-parallax';
 import { WaveDivider } from './WaveDivider';
+import Image from 'next/image';
 
 export function BohoTestimonial() {
   return (
-    <section className="relative bg-terracotta overflow-hidden pt-[100px] pb-[160px]">
+    <section className="relative bg-terracotta overflow-hidden pt-[120px] pb-[120px]">
       {/* Top wave — merges from beige section above */}
       <WaveDivider
         fill="var(--beige-bg)"
@@ -36,16 +37,20 @@ export function BohoTestimonial() {
           >
             <h2 className="sr-only">Отзив за Gypsy Vans</h2>
             <blockquote>
-            <p className="serif-head text-xl md:text-3xl text-white leading-relaxed mb-8 italic font-normal">
-              Това е кемпер, създаден за хора, които ценят както свободата, така
-              и комфорта.
+            <p className="script-head text-2xl md:text-3xl text-white leading-snug mb-8">
+              Това е кемпер, създаден за хора, които ценят както свободата, така и комфорта.
             </p>
             </blockquote>
 
-            <div className="w-12 h-px bg-cream/40 mx-auto mb-4" aria-hidden />
-
-            <p className="text-cream text-lg md:text-xl serif-head font-medium">
-              Gypsy Vans <span className="text-cream/60 font-normal">— дом, който те следва навсякъде.</span>
+            <Image
+              src="/logo-header.svg"
+              alt="Gypsy Vans"
+              width={180}
+              height={28}
+              className="mx-auto mb-3 h-6 md:h-7 w-auto brightness-0 invert opacity-80"
+            />
+            <p className="script-head text-xl md:text-2xl text-cream">
+              дом, който те следва навсякъде
             </p>
           </motion.div>
         </div>
