@@ -36,9 +36,11 @@ export function Header({ termsOpen, setTermsOpen }) {
 
   return (
     <header className={`fixed top-0 left-0 z-[100] w-full transition-all duration-300 ${
-      scrolled
-        ? 'bg-[#fff7ec]/90 backdrop-blur-md shadow-soft border-b border-b-white/70'
-        : 'bg-[#fff7ec]/40 backdrop-blur-sm border-b border-b-white/70'
+      termsOpen
+        ? 'bg-beige shadow-soft border-b border-b-white/70'
+        : scrolled
+          ? 'bg-[#fff7ec]/90 backdrop-blur-md shadow-soft border-b border-b-white/70'
+          : 'bg-[#fff7ec]/40 backdrop-blur-sm border-b border-b-white/70'
     }`}>
       <div className='mx-auto max-w-7xl px-6 h-16 flex items-center justify-between z-50 relative'>
         <a
@@ -74,7 +76,7 @@ export function Header({ termsOpen, setTermsOpen }) {
           <a
             href='/#contact'
             aria-label='Резервирай кемперван'
-            className={`rounded-full px-6 py-2.5 text-sm md:px-6 md:py-2 md:text-sm tracking-widest uppercase transition-colors duration-300 ${
+            className={`rounded-full px-6 py-1.5 text-sm md:px-6 md:py-2 md:text-sm tracking-widest uppercase transition-colors duration-300 ${
               scrolled
                 ? 'bg-orange border border-orange text-white'
                 : 'border border-black text-black'

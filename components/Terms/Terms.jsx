@@ -7,18 +7,42 @@ import { IoCloseSharp } from "react-icons/io5";
 export function Terms({ open, close }) {
   return (
     <div
-      className='fixed inset-0 w-dvw h-dvh flex justify-center pt-20 bg-beige transition-all duration-500 overflow-auto'
-      style={{ clipPath: open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)', pointerEvents: open ? "auto" : "none" }}
+      className='fixed top-16 left-0 right-0 bottom-0 bg-beige z-[-1] flex flex-col'
+      style={{
+        clipPath: open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)',
+        pointerEvents: open ? 'auto' : 'none',
+        transition: 'clip-path 0.5s ease-in-out',
+      }}
     >
-      <div className='relative max-w-[1280px] md:pl-8 pl-6 pr-4 md:mx-16 mx-2 border-l-4 border-l-black flex flex-col gap-8 overflow-auto mb-8'>
-        <div className='flex justify-between items-center sticky top-[-2px] pb-2 md:pr-4 w-full bg-beige border-b-2 border-b-coffee/20'>
-          <p className='md:text-4xl text-2xl font-bold'>
-            Условия за наем на кемперван от Gypsy vans
-          </p>
-          <button className='text-5xl' onClick={close}>
-            <IoCloseSharp />
+      {/* Fixed title bar */}
+      <div className='flex-shrink-0 bg-beige border-b border-sand/50 px-4 md:px-8'>
+        <div className='max-w-3xl mx-auto flex justify-between items-center py-4'>
+          <div>
+            <p className='script-head text-terracotta text-lg md:text-xl'>Gypsy Vans</p>
+            <h2 className='serif-head text-2xl md:text-3xl text-earth leading-tight'>
+              Условия за наем
+            </h2>
+            <div className="flex gap-2 mt-2" aria-hidden="true">
+              <div className="w-2.5 h-2.5 rounded-full bg-terracotta" />
+              <div className="w-2.5 h-2.5 rounded-full bg-desert-rose" />
+              <div className="w-2.5 h-2.5 rounded-full bg-sand" />
+              <div className="w-2.5 h-2.5 rounded-full bg-sage" />
+            </div>
+          </div>
+          <button
+            className='w-10 h-10 flex items-center justify-center rounded-full bg-white/70 border border-sand/50 text-earth hover:bg-terracotta hover:text-white transition-all duration-300 shadow-soft'
+            onClick={close}
+            aria-label='Затвори условията'
+          >
+            <IoCloseSharp className='text-xl' />
           </button>
         </div>
+      </div>
+
+      {/* Scrollable content */}
+      <div className='flex-1 overflow-auto'>
+        <div className='max-w-3xl mx-auto px-4 md:px-8 py-6 pb-12'>
+          <div className='flex flex-col gap-6'>
         <TermsSection title='1. Общи разпоредби.'>
           <TermsText>
             В случай на несъответствие между Общите условия и клаузите на
@@ -50,14 +74,14 @@ export function Terms({ open, close }) {
           <TermsText>
             2.3. Не по-късно от 20 дни преди началото на наемния период трябва
             да бъдат платени и представени:
-            <ul className='pt-1'>
-              <li className='pl-4'>
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • цялата сума за наема за договорения период на ползване на
                 кемпер;
               </li>
-              <li className='pl-4'> • копие от шофьорската книжка и талона;</li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'> • копие от шофьорската книжка и талона;</li>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • копие от личната карта или международния паспорт (за държави
                 извън ЕС със срок на валидност не по-малко от 6 месеца от датата
@@ -69,7 +93,7 @@ export function Terms({ open, close }) {
             2.4. Наемната цена трябва да бъде платена в брой или по банков път
             на следната банкова сметка на НАЕМОДАТЕЛЯ:
           </TermsText>
-          <TermsText className='font-bold text-lg uppercase'>
+          <TermsText className='font-medium bg-sand/20 rounded-xl px-5 py-4 border border-sand/40'>
             Джипси Ванс ООД <br />
             Име на банка: Банка ДСК <br />
             IBAN: BG44STSA93000030956654 <br />
@@ -79,30 +103,30 @@ export function Terms({ open, close }) {
         <TermsSection title='3. Анулиране на резервация.'>
           <TermsText>
             НАЕМОДАТЕЛЯТ има право да анулира резервацията при следните условия:
-            <ul className='pt-1'>
-              <li className='pl-4'>
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Ако в рамките на 24 часа от направената резервация не се
                 сключи Договор за наем и не се заплати изискваната авансова
                 сума.
               </li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Ако свидетелството за управление на МПС, личната карта или
                 международният паспорт на водача изтичат след по-малко от  2
                 месеца от крайната дата на наемния срок.
               </li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Ако срокът за плащане на пълната наемна цена и/или
                 гаранционния депозит не е спазен.
               </li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Ако лицето, направило резервацията, предостави грешни или
                 неточни данни.
               </li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Във всички горепосочени случаи, ако НАЕМАТЕЛЯ е внесъл
                 плащания, те НЕ се възстановяват.
@@ -221,13 +245,13 @@ export function Terms({ open, close }) {
           </TermsText>
           <TermsText>
             7.3. Депозитът ще бъде възстановен на НАЕМАТЕЛЯ, ако:
-            <ul className='pt-1'>
-              <li className='pl-4'>
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Наетият кемперван е върнат в отлично състояние, без повреди и
                 липси както по автомобила, така и по прилежащото оборудване;
               </li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Наетият кемперван е зареден с гориво, с почистена тоалетна и
                 всички ключове са налице, без липси по обзавеждането и силно
@@ -254,25 +278,25 @@ export function Terms({ open, close }) {
               При връщане на наетото МПС могат да бъдат начислени допълнителни
               такси:
             </span>
-            <ul className='pt-1'>
-              <li className='pl-4'>
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Задължителна, еднократна такса за вътрешно и външно почистване
                 – 55€
               </li>
-              <li className='pl-4'> • За непочистена тоалетна касета - 35€</li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'> • За непочистена тоалетна касета - 35€</li>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • При непълен резервоар с гориво се начислява такса от 15€ +
                 стойността на горивото;
               </li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • Такса за връщане на кемпера в силно замърсен вид (с петна по
                 дамаските, пода, стените и други повърхности, които изискват
                 почистване или специално третиране) - 80€
               </li>
-              <li className='pl-4'>
+              <li className='flex items-start gap-2 pl-1'>
                 {" "}
                 • При спукване на гума на кемпера и несъобщаване на Наемодателя
                 в подходящ срок по време на наемния период, разходите за
@@ -300,10 +324,10 @@ export function Terms({ open, close }) {
           <TermsText>
             9.3. За сигурността и спокойствието на Наемателя по време на
             пътуването, препоръчваме сключването на следните застраховки:
-            <ul className='pt-1'>
-              <li className='pl-4'> • Застраховка срещу всички рискове.</li>
-              <li className='pl-4'> • Застраховка за отказ на резервация.</li>
-              <li className='pl-4'> • Медицинска застраховка.</li>
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'> • Застраховка срещу всички рискове.</li>
+              <li className='flex items-start gap-2 pl-1'> • Застраховка за отказ на резервация.</li>
+              <li className='flex items-start gap-2 pl-1'> • Медицинска застраховка.</li>
             </ul>
           </TermsText>
         </TermsSection>
@@ -399,10 +423,17 @@ export function Terms({ open, close }) {
             движение в съответната държава и да ги спазва.
           </TermsText>
         </TermsSection>
-        <TermsText>
-          Наемодателят има право да изменя и допълва общите условия по всяко
-          време. Тези условия влизат в сила от 18.09.2024 г.
-        </TermsText>
+
+        {/* Closing note */}
+        <div className="bg-sand/20 rounded-2xl border border-sand/40 px-6 md:px-8 py-5 text-center">
+          <p className="text-cocoa text-base md:text-lg italic serif-head">
+            Наемодателят има право да изменя и допълва общите условия по всяко
+            време. Тези условия влизат в сила от 18.09.2024 г.
+          </p>
+        </div>
+
+          </div>
+        </div>
       </div>
     </div>
   );
