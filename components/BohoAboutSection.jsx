@@ -42,7 +42,7 @@ export function BohoAboutSection() {
             <p className="script-head text-4xl md:text-5xl text-desert-rose mb-1">
               Запознайте се
             </p>
-            <h2 className="serif-head text-4xl md:text-6xl text-white leading-tight mb-6">
+            <h2 className="serif-head text-4xl md:text-6xl text-cream leading-tight mb-6">
               Ние сме Дари, Мето и малката Кая
             </h2>
             <div className="flex gap-2.5 justify-center md:justify-start mb-6" aria-hidden="true">
@@ -56,7 +56,7 @@ export function BohoAboutSection() {
               Семейство приключенци, които вярват, че най-красивите истории се
               раждат по пътя. След хиляди изминати километри, стотици върхове,
               безброй минути под вода и под звездите, решихме да създадем нещо
-              наше: <span className="text-terracotta font-medium">Gypsy Vans</span>.
+              наше: <span className="text-terracotta">Gypsy Vans</span>.
             </p>
             <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-6">
               Нашият Mercedes Sprinter е конвертиран изцяло по наш проект — с

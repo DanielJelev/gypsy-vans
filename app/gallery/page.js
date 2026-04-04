@@ -98,6 +98,13 @@ export default function GalleryPage() {
       {/* Title */}
       <section className="pt-28 pb-8 text-center container-page">
         <h1 className="font-head text-4xl md:text-5xl text-coffee mb-3">Галерия</h1>
+        <div className="flex gap-2.5 justify-center mb-4" aria-hidden="true">
+          <div className="w-3 h-3 rounded-full bg-terracotta" />
+          <div className="w-3 h-3 rounded-full bg-desert-rose" />
+          <div className="w-3 h-3 rounded-full bg-sand" />
+          <div className="w-3 h-3 rounded-full bg-sage" />
+          <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
+        </div>
         <p className="text-cocoa max-w-xl mx-auto">
           Моменти от пътя — разгледайте снимките от нашите приключения с Gypsy Vans.
         </p>

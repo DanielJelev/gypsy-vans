@@ -22,6 +22,12 @@ export function Terms({ open, close }) {
             <h2 className='serif-head text-2xl md:text-3xl text-earth leading-tight'>
               Условия за наем
             </h2>
+            <div className="flex gap-2 mt-2" aria-hidden="true">
+              <div className="w-2.5 h-2.5 rounded-full bg-terracotta" />
+              <div className="w-2.5 h-2.5 rounded-full bg-desert-rose" />
+              <div className="w-2.5 h-2.5 rounded-full bg-sand" />
+              <div className="w-2.5 h-2.5 rounded-full bg-sage" />
+            </div>
           </div>
           <button
             className='w-10 h-10 flex items-center justify-center rounded-full bg-white/70 border border-sand/50 text-earth hover:bg-terracotta hover:text-white transition-all duration-300 shadow-soft'

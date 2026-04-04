@@ -71,7 +71,7 @@ export function BohoIntroSection() {
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
             className="text-center md:text-left order-1 md:order-2"
           >
-            <p className="script-head text-4xl md:text-5xl text-cocoa mb-1">
+            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">
               Добре дошли
             </p>
             <h2 className="serif-head text-4xl md:text-6xl text-cocoa leading-tight mb-6">
@@ -85,7 +85,7 @@ export function BohoIntroSection() {
               <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
             </div>
             <p className="text-cocoa text-lg md:text-xl leading-relaxed mb-4">
-              Нашият Mercedes Sprinter 2020 е оборудван с най-висок клас системи
+              Нашият <span className="serif-head text-2xl md:text-3xl text-coffee font-bold">Mercedes Sprinter 2020</span> е оборудван с най-висок клас системи
               за комфорт и автономност, така че да се чувстваш у дома, където и
               да си.
             </p>

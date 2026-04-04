@@ -39,9 +39,9 @@ export function BohoServicesGrid() {
             transition={{ duration: 0.7 }}
             className="text-center mb-16 md:mb-24"
           >
-            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">Отвътре</p>
+            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">Какво ще откриеш</p>
             <h2 className="serif-head text-4xl md:text-6xl text-earth leading-tight">
-              Какво ще откриеш
+              Отвътре
             </h2>
             <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
               <div className="w-3 h-3 rounded-full bg-terracotta" />
