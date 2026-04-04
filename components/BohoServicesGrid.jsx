@@ -49,7 +49,7 @@ export function BohoServicesGrid() {
             </h2>
 
             {/* Dot palette divider */}
-            <div className="flex gap-2.5 justify-center mt-8" aria-hidden="true">
+            <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
               <div className="w-3 h-3 rounded-full bg-terracotta" />
               <div className="w-3 h-3 rounded-full bg-desert-rose" />
               <div className="w-3 h-3 rounded-full bg-sand" />
@@ -81,7 +81,7 @@ export function BohoServicesGrid() {
                 <h3 className="serif-head text-lg md:text-xl text-earth mb-2 leading-snug">
                   {f.title}
                 </h3>
-                <p className="text-cocoa/60 text-sm leading-relaxed max-w-[220px]">
+                <p className="text-cocoa text-sm leading-relaxed max-w-[220px]">
                   {f.desc}
                 </p>
               </motion.div>

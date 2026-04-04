@@ -108,25 +108,25 @@ const PricePlans = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="max-w-3xl mx-auto text-center mb-16 space-y-4"
           >
-            <p className="text-cocoa/70 text-base md:text-lg leading-relaxed">
+            <p className="text-cocoa text-base md:text-lg leading-relaxed">
               Нашият кемперван идва при вас наистина оборудван за пътешествия.
               Помислили сме за абсолютно всичко, което ще ви бъде необходимо за
               комфортен престой. В него комфортно могат да пътуват и спят до 4 души.
             </p>
-            <p className="text-cocoa/70 text-base md:text-lg leading-relaxed">
+            <p className="text-cocoa text-base md:text-lg leading-relaxed">
               Цените варират, в зависимост от продължителността на вашето
               приключение и сезона.
             </p>
-            <p className="text-cocoa/70 text-base md:text-lg leading-relaxed">
+            <p className="text-cocoa text-base md:text-lg leading-relaxed">
               Преди да направите резервацията, моля, запознайте се с нашите
               условия за наемане и прегледайте най-често задаваните въпроси.
             </p>
-            <p className="text-earth/80 text-base md:text-lg leading-relaxed font-medium">
+            <p className="text-earth text-base md:text-lg leading-relaxed font-medium">
               Ако искате вашето пътуване да стартира от друга точка, различна от
               София — пишете ни. Предлагаме гъвкави опции за доставка на Gypsy
               van-а в различни точки на страната.
             </p>
-            <p className="text-cocoa/60 text-base md:text-lg leading-relaxed italic serif-head">
+            <p className="text-cocoa text-base md:text-lg leading-relaxed italic serif-head">
               Благодарим ви, че избирате да създавате незабравими спомени с Gypsy Vans!
             </p>
 
@@ -156,7 +156,7 @@ const PricePlans = () => {
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
                     <span
                       className={`inline-block px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest text-white shadow-sm ${
-                        plan.featured ? 'bg-terracotta' : 'bg-earth/70'
+                        plan.featured ? 'bg-terracotta' : 'bg-earth'
                       }`}
                     >
                       {plan.badge}
@@ -177,14 +177,14 @@ const PricePlans = () => {
                   {/* Header area */}
                   <div className="px-7 pt-8 pb-6 text-center">
                     <h3 className="serif-head text-2xl text-earth mb-1">{plan.name}</h3>
-                    <p className="text-cocoa/50 text-xs tracking-wide mb-5">{plan.months}</p>
+                    <p className="text-cocoa/80 text-xs tracking-wide mb-5">{plan.months}</p>
 
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="serif-head text-4xl md:text-5xl text-earth font-semibold">
                         {plan.price}
                       </span>
-                      <span className="text-cocoa/60 text-lg">{plan.currency}</span>
-                      <span className="text-cocoa/40 text-sm">{plan.frequency}</span>
+                      <span className="text-cocoa text-lg">{plan.currency}</span>
+                      <span className="text-cocoa/80 text-sm">{plan.frequency}</span>
                     </div>
                   </div>
 
@@ -197,7 +197,7 @@ const PricePlans = () => {
                   <div className="px-7 pt-6 pb-8">
                     <ul className="space-y-3 mb-8">
                       {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-3 text-sm text-cocoa/70">
+                        <li key={idx} className="flex items-center gap-3 text-sm text-cocoa">
                           <div className={`w-2 h-2 rounded-full ${plan.accent} flex-shrink-0 opacity-70`} />
                           {feature}
                         </li>

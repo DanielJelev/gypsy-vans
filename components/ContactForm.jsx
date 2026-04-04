@@ -35,7 +35,7 @@ export function ContactForm() {
       {/* Name & Email row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="relative">
-          <label htmlFor="contact-name" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Име</label>
+          <label htmlFor="contact-name" className="block text-cocoa text-base uppercase tracking-wider mb-2 ml-1">Име</label>
           <input
             id="contact-name"
             required
@@ -46,7 +46,7 @@ export function ContactForm() {
           />
         </div>
         <div className="relative">
-          <label htmlFor="contact-email" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Имейл</label>
+          <label htmlFor="contact-email" className="block text-cocoa text-base uppercase tracking-wider mb-2 ml-1">Имейл</label>
           <input
             id="contact-email"
             required
@@ -61,7 +61,7 @@ export function ContactForm() {
 
       {/* Nights */}
       <div>
-        <label htmlFor="contact-nights" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Брой нощувки</label>
+        <label htmlFor="contact-nights" className="block text-cocoa text-base uppercase tracking-wider mb-2 ml-1">Брой нощувки</label>
         <input
           id="contact-nights"
           required
@@ -75,7 +75,7 @@ export function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="contact-message" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Съобщение</label>
+        <label htmlFor="contact-message" className="block text-cocoa text-base uppercase tracking-wider mb-2 ml-1">Съобщение</label>
         <textarea
           id="contact-message"
           required

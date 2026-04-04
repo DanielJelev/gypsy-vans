@@ -98,7 +98,7 @@ export default function GalleryPage() {
       {/* Title */}
       <section className="pt-28 pb-8 text-center container-page">
         <h1 className="font-head text-4xl md:text-5xl text-coffee mb-3">Галерия</h1>
-        <p className="text-cocoa/70 max-w-xl mx-auto">
+        <p className="text-cocoa max-w-xl mx-auto">
           Моменти от пътя — разгледайте снимките от нашите приключения с Gypsy Vans.
         </p>
       </section>
@@ -112,13 +112,13 @@ export default function GalleryPage() {
         )}
 
         {error && (
-          <div className="text-center py-20 text-cocoa/60">
+          <div className="text-center py-20 text-cocoa">
             <p>{error}</p>
           </div>
         )}
 
         {!loading && !error && images.length === 0 && (
-          <p className="text-center py-20 text-cocoa/60">Няма намерени снимки.</p>
+          <p className="text-center py-20 text-cocoa">Няма намерени снимки.</p>
         )}
 
         {!loading && !error && images.length > 0 && (

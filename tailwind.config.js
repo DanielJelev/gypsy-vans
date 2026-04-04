@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./app/**/*.{js,jsx,ts,tsx}','./components/**/*.{js,jsx,ts,tsx}'],
+  safelist: [
+    'bg-sage', 'bg-terracotta', 'bg-desert-rose',
+    'h-1',
+  ],
   theme: {
     extend: {
       colors: {
-        page: '#FAF8F5', card: '#E9E1D5', cocoa: '#6A4B3C', clay: '#8C6148',
+        page: '#FAF8F5', card: '#E9E1D5', cocoa: '#4A3228', clay: '#8C6148',
         sienna: '#C47A5A', olive: '#8C8A6F', ink: '#2D221B', pebble: '#D6CEC3',
         fawn: '#EEDFCC', mocha: '#4E3B2F',
         coffee: '#453336', tan: '#fee5cf', orange: '#ef432a', beige: '#fff7ec',

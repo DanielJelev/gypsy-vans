@@ -145,7 +145,7 @@ export function Faq() {
                       className="px-6 md:px-7 pb-6 md:pb-7"
                     >
                       <div className="w-full h-px bg-sand/40 mb-5" />
-                      <p className="text-cocoa/70 text-base md:text-lg leading-relaxed">
+                      <p className="text-cocoa text-lg md:text-xl leading-relaxed">
                         {section.description}
                       </p>
                     </div>

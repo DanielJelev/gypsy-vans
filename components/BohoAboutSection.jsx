@@ -45,25 +45,31 @@ export function BohoAboutSection() {
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
             className="text-center md:text-left order-1 md:order-1"
           >
-            <p className="script-head text-4xl md:text-5xl text-desert-rose mb-2">
+            <p className="script-head text-4xl md:text-5xl text-desert-rose mb-1">
               Запознайте се
             </p>
-            <h2 className="serif-head text-3xl md:text-[3.2rem] text-white leading-tight mb-6">
+            <h2 className="serif-head text-4xl md:text-6xl text-white leading-tight mb-6">
               Ние сме Дари, Мето и малката Кая
             </h2>
-            <div className="w-16 h-px bg-terracotta/50 mx-auto md:mx-0 mb-6" aria-hidden />
-            <p className="text-white/80 text-base md:text-lg leading-relaxed mb-4">
+            <div className="flex gap-2.5 justify-center md:justify-start mb-6" aria-hidden="true">
+              <div className="w-3 h-3 rounded-full bg-terracotta" />
+              <div className="w-3 h-3 rounded-full bg-desert-rose" />
+              <div className="w-3 h-3 rounded-full bg-sand" />
+              <div className="w-3 h-3 rounded-full bg-sage" />
+              <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
+            </div>
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-4">
               Семейство приключенци, които вярват, че най-красивите истории се
               раждат по пътя. След хиляди изминати километри, стотици върхове,
               безброй минути под вода и под звездите, решихме да създадем нещо
               наше: <span className="text-terracotta font-medium">Gypsy Vans</span>.
             </p>
-            <p className="text-white/80 text-base md:text-lg leading-relaxed mb-6">
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-6">
               Нашият Mercedes Sprinter е конвертиран изцяло по наш проект — с
               внимание към всеки детайл, с любов към природата и с желание да
               дадем на другите свободата, която ние самите търсим.
             </p>
-            <p className="text-desert-rose/90 text-base md:text-lg leading-relaxed italic mb-8">
+            <p className="text-desert-rose/90 text-lg md:text-xl leading-relaxed italic mb-8">
               Gypsy Vans не са просто кемперванове под наем. Това е покана да
               излезеш извън рамките, да се свържеш със себе си и с пътя, и да
               създадеш спомени, които топлят цял живот.

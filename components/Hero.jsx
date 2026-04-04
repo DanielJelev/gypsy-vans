@@ -34,7 +34,7 @@ export function Hero() {
         <SocialWidget
           img='/logos/facebook-logo.png'
           alt='Facebook Page'
-          href='https://www.google.com'
+          href='https://www.facebook.com/gypsyvans.bg'
         />
         <SocialWidget
           img='/logos/tiktok-logo.png'
@@ -55,7 +55,9 @@ export function Hero() {
         aria-label='Background hero video'
         onCanPlay={fireReady}
         onError={fireReady}
-      />
+      >
+        <track kind="captions" />
+      </video>
 
       {/* Right-side vignette overlay */}
       <div
@@ -75,7 +77,7 @@ export function Hero() {
             Пътят е дом
           </h1>
 
-          <p className='text-white/90 text-[3.8vw] md:text-[1.3vw] lg:text-[1.1vw] leading-[1.5] md:leading-[1.6] font-light drop-shadow max-w-xl ml-auto'>
+          <p className='text-white text-[4.2vw] md:text-[1.8vw] lg:text-[1.5vw] leading-[1.6] md:leading-[1.7] font-light drop-shadow-md max-w-xl ml-auto'>
             Луксозен кемперван Mercedes Sprinter, създаден за свободата да
             откриваш. От семейство влюбено в приключенията – за всички, които
             искат да пътуват с комфорт, стил и душа.

@@ -94,7 +94,7 @@ export default function Page() {
                 <div className="w-3 h-3 rounded-full bg-sage" />
                 <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
               </div>
-              <p className="text-cocoa/60 max-w-lg mx-auto mt-6 text-base md:text-lg">
+              <p className="text-cocoa max-w-lg mx-auto mt-6 text-lg md:text-xl">
                 Имате въпроси или искате да резервирате? Пишете ни!
               </p>
             </div>

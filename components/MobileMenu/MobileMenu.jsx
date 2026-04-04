@@ -31,6 +31,7 @@ export function MobileMenu({ termsOpen, setTermsOpen }) {
             transform: open ? "translateX(20px)" : "translateX(0px)",
           }}
           onClick={() => setOpen(true)}
+          aria-label="Отвори меню"
         >
           <IoMdMenu />
         </button>
@@ -41,6 +42,7 @@ export function MobileMenu({ termsOpen, setTermsOpen }) {
             pointerEvents: open ? "auto" : "none",
           }}
           onClick={() => setOpen(false)}
+          aria-label="Затвори меню"
         >
           <IoCloseSharp />
         </button>

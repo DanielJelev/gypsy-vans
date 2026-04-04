@@ -85,19 +85,25 @@ export function BohoIntroSection() {
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
             className="text-center md:text-left order-1 md:order-2"
           >
-            <p className="script-head text-4xl md:text-5xl text-cocoa mb-2">
+            <p className="script-head text-4xl md:text-5xl text-cocoa mb-1">
               Добре дошли
             </p>
-            <h2 className="serif-head text-3xl md:text-[3.2rem] text-cocoa leading-tight mb-6">
+            <h2 className="serif-head text-4xl md:text-6xl text-cocoa leading-tight mb-6">
               Кемперванът – Лукс, уют и свобода в едно
             </h2>
-            <div className="w-16 h-px bg-cream/40 mx-auto md:mx-0 mb-6" aria-hidden />
-            <p className="text-cocoa text-base md:text-lg leading-relaxed mb-4">
+            <div className="flex gap-2.5 justify-center md:justify-start mb-6" aria-hidden="true">
+              <div className="w-3 h-3 rounded-full bg-terracotta" />
+              <div className="w-3 h-3 rounded-full bg-desert-rose" />
+              <div className="w-3 h-3 rounded-full bg-sand" />
+              <div className="w-3 h-3 rounded-full bg-sage" />
+              <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
+            </div>
+            <p className="text-cocoa text-lg md:text-xl leading-relaxed mb-4">
               Нашият Mercedes Sprinter 2020 е оборудван с най-висок клас системи
               за комфорт и автономност, така че да се чувстваш у дома, където и
               да си.
             </p>
-            <p className="text-cocoa text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-cocoa text-lg md:text-xl leading-relaxed mb-8">
               Интериорът е в модерен boho &amp; minimalistic стил – топли натурални
               цветове, качествени естествени материали, меки форми и внимание към
               светлината и атмосферата. Тук уютът среща функционалността, а

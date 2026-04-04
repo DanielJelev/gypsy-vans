@@ -99,7 +99,7 @@ export function GalleryCarouselSection() {
                       </div>
                       {/* Polaroid bottom caption */}
                       <div className="mt-3 md:mt-4 flex flex-col items-center gap-1.5">
-                        <p className="serif-head text-sm md:text-base text-cocoa/70 select-none text-center font-semibold italic whitespace-nowrap">
+                        <p className="serif-head text-sm md:text-base text-cocoa select-none text-center font-semibold italic whitespace-nowrap">
                           {captions[i % captions.length]}
                         </p>
                         <Image src="/gypsy-van-logo.svg" alt="" width={32} height={32} className="h-6 md:h-8 w-auto opacity-60 select-none pointer-events-none" aria-hidden />

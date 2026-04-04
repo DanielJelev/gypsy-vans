@@ -3,7 +3,7 @@ import Image from 'next/image';
 export function SocialWidget({ img, alt, href }) {
   return (
     <div className='p-1 bg-[#fff7ec]/10 backdrop-blur-sm border border-white/20 rounded-md hover:opacity-70 hover:scale-95 transition-all duration-300'>
-      <a href={href}>
+      <a href={href} target='_blank' rel='noopener noreferrer'>
         <Image
           src={img}
           alt={alt}

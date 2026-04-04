@@ -33,7 +33,7 @@ export function Footer({ termsOpen, setTermsOpen }) {
           <div className="flex lg:flex-row flex-col justify-between gap-12 mb-14">
 
             {/* Left: Logo + Tagline */}
-            <div className="flex gap-6 text-white items-center lg:items-start">
+            <div className="flex flex-col items-center lg:flex-row lg:items-start gap-4 lg:gap-6 text-white">
               <Image
                 src="/gypsy-van-logo.svg"
                 alt="Gypsy Vans лого"
@@ -41,7 +41,7 @@ export function Footer({ termsOpen, setTermsOpen }) {
                 height={112}
                 className="w-24 md:w-28 h-auto opacity-90 flex-shrink-0"
               />
-              <p className="text-lg md:text-xl text-white/90 leading-9 font-bold">
+              <p className="text-lg md:text-xl text-white/90 leading-9 font-bold text-center lg:text-left">
                 Създаден с любов.
                 <br />
                 Изживян с дух.
@@ -75,8 +75,8 @@ export function Footer({ termsOpen, setTermsOpen }) {
                 ))}
               </nav>
               <div className="flex gap-5">
-                <SocialWidget img="/logos/instagram-logo.png" alt="Instagram Page" href="https://www.google.com" />
-                <SocialWidget img="/logos/facebook-logo.png" alt="Facebook Page" href="https://www.google.com" />
+                <SocialWidget img="/logos/instagram-logo.png" alt="Instagram Page" href="https://www.instagram.com/gypsyvans.bg" />
+                <SocialWidget img="/logos/facebook-logo.png" alt="Facebook Page" href="https://www.facebook.com/gypsyvans.bg" />
                 <SocialWidget img="/logos/tiktok-logo.png" alt="TikTok Page" href="https://www.google.com" />
               </div>
             </div>

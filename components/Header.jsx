@@ -7,11 +7,11 @@ import { MobileMenu } from "./MobileMenu/MobileMenu";
 
 export const LINKS = [
   { label: "Начало", href: "/#home" },
-  { label: "Галерия", href: "/gallery" },
+  { label: "За нас", href: "/#about" },
   { label: "Цени", href: "/#prices" },
   { label: "Условия", href: "#", action: true },
-  { label: "За нас", href: "/#about" },
   { label: "Контакти", href: "/#contact" },
+  { label: "Галерия", href: "/gallery" },
 ];
 
 export function Header({ termsOpen, setTermsOpen }) {
@@ -51,7 +51,7 @@ export function Header({ termsOpen, setTermsOpen }) {
             alt='Gypsy Vans - Начало'
             width={220}
             height={32}
-            className='w-40 md:w-55 h-8 opacity-95 drop-shadow'
+            className='w-32 md:w-55 h-auto opacity-95 drop-shadow'
             priority
           />
         </a>
@@ -74,7 +74,7 @@ export function Header({ termsOpen, setTermsOpen }) {
           <a
             href='/#contact'
             aria-label='Резервирай кемперван'
-            className={`rounded-full px-3 py-1.5 text-[10px] md:px-6 md:py-2 md:text-sm tracking-widest uppercase transition-colors duration-300 ${
+            className={`rounded-full px-6 py-2.5 text-sm md:px-6 md:py-2 md:text-sm tracking-widest uppercase transition-colors duration-300 ${
               scrolled
                 ? 'bg-orange border border-orange text-white'
                 : 'border border-black text-black'
