@@ -71,10 +71,7 @@ const cardVariants = {
 
 const PricePlans = () => {
   return (
-    <section className="relative pt-20 md:pt-32 pb-[160px] overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
-      {/* Soft decorative blobs */}
-      <div className="absolute top-0 -right-40 w-80 h-80 rounded-full bg-sand/20 blur-3xl pointer-events-none" aria-hidden />
-      <div className="absolute bottom-20 -left-32 w-72 h-72 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
+    <section className="relative pb-[160px] overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
 
       <div className="container-page">
         <div className="max-w-6xl mx-auto">
@@ -90,7 +87,6 @@ const PricePlans = () => {
             <h2 className="serif-head text-4xl md:text-6xl text-earth leading-tight">
               Ценови пакети
             </h2>
-
             <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
               <div className="w-3 h-3 rounded-full bg-terracotta" />
               <div className="w-3 h-3 rounded-full bg-desert-rose" />

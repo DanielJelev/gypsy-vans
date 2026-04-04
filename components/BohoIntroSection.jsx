@@ -23,19 +23,6 @@ export function BohoIntroSection() {
 
   return (
     <section className="relative bg-tan overflow-hidden pb-[140px]">
-      {/* Decorative concentric arches */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.06]">
-        <svg width="900" height="560" viewBox="0 0 900 560" fill="none" aria-hidden>
-          <path d="M100 560 Q100 80 450 80 Q800 80 800 560" stroke="white" strokeWidth="1.5" />
-          <path d="M160 560 Q160 140 450 140 Q740 140 740 560" stroke="white" strokeWidth="1.5" />
-          <path d="M220 560 Q220 200 450 200 Q680 200 680 560" stroke="white" strokeWidth="1.5" />
-          <path d="M280 560 Q280 260 450 260 Q620 260 620 560" stroke="white" strokeWidth="1.5" />
-        </svg>
-      </div>
-
-      {/* Floating decorative circle */}
-      <div className="absolute top-16 right-[8%] w-28 h-28 rounded-full border border-white/10 animate-float pointer-events-none" aria-hidden />
-      <div className="absolute bottom-[200px] left-[5%] w-16 h-16 rounded-full bg-white/[0.04] animate-float-slow pointer-events-none" aria-hidden />
 
       <div className="container-page py-16 md:py-28">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -74,7 +61,6 @@ export function BohoIntroSection() {
             </Parallax>
 
             {/* Decorative ring */}
-            <div className="absolute -top-4 -left-4 w-20 h-20 rounded-full border-2 border-white/15 pointer-events-none" aria-hidden />
           </div>
 
           {/* Text Side */}
@@ -111,7 +97,7 @@ export function BohoIntroSection() {
             </p>
             <a
               href="/gallery"
-              className="inline-flex items-center gap-2 text-cocoa text-lg border-b border-cream/40 pb-1 hover:border-cream transition-colors group"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-orange border border-orange text-white text-base md:text-lg tracking-widest uppercase hover:bg-terracotta transition-colors group"
             >
               Разгледай отвътре
               <span className="group-hover:translate-x-1 transition-transform" aria-hidden>→</span>

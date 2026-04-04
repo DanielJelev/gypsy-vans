@@ -25,14 +25,8 @@ export function BohoAboutSection() {
   return (
     <section
       id="about"
-      className="relative bg-coffee overflow-hidden pb-8 md:pb-[80px] pt-12 md:pt-20"
+      className="relative bg-coffee overflow-hidden pb-8 md:pb-[80px]"
     >
-      {/* Decorative blurred orbs */}
-      <div className="absolute top-10 left-[5%] w-48 h-48 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
-      <div className="absolute bottom-40 right-[5%] w-60 h-60 rounded-full bg-desert-rose/8 blur-3xl pointer-events-none" aria-hidden />
-
-      {/* Subtle dot pattern overlay */}
-      <div className="absolute inset-0 boho-dots opacity-[0.04] pointer-events-none" aria-hidden />
 
       <div className="container-page py-8 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -74,15 +68,6 @@ export function BohoAboutSection() {
               излезеш извън рамките, да се свържеш със себе си и с пътя, и да
               създадеш спомени, които топлят цял живот.
             </p>
-
-            {/* Color palette dots — boho accent */}
-            <div className="flex gap-3 justify-center md:justify-start" aria-hidden>
-              <div className="w-5 h-5 rounded-full bg-terracotta" />
-              <div className="w-5 h-5 rounded-full bg-desert-rose" />
-              <div className="w-5 h-5 rounded-full bg-sand" />
-              <div className="w-5 h-5 rounded-full bg-sage" />
-              <div className="w-5 h-5 rounded-full bg-cream" />
-            </div>
           </motion.div>
 
           {/* Images Side */}
@@ -134,9 +119,6 @@ export function BohoAboutSection() {
               </div>
             </Parallax>
 
-            {/* Decorative elements */}
-            <div className="absolute -top-3 right-[40%] w-14 h-14 rounded-full border border-terracotta/20 pointer-events-none animate-float" aria-hidden />
-            <div className="absolute bottom-10 -left-3 w-10 h-10 rounded-full border border-white/10 pointer-events-none" aria-hidden />
           </div>
 
         </div>

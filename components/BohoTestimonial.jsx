@@ -24,22 +24,6 @@ export function BohoTestimonial() {
         <div className="absolute bottom-20 right-4 md:bottom-24 md:right-16 text-white/[0.06] text-[160px] md:text-[260px] leading-none serif-head select-none rotate-180">
           &ldquo;
         </div>
-
-        {/* Floating concentric circles */}
-        <Parallax translateY={[-20, 20]} className="absolute -left-16 top-1/2 -translate-y-1/2 opacity-40">
-          <div className="relative w-36 h-36">
-            <div className="absolute inset-0 rounded-full border border-white/15" />
-            <div className="absolute inset-3 rounded-full border border-white/10" />
-            <div className="absolute inset-6 rounded-full border border-white/5" />
-          </div>
-        </Parallax>
-
-        <Parallax translateY={[15, -15]} className="absolute -right-10 bottom-[30%] opacity-30">
-          <div className="relative w-24 h-24">
-            <div className="absolute inset-0 rounded-full border border-white/15" />
-            <div className="absolute inset-2 rounded-full border border-white/10" />
-          </div>
-        </Parallax>
       </div>
 
       <div className="container-page relative z-10">
@@ -63,15 +47,6 @@ export function BohoTestimonial() {
             <p className="text-cream text-lg md:text-xl serif-head font-medium">
               Gypsy Vans <span className="text-cream/60 font-normal">— дом, който те следва навсякъде.</span>
             </p>
-
-            {/* Decorative color dots */}
-            <div className="flex gap-2 justify-center mt-8" aria-hidden>
-              <div className="w-3 h-3 rounded-full bg-cream/20" />
-              <div className="w-3 h-3 rounded-full bg-cream/30" />
-              <div className="w-3 h-3 rounded-full bg-cream/40" />
-              <div className="w-3 h-3 rounded-full bg-cream/30" />
-              <div className="w-3 h-3 rounded-full bg-cream/20" />
-            </div>
           </motion.div>
         </div>
       </div>

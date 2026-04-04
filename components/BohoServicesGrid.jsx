@@ -28,10 +28,6 @@ export function BohoServicesGrid() {
   return (
     <section id="discover" className="relative overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
 
-      {/* Decorative background blobs */}
-      <div className="absolute top-20 -left-32 w-72 h-72 rounded-full bg-sand/20 blur-3xl pointer-events-none" aria-hidden />
-      <div className="absolute bottom-10 -right-24 w-64 h-64 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
-
       <div className="container-page">
         <div className="max-w-6xl mx-auto">
 
@@ -47,8 +43,6 @@ export function BohoServicesGrid() {
             <h2 className="serif-head text-4xl md:text-6xl text-earth leading-tight">
               Какво ще откриеш
             </h2>
-
-            {/* Dot palette divider */}
             <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
               <div className="w-3 h-3 rounded-full bg-terracotta" />
               <div className="w-3 h-3 rounded-full bg-desert-rose" />

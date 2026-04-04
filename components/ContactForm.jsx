@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { WaveDivider } from "./WaveDivider";
 
 const inputBase =
   "w-full rounded-xl border border-sand/60 bg-white/50 backdrop-blur-sm px-6 py-5 text-earth text-xl placeholder:text-cocoa/40 focus:outline-none focus:border-terracotta/40 focus:ring-2 focus:ring-terracotta/10 transition-all duration-300 serif-head";
@@ -112,5 +113,45 @@ export function ContactForm() {
       )}
       </div>
     </form>
+  );
+}
+
+export function ContactSection() {
+  return (
+    <section id="contact" className="relative pb-[160px] overflow-hidden" style={{ background: 'var(--beige-bg)' }}>
+      <div className="container-page">
+        <div className="max-w-2xl mx-auto">
+
+          {/* Header */}
+          <div className="text-center mb-12">
+            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">
+              Свържете се
+            </p>
+            <h2 className="serif-head text-4xl md:text-6xl text-earth leading-tight">
+              с нас
+            </h2>
+            <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
+              <div className="w-3 h-3 rounded-full bg-terracotta" />
+              <div className="w-3 h-3 rounded-full bg-desert-rose" />
+              <div className="w-3 h-3 rounded-full bg-sand" />
+              <div className="w-3 h-3 rounded-full bg-sage" />
+              <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
+            </div>
+            <p className="text-cocoa max-w-lg mx-auto mt-6 text-lg md:text-xl">
+              Имате въпроси или искате да резервирате? Пишете ни!
+            </p>
+          </div>
+
+          {/* Form card */}
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-sand/60 shadow-boho p-8 md:p-10">
+            <ContactForm />
+          </div>
+
+        </div>
+      </div>
+
+      {/* Bottom wave → Footer */}
+      <WaveDivider position="bottom" fill="var(--coffee)" height={120} overlap={-2} />
+    </section>
   );
 }

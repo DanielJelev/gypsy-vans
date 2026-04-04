@@ -23,9 +23,6 @@ export function Footer({ termsOpen, setTermsOpen }) {
       <WaveDivider position="top" fill="#453336" height={120} overlap={-2} />
 
       <div className="relative bg-coffee pt-16 pb-10 md:pt-24 md:pb-14">
-        {/* Decorative blobs */}
-        <div className="absolute top-20 -left-40 w-80 h-80 rounded-full bg-terracotta/8 blur-3xl pointer-events-none" aria-hidden />
-        <div className="absolute bottom-10 -right-32 w-64 h-64 rounded-full bg-sand/8 blur-3xl pointer-events-none" aria-hidden />
 
         <div className="max-w-6xl mx-auto px-6 md:px-10">
 

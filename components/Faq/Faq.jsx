@@ -53,10 +53,7 @@ export function Faq() {
   }, []);
 
   return (
-    <section className="relative pt-20 md:pt-32 pb-[160px] overflow-hidden bg-linen">
-      {/* Decorative blobs */}
-      <div className="absolute top-10 -left-32 w-72 h-72 rounded-full bg-sand/20 blur-3xl pointer-events-none" aria-hidden />
-      <div className="absolute bottom-20 -right-24 w-60 h-60 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden />
+    <section className="relative pb-[160px] overflow-hidden bg-linen">
 
       <div className="container-page">
         <div className="max-w-3xl mx-auto">
@@ -69,9 +66,9 @@ export function Faq() {
             transition={{ duration: 0.7 }}
             className="text-center mb-14"
           >
-            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">Въпроси</p>
+            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">Често задавани</p>
             <h2 className="serif-head text-4xl md:text-6xl text-earth leading-tight">
-              Често задавани
+              Въпроси
             </h2>
             <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
               <div className="w-3 h-3 rounded-full bg-terracotta" />
