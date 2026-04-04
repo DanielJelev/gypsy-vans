@@ -16,6 +16,7 @@ import { Faq } from '../components/Faq/Faq'
 import { WaveDivider } from '../components/WaveDivider'
 import { WavyOrangeLine } from '../components/WavyOrangeLine'
 import { LandingAssetsProvider } from './contexts/LandingAssetsContext'
+import { jsonLd } from './metadata/jsonLd'
 import { useState } from 'react'
 
 export default function Page() {
@@ -23,6 +24,10 @@ export default function Page() {
 
   return (
     <LandingAssetsProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
       <main className="relative">
       {/* <WavyOrangeLine /> */}

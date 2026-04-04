@@ -38,7 +38,7 @@ export default function SplashScreen({ children }) {
         >
           <div className="splash-logo-wrapper">
             <Image
-              src="/Logo-04.svg"
+              src="/gypsy-van-logo.svg"
               alt="Gypsy Vans"
               width={120}
               height={120}

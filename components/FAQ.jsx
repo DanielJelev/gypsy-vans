@@ -1,1 +1,0 @@
-export function FAQ() { return <section className='p-8'>FAQ</section> }

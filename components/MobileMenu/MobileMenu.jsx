@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { IoMdMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { LINKS } from "../Header";
@@ -64,9 +65,11 @@ export function MobileMenu({ termsOpen, setTermsOpen }) {
           ))}
         </nav>
         <div className='absolute bottom-8 left-0 w-full flex justify-center'>
-          <img
+          <Image
             src='/logo-header.svg'
-            alt='logo'
+            alt='Gypsy Vans - Начало'
+            width={220}
+            height={32}
             className='w-55 h-8 opacity-95 drop-shadow'
           />
         </div>

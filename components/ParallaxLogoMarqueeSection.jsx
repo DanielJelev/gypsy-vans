@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 import { WaveDivider } from './WaveDivider';
 
 export function ParallaxLogoMarqueeSection({
@@ -30,9 +31,7 @@ export function ParallaxLogoMarqueeSection({
     >
       <div className="absolute inset-0 flex items-center justify-center" style={{ marginTop: '-40px' }}>
         {/* Logo */}
-        <motion.img
-          src="/Logo-04.svg"
-          alt="Logo"
+        <motion.div
           style={{
             x,
             rotate,
@@ -41,7 +40,15 @@ export function ParallaxLogoMarqueeSection({
             transform: 'translateZ(0)',
             pointerEvents: 'none',
           }}
-        />
+        >
+          <Image
+            src="/gypsy-van-logo.svg"
+            alt="Gypsy Vans лого"
+            width={150}
+            height={150}
+            className="w-full h-auto"
+          />
+        </motion.div>
       </div>
        <WaveDivider
         fill="var(--coffee)"

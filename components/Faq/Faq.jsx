@@ -102,6 +102,9 @@ export function Faq() {
                   <button
                     onClick={() => toggleSection(index)}
                     className="w-full flex items-center gap-4 p-6 md:p-7 text-left cursor-pointer"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${index}`}
+                    id={`faq-button-${index}`}
                   >
                     {/* Dot indicator */}
                     <div
@@ -121,12 +124,16 @@ export function Faq() {
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                       strokeWidth={2}
+                      aria-hidden="true"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
 
                   <div
+                    id={`faq-panel-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-button-${index}`}
                     className="overflow-hidden transition-all duration-500 ease-out"
                     style={{
                       maxHeight: isOpen ? (sectionHeights[index] || 500) : 0,

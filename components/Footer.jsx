@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { SocialWidget } from './SocialWidget';
 import { WaveDivider } from './WaveDivider';
 import { LINKS } from './Header';
@@ -33,9 +34,11 @@ export function Footer({ termsOpen, setTermsOpen }) {
 
             {/* Left: Logo + Tagline */}
             <div className="flex gap-6 text-white items-center lg:items-start">
-              <img
-                src="/Logo-04.svg"
-                alt="Gypsy Vans Logo"
+              <Image
+                src="/gypsy-van-logo.svg"
+                alt="Gypsy Vans лого"
+                width={112}
+                height={112}
                 className="w-24 md:w-28 h-auto opacity-90 flex-shrink-0"
               />
               <p className="text-lg md:text-xl text-white/90 leading-9 font-bold">
@@ -49,7 +52,7 @@ export function Footer({ termsOpen, setTermsOpen }) {
 
             {/* Right: Nav + Socials */}
             <div className="flex flex-col gap-8 lg:items-end items-center">
-              <nav className="flex flex-wrap lg:justify-end justify-center gap-x-8 gap-y-3">
+              <nav aria-label='Навигация в долната част' className="flex flex-wrap lg:justify-end justify-center gap-x-8 gap-y-3">
                 {LINKS.map((l) => (
                   <div key={l.href} className="group">
                     {l.action ? (

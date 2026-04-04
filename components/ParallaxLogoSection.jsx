@@ -31,7 +31,7 @@ export function ParallaxLogoSection({
       {/* Background banner image */}
       <Image
         src={bgSrc}
-        alt=""
+        alt="Интериор на кемперван Gypsy Vans"
         fill
         className="object-cover"
         priority={false}
@@ -52,10 +52,12 @@ export function ParallaxLogoSection({
         scale={[1, toScale]}
         className="pointer-events-none"
       >
-        <img
-          src="/Logo-04.svg"
-          alt="Logo"
-          className="w-[600px] h-auto will-t"
+        <Image
+          src="/gypsy-van-logo.svg"
+          alt="Gypsy Vans лого"
+          width={600}
+          height={600}
+          className="w-[600px] h-auto"
         />
       </Parallax>
 

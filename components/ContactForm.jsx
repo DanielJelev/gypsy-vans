@@ -35,8 +35,9 @@ export function ContactForm() {
       {/* Name & Email row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="relative">
-          <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Име</label>
+          <label htmlFor="contact-name" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Име</label>
           <input
+            id="contact-name"
             required
             placeholder="Вашето име"
             value={form.name}
@@ -45,8 +46,9 @@ export function ContactForm() {
           />
         </div>
         <div className="relative">
-          <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Имейл</label>
+          <label htmlFor="contact-email" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Имейл</label>
           <input
+            id="contact-email"
             required
             type="email"
             placeholder="email@example.com"
@@ -59,8 +61,9 @@ export function ContactForm() {
 
       {/* Nights */}
       <div>
-        <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Брой нощувки</label>
+        <label htmlFor="contact-nights" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Брой нощувки</label>
         <input
+          id="contact-nights"
           required
           type="text"
           placeholder="напр. 5"
@@ -72,8 +75,9 @@ export function ContactForm() {
 
       {/* Message */}
       <div>
-        <label className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Съобщение</label>
+        <label htmlFor="contact-message" className="block text-cocoa/50 text-base uppercase tracking-wider mb-2 ml-1">Съобщение</label>
         <textarea
+          id="contact-message"
           required
           rows={4}
           placeholder="Разкажете ни за вашето планирано приключение..."
@@ -93,6 +97,7 @@ export function ContactForm() {
       </button>
 
       {/* Status messages */}
+      <div aria-live="polite" role="status">
       {status === "sent" && (
         <div className="flex items-center justify-center gap-2 py-3 rounded-xl bg-sage/10 border border-sage/30">
           <div className="w-2 h-2 rounded-full bg-sage" />
@@ -105,6 +110,7 @@ export function ContactForm() {
           <p className="text-terracotta text-sm font-medium">Грешка при изпращане. Опитайте отново.</p>
         </div>
       )}
+      </div>
     </form>
   );
 }

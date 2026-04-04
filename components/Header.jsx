@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Terms } from "./Terms/Terms";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 
@@ -45,13 +46,16 @@ export function Header({ termsOpen, setTermsOpen }) {
           onClick={closeTerms}
           className='flex items-center gap-3'
         >
-          <img
+          <Image
             src='/logo-header.svg'
-            alt='logo'
+            alt='Gypsy Vans - Начало'
+            width={220}
+            height={32}
             className='w-40 md:w-55 h-8 opacity-95 drop-shadow'
+            priority
           />
         </a>
-        <nav className='hidden md:flex gap-6 lg:gap-12 text-md text-black'>
+        <nav aria-label='Главна навигация' className='hidden md:flex gap-6 lg:gap-12 text-md text-black'>
           {LINKS.map((l) => (
             <div key={l.href} className='hover:opacity-70 z-30'>
               {l.action ? (
@@ -69,6 +73,7 @@ export function Header({ termsOpen, setTermsOpen }) {
         <div className='flex gap-2 md:gap-4 items-center z-10'>
           <a
             href='/#contact'
+            aria-label='Резервирай кемперван'
             className={`rounded-full px-3 py-1.5 text-[10px] md:px-6 md:py-2 md:text-sm tracking-widest uppercase transition-colors duration-300 ${
               scrolled
                 ? 'bg-orange border border-orange text-white'

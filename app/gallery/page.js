@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 
@@ -146,16 +147,17 @@ export default function GalleryPage() {
                         className={`relative bg-white p-3 md:p-4 pb-3 md:pb-4 rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-[1.03] group-hover:rotate-0 w-full ${rotation}`}
                       >
                         <div className="relative overflow-hidden aspect-[4/3]">
-                          <img
+                          <Image
                             src={img.thumbnail}
-                            alt={img.name}
-                            loading="lazy"
-                            className="w-full h-full object-cover"
+                            alt={img.name?.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ') || `Gypsy Vans снимка ${i + 1}`}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover"
                           />
                           <div className="absolute inset-0 bg-coffee/0 group-hover:bg-coffee/10 transition-colors duration-300" />
                         </div>
                         <div className="mt-3 md:mt-4 flex justify-center">
-                          <img src="/Logo-04.svg" alt="" className="h-6 md:h-8 w-auto opacity-60 select-none pointer-events-none" aria-hidden="true" />
+                          <Image src="/gypsy-van-logo.svg" alt="" width={32} height={32} className="h-6 md:h-8 w-auto opacity-60 select-none pointer-events-none" aria-hidden="true" />
                         </div>
                       </div>
                     </div>

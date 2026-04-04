@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -67,6 +68,7 @@ export function GalleryCarouselSection() {
   return (
     <>
       <section className="relative bg-beige overflow-hidden py-12 md:py-20">
+        <h2 className="sr-only">Галерия снимки</h2>
         {/* Embla Carousel */}
         <div className="overflow-hidden px-4 md:px-8" ref={emblaRef}>
           <div className="flex items-center -ml-4 md:-ml-6">
@@ -86,11 +88,12 @@ export function GalleryCarouselSection() {
                       style={{ maxWidth: '380px', width: '100%' }}
                     >
                       <div className="relative overflow-hidden aspect-[4/3]">
-                        <img
+                        <Image
                           src={img.thumbnail}
-                          alt={img.name}
-                          loading="lazy"
-                          className="w-full h-full object-cover"
+                          alt={img.name?.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ') || `Gypsy Vans снимка ${i + 1}`}
+                          fill
+                          sizes="(max-width: 768px) 85vw, 33vw"
+                          className="object-cover"
                         />
                         <div className="absolute inset-0 bg-coffee/0 group-hover:bg-coffee/10 transition-colors duration-300" />
                       </div>
@@ -99,7 +102,7 @@ export function GalleryCarouselSection() {
                         <p className="serif-head text-sm md:text-base text-cocoa/70 select-none text-center font-semibold italic whitespace-nowrap">
                           {captions[i % captions.length]}
                         </p>
-                        <img src="/Logo-04.svg" alt="" className="h-6 md:h-8 w-auto opacity-60 select-none pointer-events-none" aria-hidden />
+                        <Image src="/gypsy-van-logo.svg" alt="" width={32} height={32} className="h-6 md:h-8 w-auto opacity-60 select-none pointer-events-none" aria-hidden />
                       </div>
                     </div>
                   </div>

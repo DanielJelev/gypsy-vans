@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { SocialWidget } from "./SocialWidget";
 import { useRef } from "react";
 
@@ -91,9 +92,11 @@ export function Hero() {
 
       {/* Spinning logo — bottom center */}
       <div className='absolute inset-x-0 bottom-20 md:bottom-10 flex flex-col items-center z-20 gap-4'>
-        <img
+        <Image
           src='/logo-gypsy-white.svg'
-          alt='Gypsy Vans rosette'
+          alt='Gypsy Vans емблема'
+          width={56}
+          height={56}
           className='spin-slow drop-shadow-lg w-10 h-10 md:w-14 md:h-14'
         />
         <a

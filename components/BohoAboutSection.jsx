@@ -118,7 +118,7 @@ export function BohoAboutSection() {
               <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-2 md:border-4 border-sand shadow-deep">
                 <Image
                   src={img3}
-                  alt="Детайл"
+                  alt="Кая в детското столче в кемпера"
                   width={176}
                   height={176}
                   className="w-full h-full object-cover"

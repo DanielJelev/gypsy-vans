@@ -50,10 +50,13 @@ export function BohoTestimonial() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
           >
+            <h2 className="sr-only">Отзив за Gypsy Vans</h2>
+            <blockquote>
             <p className="serif-head text-xl md:text-3xl text-white leading-relaxed mb-8 italic font-normal">
               Това е кемпер, създаден за хора, които ценят както свободата, така
               и комфорта.
             </p>
+            </blockquote>
 
             <div className="w-12 h-px bg-cream/40 mx-auto mb-4" aria-hidden />
 

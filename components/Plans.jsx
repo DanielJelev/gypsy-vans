@@ -206,6 +206,7 @@ const PricePlans = () => {
 
                     <a
                       href="/#contact"
+                      aria-label={`Резервирай ${plan.name}`}
                       className={`block text-center w-full py-3 rounded-full text-sm tracking-widest uppercase ${
                         plan.featured
                           ? 'bg-orange border border-orange text-white'
