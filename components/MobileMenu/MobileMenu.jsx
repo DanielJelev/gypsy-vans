@@ -48,10 +48,10 @@ export function MobileMenu({ termsOpen, setTermsOpen }) {
         </button>
       </div>
       <div
-        className='fixed inset-0 w-dvw h-dvh flex justify-center items-center pt-20 gap-8 bg-beige transition-all duration-500 delay-100 z-10'
+        className='fixed inset-0 w-dvw h-dvh flex flex-col justify-center items-center pt-20 pb-24 gap-8 bg-beige transition-all duration-500 delay-100 z-10'
         style={{ clipPath: open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)', pointerEvents: open ? "auto" : "none" }}
       >
-        <nav className='flex flex-col gap-12 text-4xl text-black justify-center items-center w-full pb-20'>
+        <nav className='flex flex-col gap-[4vh] text-[min(8vw,2.25rem)] text-black justify-center items-center w-full overflow-y-auto pb-4'>
           {LINKS.map((l) => (
             <div key={l.href} className='hover:opacity-70 z-30'>
               {l.action ? (
