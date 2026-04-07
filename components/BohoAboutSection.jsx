@@ -59,11 +59,11 @@ export function BohoAboutSection() {
               наше: <span className="text-terracotta">Gypsy Vans</span>.
             </p>
             <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-6">
-              Нашият Mercedes Sprinter е конвертиран изцяло по наш проект — с
+              Нашият <span className="serif-head text-2xl md:text-3xl text-cream font-bold">Mercedes Sprinter</span> е конвертиран изцяло по наш проект — с
               внимание към всеки детайл, с любов към природата и с желание да
               дадем на другите свободата, която ние самите търсим.
             </p>
-            <p className="text-desert-rose/90 text-lg md:text-xl leading-relaxed italic mb-8">
+            <p className="text-sand text-lg md:text-xl leading-relaxed italic mb-8">
               Gypsy Vans не са просто кемперванове под наем. Това е покана да
               излезеш извън рамките, да се свържеш със себе си и с пътя, и да
               създадеш спомени, които топлят цял живот.

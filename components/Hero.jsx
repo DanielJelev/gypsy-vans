@@ -78,7 +78,7 @@ export function Hero() {
             Пътят е дом
           </h1>
 
-          <p className='text-white text-[4.2vw] md:text-[1.8vw] lg:text-[1.5vw] leading-[1.6] md:leading-[1.7] font-light drop-shadow-md max-w-xl ml-auto'>
+          <p className='text-white text-[5vw] md:text-[2.2vw] lg:text-[1.8vw] leading-[1.6] md:leading-[1.7] font-light drop-shadow-md max-w-xl ml-auto'>
             Луксозен кемперван Mercedes Sprinter, създаден за свободата да
             откриваш. От семейство влюбено в приключенията – за всички, които
             искат да пътуват с комфорт, стил и душа.
