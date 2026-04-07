@@ -45,8 +45,9 @@ export function Hero() {
 
       {/* Video background — local asset */}
       <video
-        className='absolute inset-0 z-0 h-full w-full object-cover'
+        className='absolute inset-0 z-0 h-full w-full object-cover bg-neutral-800'
         src='/hero-banner-video.webm'
+        poster='/hero-poster.webp'
         autoPlay
         muted
         loop
