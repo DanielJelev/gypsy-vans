@@ -1,7 +1,7 @@
 'use client';
 
 import { useLayoutEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+
 import { WaveDivider } from '../WaveDivider';
 import { debounce } from "../../app/utils/debounce";
 
@@ -59,11 +59,7 @@ export function Faq() {
         <div className="max-w-3xl mx-auto">
 
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+          <div
             className="text-center mb-14"
           >
             <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">Често задавани</p>
@@ -77,19 +73,15 @@ export function Faq() {
               <div className="w-3 h-3 rounded-full bg-sage" />
               <div className="w-3 h-3 rounded-full bg-cream border border-sand/50" />
             </div>
-          </motion.div>
+          </div>
 
           {/* Accordion */}
           <div className="space-y-4">
             {sections.map((section, index) => {
               const isOpen = !!expandedSections[index];
               return (
-                <motion.div
+                <div
                   key={section.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
                   className={`rounded-2xl border transition-all duration-300 ${
                     isOpen
                       ? 'bg-white shadow-boho border-terracotta/20'
@@ -147,7 +139,7 @@ export function Faq() {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
