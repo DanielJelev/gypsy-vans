@@ -75,7 +75,7 @@ export function BohoServicesGrid() {
                 <h3 className="serif-head text-lg md:text-xl text-earth mb-2 leading-snug">
                   {f.title}
                 </h3>
-                <p className="text-cocoa text-sm leading-relaxed max-w-[220px]">
+                <p className="text-cocoa text-base md:text-lg leading-relaxed max-w-[260px]">
                   {f.desc}
                 </p>
               </motion.div>
