@@ -2,35 +2,10 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 
-const PAGE_SIZE = 12
-
-const rotations = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2', 'rotate-0', '-rotate-3']
-const captions = [
-  'За свободни души & диви сърца',
-  'Луксозен бохо кемпер ван за 4-ма',
-  'Заспивай, където те отведе пътя',
-  'Събуждай се свободен',
-  'Готов ли си за приключение?',
-]
-// Cycling scale + span patterns for masonry-like variety
-const sizes = [
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-[0.88]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-100' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[0.92]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-[0.82]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-100' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[0.85]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[0.95]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-[0.78]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-100' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-4', scale: 'scale-[0.9]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-5', scale: 'scale-[1.02]' },
-  { span: 'col-span-12 sm:col-span-6 lg:col-span-3', scale: 'scale-[0.86]' },
-]
+const PAGE_SIZE = 50
 
 export default function GalleryPage() {
   const [images, setImages] = useState([])
@@ -130,48 +105,29 @@ export default function GalleryPage() {
 
         {!loading && !error && images.length > 0 && (
           <>
-          <div className="grid grid-cols-12 gap-4 md:gap-6">
-            {images.map((img, i) => {
-              const rotation = rotations[i % rotations.length]
-              const caption = captions[i % captions.length]
-              const size = sizes[i % sizes.length]
-
-              return (
-                <motion.div
-                  key={img.id}
-                  className={size.span}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.5, delay: (i % 6) * 0.08 }}
+          <div className="gallery-grid">
+            {images.map((img, i) => (
+              <motion.div
+                key={img.id}
+                className="gallery-item"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: (i % 6) * 0.08 }}
+              >
+                <button
+                  onClick={() => openLightbox(i)}
+                  className="gallery-frame"
                 >
-                  <button
-                    onClick={() => openLightbox(i)}
-                    className="w-full group cursor-pointer"
-                  >
-                    <div className={`flex items-center justify-center py-2 ${size.scale}`}>
-                      <div
-                        className={`relative bg-white p-3 md:p-4 pb-3 md:pb-4 rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-[1.03] group-hover:rotate-0 w-full ${rotation}`}
-                      >
-                        <div className="relative overflow-hidden aspect-[4/3]">
-                          <Image
-                            src={img.thumbnail}
-                            alt={img.name?.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ') || `Gypsy Vans снимка ${i + 1}`}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-coffee/0 group-hover:bg-coffee/10 transition-colors duration-300" />
-                        </div>
-                        <div className="mt-3 md:mt-4 flex justify-center">
-                          <Image src="/gypsy-van-logo.svg" alt="" width={32} height={32} className="h-6 md:h-8 w-auto opacity-60 select-none pointer-events-none" aria-hidden="true" />
-                        </div>
-                      </div>
-                    </div>
-                  </button>
-                </motion.div>
-              )
-            })}
+                  <img
+                    src={img.thumbnail}
+                    alt={img.name}
+                    loading={i < PAGE_SIZE ? 'eager' : 'lazy'}
+                    className="gallery-img"
+                  />
+                </button>
+              </motion.div>
+            ))}
           </div>
 
           {/* Sentinel for infinite scroll */}
