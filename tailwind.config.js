@@ -2,7 +2,10 @@
 module.exports = {
   content: ['./app/**/*.{js,jsx,ts,tsx}','./components/**/*.{js,jsx,ts,tsx}'],
   safelist: [
-    'bg-sage', 'bg-terracotta', 'bg-desert-rose',
+    'bg-sage', 'bg-terracotta', 'bg-desert-rose', 'bg-sand',
+    'bg-sage/10', 'bg-terracotta/10', 'bg-desert-rose/10', 'bg-sand/10',
+    'bg-sage/20', 'bg-terracotta/20', 'bg-desert-rose/20', 'bg-sand/20',
+    'text-sage', 'text-terracotta', 'text-desert-rose', 'text-sand', 'text-earth',
     'h-1',
   ],
   theme: {
@@ -36,12 +39,14 @@ module.exports = {
         marquee: { '0%':{ transform:'translateX(0)'}, '100%':{ transform:'translateX(-50%)'}},
         float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' }},
         slideUp: { '0%': { transform: 'translateY(100%)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' }},
+        slideDown: { '0%': { transform: 'translateY(0)', opacity: '1' }, '100%': { transform: 'translateY(100%)', opacity: '0' }},
       },
       animation: {
         marquee: 'marquee 30s linear infinite',
         float: 'float 6s ease-in-out infinite',
         'float-slow': 'float 8s ease-in-out infinite',
         slideUp: 'slideUp 0.5s cubic-bezier(.22,.61,.36,1) forwards',
+        slideDown: 'slideDown 0.5s cubic-bezier(.22,.61,.36,1) forwards',
       },
     }
   },

@@ -1,8 +1,8 @@
-const API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyBrUBmMGYQTvSd0yxvuQzbCy5FSUIabFns'
+const API_KEY = process.env.GOOGLE_API_KEY || ''
 
 const FOLDERS = {
-  landing: process.env.GOOGLE_DRIVE_LANDING_FOLDER_ID || '1KsT3CV4TuRW3B2cWrQt6kPgRld4eDSWr',
-  gallery: process.env.GOOGLE_DRIVE_FOLDER_ID || '1JW813l4xhaCpOqC_UCsiK0fCS4ZeUHmm',
+  landing: process.env.GOOGLE_DRIVE_LANDING_FOLDER_ID || '',
+  gallery: process.env.GOOGLE_DRIVE_FOLDER_ID || '',
 }
 
 /**

@@ -6,6 +6,7 @@ const COOKIE_KEY = 'gypsy_cookie_consent';
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  const [dismissing, setDismissing] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_KEY);
@@ -16,21 +17,22 @@ export default function CookieConsent() {
     }
   }, []);
 
-  const accept = () => {
-    localStorage.setItem(COOKIE_KEY, 'accepted');
-    setVisible(false);
+  const dismiss = (type) => {
+    localStorage.setItem(COOKIE_KEY, type);
+    setDismissing(true);
+    setTimeout(() => setVisible(false), 500);
   };
 
-  const decline = () => {
-    localStorage.setItem(COOKIE_KEY, 'declined');
-    setVisible(false);
-  };
+  const accept = () => dismiss('accepted');
+  const decline = () => dismiss('declined');
 
   if (!visible) return null;
 
   return (
     <div
-      className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[9998] animate-slideUp"
+      className={`fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[9998] ${
+        dismissing ? 'animate-slideDown' : 'animate-slideUp'
+      }`}
       role="dialog"
       aria-label="Бисквитки"
     >

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyBrUBmMGYQTvSd0yxvuQzbCy5FSUIabFns'
+const API_KEY = process.env.GOOGLE_API_KEY || ''
 
 export const dynamic = 'force-dynamic'
 

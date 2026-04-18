@@ -8,6 +8,8 @@ const inputBase =
 
 export function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", nights: "", message: "" });
+  const [honeypot, setHoneypot] = useState("");
+  const [loadedAt] = useState(() => Date.now());
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   const update = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
@@ -20,7 +22,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _hp: honeypot, _t: loadedAt }),
       });
 
       if (!res.ok) throw new Error();
@@ -33,6 +35,9 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', tabIndex: -1 }}>
+        <input id="_hp" name="_hp" type="text" autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+      </div>
       {/* Name & Email row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="relative">
