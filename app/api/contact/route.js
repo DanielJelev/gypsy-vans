@@ -24,7 +24,7 @@ export async function POST(req) {
 
   try {
     await resend.emails.send({
-      from: "Gypsy Vans <onboarding@resend.dev>",
+      from: "Gypsy Vans <noreply@gypsyvans.bg>",
       to: process.env.CONTACT_EMAIL,
       subject: `Ново запитване от ${name}`,
       replyTo: email,
