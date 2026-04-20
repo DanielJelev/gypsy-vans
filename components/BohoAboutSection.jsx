@@ -25,7 +25,7 @@ export function BohoAboutSection() {
   return (
     <section
       id="about"
-      className="relative bg-coffee overflow-hidden pb-8 md:pb-[80px]"
+      className="relative bg-coffee overflow-hidden pb-10 md:pb-[80px]"
     >
 
       <div className="container-page py-8 md:py-20">
@@ -71,7 +71,7 @@ export function BohoAboutSection() {
           </motion.div>
 
           {/* Images Side */}
-          <div className="relative mx-auto w-full max-w-[640px] min-h-[520px] md:min-h-[700px] order-2 md:order-2">
+          <div className="relative mx-auto w-full max-w-[640px] min-h-[580px] md:min-h-[780px] order-2 md:order-2">
             {/* Main rectangular image */}
             <Parallax translateY={[-3, 3]} easing="easeOutQuad">
               <div className="rounded-2xl overflow-hidden shadow-deep w-[80%] md:w-[78%]">
@@ -105,8 +105,8 @@ export function BohoAboutSection() {
             </Parallax>
 
             {/* Small circular accent image */}
-            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-10 md:-bottom-32 left-[20%] md:left-[25%] z-20">
-              <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-2 md:border-4 border-sand shadow-deep">
+            <Parallax translateY={[4, -4]} easing="easeOutQuad" className="absolute -bottom-10 md:-bottom-28 left-[8%] md:left-[12%] z-20">
+              <div className="w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-2 md:border-4 border-sand shadow-deep">
                 <Image
                   src={img3}
                   alt="Кая в детското столче в кемпера"
