@@ -37,13 +37,13 @@ export function BohoServicesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-center mb-16 md:mb-24"
+            className="text-center mb-8 md:mb-24"
           >
-            <p className="script-head text-4xl md:text-5xl text-terracotta mb-1">Какво ще откриеш</p>
-            <h2 className="serif-head text-4xl md:text-6xl text-earth leading-tight">
+            <p className="script-head text-3xl md:text-5xl text-terracotta mb-1">Какво ще откриеш</p>
+            <h2 className="serif-head text-3xl md:text-6xl text-earth leading-tight">
               Отвътре
             </h2>
-            <div className="flex gap-2.5 justify-center mt-6" aria-hidden="true">
+            <div className="flex gap-2.5 justify-center mt-4 md:mt-6" aria-hidden="true">
               <div className="w-3 h-3 rounded-full bg-terracotta" />
               <div className="w-3 h-3 rounded-full bg-desert-rose" />
               <div className="w-3 h-3 rounded-full bg-sand" />
@@ -53,7 +53,7 @@ export function BohoServicesGrid() {
           </motion.div>
 
           {/* Feature items – organic layout */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-14 md:gap-y-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-10 gap-y-6 md:gap-y-8">
             {features.map((f, i) => (
               <motion.div
                 key={f.title}
@@ -65,17 +65,17 @@ export function BohoServicesGrid() {
                 className={`group flex flex-col items-center text-center ${offsets[i]}`}
               >
                 {/* Arch-shaped accent */}
-                <div className="relative mb-5">
-                  <div className="w-20 h-28 md:w-24 md:h-32 arch-frame-subtle bg-sand/30 group-hover:bg-sand/50 transition-colors duration-500" />
+                <div className="relative mb-3 md:mb-5">
+                  <div className="w-14 h-20 md:w-24 md:h-32 arch-frame-subtle bg-sand/30 group-hover:bg-sand/50 transition-colors duration-500" />
                   <div
-                    className={`absolute bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 md:w-7 md:h-7 rounded-full ${f.color} shadow-sm group-hover:scale-110 transition-transform duration-500`}
+                    className={`absolute bottom-2 md:bottom-3 left-1/2 -translate-x-1/2 w-5 h-5 md:w-7 md:h-7 rounded-full ${f.color} shadow-sm group-hover:scale-110 transition-transform duration-500`}
                   />
                 </div>
 
-                <h3 className="serif-head text-lg md:text-xl text-earth mb-2 leading-snug">
+                <h3 className="serif-head text-base md:text-xl text-earth mb-1 md:mb-2 leading-snug">
                   {f.title}
                 </h3>
-                <p className="text-cocoa text-base md:text-lg leading-relaxed max-w-[260px]">
+                <p className="text-cocoa text-sm md:text-lg leading-snug md:leading-relaxed max-w-[260px]">
                   {f.desc}
                 </p>
               </motion.div>
