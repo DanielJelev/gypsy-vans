@@ -593,6 +593,185 @@ export function Terms({ open, close }) {
           </p>
         </div>
 
+        {/* Privacy Policy divider */}
+        <div className="flex items-center gap-4 mt-8 mb-2">
+          <div className="flex-1 h-px bg-sand/60" />
+          <p className="script-head text-terracotta text-lg md:text-xl whitespace-nowrap">Политика за защита на личните данни</p>
+          <div className="flex-1 h-px bg-sand/60" />
+        </div>
+
+        <TermsSection title='I. Обща информация'>
+          <TermsText>
+            ДЖИПСИ ВАНС ООД, ЕИК 207872284, със седалище и адрес на управление: гр. София, п.к. 1309, ж.к. ЗОНА Б-19, ул. Димитър Петков № 119 („Администраторът") обработва лични данни в съответствие с Регламент (ЕС) 2016/679 (GDPR) и приложимото българско законодателство.
+          </TermsText>
+          <TermsText>
+            Настоящата политика има за цел да информира лицата относно начина, по който се събират, използват и защитават техните лични данни.
+          </TermsText>
+          <TermsText className='font-medium bg-sand/20 rounded-xl px-5 py-4 border border-sand/40'>
+            Контакти: <br />
+            Имейл: info@gypsyvans.bg <br />
+            Телефон: 0886837085
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='II. Категории лични данни'>
+          <TermsText>
+            Администраторът може да обработва следните категории лични данни:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• идентификационни данни: имена, ЕГН/ЛНЧ, номер на личен документ</li>
+              <li className='flex items-start gap-2 pl-1'>• данни за контакт: телефон, електронна поща, адрес</li>
+              <li className='flex items-start gap-2 pl-1'>• данни и копия от свидетелство за управление на МПС</li>
+              <li className='flex items-start gap-2 pl-1'>• данни за плащания и банкови операции</li>
+              <li className='flex items-start gap-2 pl-1'>• данни за резервации и наемни периоди</li>
+              <li className='flex items-start gap-2 pl-1'>• данни, свързани с използването на автомобила (вкл. нарушения, щети)</li>
+              <li className='flex items-start gap-2 pl-1'>• снимки и видеозаписи на автомобила при предаване и връщане</li>
+            </ul>
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='III. Данни от GPS проследяване'>
+          <TermsText>
+            Кемперите на Администратора са оборудвани с GPS устройства. Обработват се данни за местоположение, скорост и маршрут на автомобила единствено с цел защита на собствеността, предотвратяване на кражби, контрол върху забранените зони за движение и техническа диагностика. GPS данните не се използват за постоянно наблюдение на поведението на водача извън посочените цели.
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='IV. Цели на обработването'>
+          <TermsText>
+            Личните данни се обработват за следните цели:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• сключване и изпълнение на договор за наем</li>
+              <li className='flex items-start gap-2 pl-1'>• идентификация на клиента и водачите</li>
+              <li className='flex items-start gap-2 pl-1'>• изготвяне на документи (договор, протоколи, пълномощни)</li>
+              <li className='flex items-start gap-2 pl-1'>• изпълнение на законови задължения</li>
+              <li className='flex items-start gap-2 pl-1'>• комуникация с клиента</li>
+              <li className='flex items-start gap-2 pl-1'>• обработване на плащания</li>
+              <li className='flex items-start gap-2 pl-1'>• защита на правата и законните интереси на Администратора (вкл. при щети, нарушения, глоби)</li>
+            </ul>
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='V. Правно основание'>
+          <TermsText>
+            Обработването се извършва на основание:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• сключване и изпълнение на договор</li>
+              <li className='flex items-start gap-2 pl-1'>• изпълнение на законово задължение</li>
+              <li className='flex items-start gap-2 pl-1'>• легитимен интерес на Администратора (защита при спорове, щети, злоупотреби)</li>
+            </ul>
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='VI. Срок на съхранение'>
+          <TermsText>
+            Данните се съхраняват:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• за срок от 5 години след прекратяване на договора (давностен срок за правни претенции)</li>
+              <li className='flex items-start gap-2 pl-1'>• или 10 години за счетоводни и данъчни документи, съгласно Закона за счетоводството, Закона за корпоративното подоходно облагане, Закон за данък върху добавената стойност и други приложими нормативни актове</li>
+              <li className='flex items-start gap-2 pl-1'>• по-дълго, ако е необходимо за защита при правни спорове или по закон</li>
+              <li className='flex items-start gap-2 pl-1'>• данни, предоставени във връзка с резервации, които не водят до сключване на договор, се съхраняват за срок до 6 месеца от последната комуникация с клиента, освен ако не е налице основание за по-дълго съхранение</li>
+            </ul>
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='VII. Предоставяне на данни'>
+          <TermsText>
+            Личните данни могат да бъдат предоставяни на следните лица, когато това е необходимо и законосъобразно:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• застрахователни компании</li>
+              <li className='flex items-start gap-2 pl-1'>• държавни органи (КАТ, съд, НАП и др.)</li>
+              <li className='flex items-start gap-2 pl-1'>• счетоводители и правни консултанти</li>
+              <li className='flex items-start gap-2 pl-1'>• доставчици на услуги (напр. платежни услуги)</li>
+            </ul>
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='VIII. Права на лицата'>
+          <TermsText>
+            Всяко лице има право:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• на достъп до своите данни</li>
+              <li className='flex items-start gap-2 pl-1'>• на коригиране</li>
+              <li className='flex items-start gap-2 pl-1'>• на изтриване (когато е приложимо)</li>
+              <li className='flex items-start gap-2 pl-1'>• на ограничаване на обработването</li>
+              <li className='flex items-start gap-2 pl-1'>• на възражение</li>
+              <li className='flex items-start gap-2 pl-1'>• на преносимост на данните</li>
+            </ul>
+          </TermsText>
+          <TermsText>
+            Искания могат да се подават на посочения имейл.
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='IX. Сигурност на данните'>
+          <TermsText>
+            Администраторът прилага подходящи технически и организационни мерки за защита на личните данни срещу:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• неоторизиран достъп</li>
+              <li className='flex items-start gap-2 pl-1'>• загуба или унищожаване</li>
+              <li className='flex items-start gap-2 pl-1'>• неправомерно използване</li>
+            </ul>
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='X. Данни при регистрация и резервация'>
+          <TermsText>
+            При използване на уебсайта, включително при създаване на запитване, резервация или регистрация, Администраторът може да събира следните данни:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• име и фамилия</li>
+              <li className='flex items-start gap-2 pl-1'>• телефонен номер</li>
+              <li className='flex items-start gap-2 pl-1'>• електронна поща</li>
+              <li className='flex items-start gap-2 pl-1'>• информация за желан наемен период</li>
+              <li className='flex items-start gap-2 pl-1'>• допълнителна информация, предоставена доброволно от потребителя</li>
+            </ul>
+          </TermsText>
+          <TermsText>
+            Тези данни се използват за обработване на резервации, комуникация с клиента и подготовка на договорни отношения. Предоставянето на тези данни е доброволно, но е необходимо за сключване и изпълнение на договор за наем.
+          </TermsText>
+          <TermsText>
+            При последващо сключване на договор се събират допълнителни данни съгласно настоящата политика. Администраторът не използва данните за автоматизирано вземане на решения или профилиране. Администраторът не предоставя лични данни извън Европейския съюз.
+          </TermsText>
+          <TermsText>
+            Предоставянето на лични данни е доброволно, но при отказ е възможно Администраторът да не може да сключи или изпълни договор за наем.
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='XI. Бисквитки'>
+          <TermsText>
+            Уебсайтът използва бисквитки (cookies) с цел осигуряване на нормалното функциониране на сайта, подобряване на потребителското изживяване и анализ на трафика.
+          </TermsText>
+          <TermsText>
+            Бисквитките могат да бъдат:
+            <ul className='mt-2 space-y-1.5'>
+              <li className='flex items-start gap-2 pl-1'>• необходими – за правилното функциониране на сайта;</li>
+              <li className='flex items-start gap-2 pl-1'>• функционални – за запомняне на предпочитания;</li>
+              <li className='flex items-start gap-2 pl-1'>• аналитични – за измерване и анализ на трафика (напр. чрез Google Analytics);</li>
+              <li className='flex items-start gap-2 pl-1'>• маркетингови – за персонализиране на рекламно съдържание (ако е приложимо).</li>
+            </ul>
+          </TermsText>
+          <TermsText>
+            При първо посещение на сайта потребителят може да даде съгласие за използването на бисквитки чрез специален банер, който позволява избор на категории бисквитки. Потребителят може по всяко време да промени своите предпочитания или да изтрие бисквитките чрез настройките на своя браузър.
+          </TermsText>
+          <TermsText>
+            Срокът на съхранение на бисквитките зависи от техния вид и може да варира от сесийни (до затваряне на браузъра) до постоянни бисквитки с определен срок.
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='XII. Промени'>
+          <TermsText>
+            Администраторът има право да актуализира настоящата политика, като актуалната версия се публикува на сайта.
+          </TermsText>
+        </TermsSection>
+
+        <TermsSection title='XIII. Контакт с Комисията за защита на личните данни'>
+          <TermsText>
+            Лицата имат право да подадат жалба до:
+          </TermsText>
+          <TermsText className='font-medium bg-sand/20 rounded-xl px-5 py-4 border border-sand/40'>
+            Комисия за защита на личните данни (КЗЛД) <br />
+            www.cpdp.bg
+          </TermsText>
+        </TermsSection>
+
           </div>
         </div>
       </div>
