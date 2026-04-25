@@ -2,12 +2,53 @@ export const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'Organization',
+      '@id': 'https://gypsyvans.bg/#organization',
+      name: 'Gypsy Vans',
+      url: 'https://gypsyvans.bg',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://gypsyvans.bg/gypsy-van-logo.png',
+      },
+      sameAs: [
+        'https://www.instagram.com/gypsyvans.bg',
+        'https://www.facebook.com/gypsyvans.bg',
+      ],
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+359887979934',
+          contactType: 'customer service',
+          areaServed: 'BG',
+          availableLanguage: ['bg', 'en'],
+        },
+        {
+          '@type': 'ContactPoint',
+          telephone: '+359886837085',
+          contactType: 'customer service',
+          areaServed: 'BG',
+          availableLanguage: ['bg', 'en'],
+        },
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://gypsyvans.bg/#website',
+      url: 'https://gypsyvans.bg',
+      name: 'Gypsy Vans',
+      inLanguage: 'bg',
+      publisher: { '@id': 'https://gypsyvans.bg/#organization' },
+    },
+    {
       '@type': 'LocalBusiness',
+      '@id': 'https://gypsyvans.bg/#localbusiness',
       name: 'Gypsy Vans',
       description: 'Луксозен кемперван Mercedes Sprinter под наем в България. Пълно оборудване и комфорт за до 4 души.',
       url: 'https://gypsyvans.bg',
-      image: 'https://gypsyvans.bg/van/van-image-outside.webp',
+      logo: 'https://gypsyvans.bg/gypsy-van-logo.png',
+      image: 'https://gypsyvans.bg/van/van-image-inside.webp',
       address: { '@type': 'PostalAddress', addressLocality: 'София', addressCountry: 'BG' },
+      telephone: '+359887979934',
       priceRange: '€84–€125/ден',
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
@@ -15,7 +56,10 @@ export const jsonLd = {
         opens: '08:00',
         closes: '20:00',
       },
-      sameAs: ['https://www.instagram.com/gypsyvans.bg'],
+      sameAs: [
+        'https://www.instagram.com/gypsyvans.bg',
+        'https://www.facebook.com/gypsyvans.bg',
+      ],
     },
     {
       '@type': 'FAQPage',

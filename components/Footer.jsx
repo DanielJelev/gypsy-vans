@@ -71,10 +71,30 @@ export function Footer({ termsOpen, setTermsOpen }) {
                   </div>
                 ))}
               </nav>
-              <div className="flex gap-5">
-                <SocialWidget img="/logos/instagram-logo.png" alt="Instagram Page" href="https://www.instagram.com/gypsyvans.bg" />
-                <SocialWidget img="/logos/facebook-logo.png" alt="Facebook Page" href="https://www.facebook.com/gypsyvans.bg" />
-                <SocialWidget img="/logos/tiktok-logo.png" alt="TikTok Page" href="https://www.google.com" />
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 sm:gap-4 md:gap-6">
+                <div className="flex items-center gap-3 md:gap-4 text-white/85 text-sm md:text-base">
+                  <a
+                    href="tel:+359887979934"
+                    className="hover:text-terracotta transition-colors duration-300"
+                  >
+                    +359 887 979 934
+                  </a>
+                  <span className="text-white/40" aria-hidden="true">/</span>
+                  <a
+                    href="tel:+359886837085"
+                    className="hover:text-terracotta transition-colors duration-300"
+                  >
+                    +359 886 837 085
+                  </a>
+                </div>
+
+                <div className="hidden sm:block h-6 w-px bg-white/25" aria-hidden="true" />
+
+                <div className="flex gap-5">
+                  <SocialWidget img="/logos/instagram-logo.png" alt="Instagram Page" href="https://www.instagram.com/gypsyvans.bg" />
+                  <SocialWidget img="/logos/facebook-logo.png" alt="Facebook Page" href="https://www.facebook.com/gypsyvans.bg" />
+                  <SocialWidget img="/logos/tiktok-logo.png" alt="TikTok Page" disabled />
+                </div>
               </div>
             </div>
 

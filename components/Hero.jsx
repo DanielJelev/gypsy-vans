@@ -39,7 +39,7 @@ export function Hero() {
         <SocialWidget
           img='/logos/tiktok-logo.png'
           alt='TikTok Page'
-          href='https://www.google.com'
+          disabled
         />
       </div>
 

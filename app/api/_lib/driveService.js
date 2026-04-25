@@ -3,11 +3,13 @@ const API_KEY = process.env.GOOGLE_API_KEY || ''
 const FOLDERS = {
   landing: process.env.GOOGLE_DRIVE_LANDING_FOLDER_ID || '',
   gallery: process.env.GOOGLE_DRIVE_FOLDER_ID || '',
+  carousel:
+    process.env.GOOGLE_DRIVE_CAROUSEL_FOLDER_ID || '',
 }
 
 /**
  * Fetch files from a Google Drive folder.
- * @param {'landing'|'gallery'} folder
+ * @param {'landing'|'gallery'|'carousel'} folder
  * @returns {Promise<{files?: Array, error?: string, status?: number}>}
  */
 export async function fetchDriveFiles(folder) {

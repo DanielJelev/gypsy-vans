@@ -42,18 +42,18 @@ export function Header({ termsOpen, setTermsOpen }) {
           ? 'bg-[#fff7ec]/90 backdrop-blur-md shadow-soft border-b border-b-white/70'
           : 'bg-[#fff7ec]/40 backdrop-blur-sm border-b border-b-white/70'
     }`}>
-      <div className='mx-auto max-w-7xl px-6 h-16 flex items-center justify-between z-50 relative'>
+      <div className='mx-auto max-w-7xl px-3 sm:px-6 h-16 flex items-center justify-between z-50 relative'>
         <a
           href='/#home'
           onClick={closeTerms}
-          className='flex items-center gap-3'
+          className='flex items-center gap-2 shrink-0'
         >
           <Image
             src='/logo-header.svg'
             alt='Gypsy Vans - Начало'
             width={220}
             height={32}
-            className='w-32 md:w-55 h-auto opacity-95 drop-shadow'
+            className='w-24 sm:w-32 md:w-55 h-auto opacity-95 drop-shadow'
             priority
           />
         </a>
@@ -72,11 +72,11 @@ export function Header({ termsOpen, setTermsOpen }) {
             </div>
           ))}
         </nav>
-        <div className='flex gap-2 md:gap-4 items-center z-10'>
+        <div className='flex gap-1.5 sm:gap-2 md:gap-4 items-center z-10 shrink-0'>
           <a
             href='/#contact'
             aria-label='Резервирай кемперван'
-            className={`rounded-full px-6 py-1.5 text-sm md:px-6 md:py-2 md:text-sm tracking-widest uppercase transition-colors duration-300 ${
+            className={`rounded-full px-3 sm:px-6 py-1.5 text-xs sm:text-sm md:py-2 tracking-[0.22em] sm:tracking-widest uppercase transition-colors duration-300 ${
               scrolled
                 ? 'bg-orange border border-orange text-white'
                 : 'border border-black text-black'

@@ -83,35 +83,23 @@ const PricePlans = () => {
           {/* Intro */}
           <div className="max-w-3xl mx-auto mb-12 space-y-8">
             <p className="text-earth text-lg md:text-xl leading-[1.8] text-center">
-              Нашият кемперван идва при вас наистина оборудван за пътешествия.
-              Помислили сме за абсолютно всичко, което ще ви бъде необходимо за
-              комфортен престой. В него комфортно могат да пътуват и спят до <span className="serif-head font-bold text-terracotta">4 души</span>.
+              Нашият кемпер ван под наем е <span className="font-bold text-coffee">напълно оборудван</span> за комфортни пътешествия из България и Европа.
+              В него удобно могат да пътуват <span className="font-bold text-coffee">и нощуват до 4 души</span>, като сме осигурили всичко необходимо за едно
+              безгрижно приключение.
             </p>
 
             <p className="text-earth text-lg md:text-xl leading-[1.8] text-center">
-              Цените варират в зависимост от <span className="serif-head font-semibold">продължителността</span> на вашето
-              приключение и <span className="serif-head font-semibold">сезона</span>. Преди да направите резервацията, моля, запознайте се с нашите
-              условия за наемане и прегледайте най-често задаваните въпроси.
+              Цените за наем на кемпер ван варират според сезона и продължителността на пътуването. <span className="font-bold text-coffee">Моля
+              запознайте с условията за наем и често задаваните въпроси преди резервация.</span>
             </p>
 
-            <div className="flex items-center gap-4" aria-hidden="true">
-              <div className="h-px flex-1 bg-sand/50" />
-              <div className="flex gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-terracotta" />
-                <div className="w-2 h-2 rounded-full bg-desert-rose" />
-                <div className="w-2 h-2 rounded-full bg-sage" />
-              </div>
-              <div className="h-px flex-1 bg-sand/50" />
-            </div>
-
             <p className="text-earth text-base md:text-lg leading-[1.8] text-center font-medium">
-              Ако искате вашето пътуване да стартира от друга точка, различна от
-              София — <a href="#contact" className="text-terracotta underline underline-offset-2 decoration-terracotta/40 hover:decoration-terracotta">пишете ни</a>. Предлагаме гъвкави опции за доставка на Gypsy
-              van-а в различни точки на страната.
+              <span className="font-bold text-coffee">Базата ни е в София</span>, но предлагаме гъвкава доставка на кемпер вана до различни локации в
+              страната при предварителна заявка.
             </p>
 
             <p className="script-head text-xl md:text-2xl text-terracotta text-center">
-              Благодарим ви, че избирате да създавате незабравими спомени с Gypsy Vans!
+              С Gypsy Vans всяко пътуване се превръща в спомен.
             </p>
           </div>
 

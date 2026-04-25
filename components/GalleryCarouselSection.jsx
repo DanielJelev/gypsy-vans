@@ -18,7 +18,7 @@ export function GalleryCarouselSection() {
 
   // Fetch gallery images
   useEffect(() => {
-    fetch('/api/gallery?page=1&limit=50')
+    fetch('/api/carousel?page=1&limit=50')
       .then((r) => r.json())
       .then((data) => {
         if (data.images?.length) setImages(data.images);

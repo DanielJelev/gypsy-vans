@@ -2,6 +2,8 @@ import './globals.css'
 import { Providers } from './providers'
 import CookieConsent from '../components/CookieConsent'
 
+const socialPreviewImage = 'https://gypsyvans.bg/gypsy-van-logo.png'
+
 export const metadata = {
   metadataBase: new URL('https://gypsyvans.bg'),
   title: {
@@ -28,18 +30,25 @@ export const metadata = {
     title: 'Gypsy Vans — Луксозен кемперван под наем в България',
     description:
       'Наемете луксозен Mercedes Sprinter кемперван за вашето приключение в България. Пълно оборудване, комфорт за до 4 души и свобода.',
-    images: [{ url: '/van/van-image-outside.webp', width: 1200, height: 630, alt: 'Gypsy Vans кемперван' }],
+    images: [
+      {
+        url: socialPreviewImage,
+        width: 102,
+        height: 102,
+        alt: 'Gypsy Vans лого',
+      },
+    ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Gypsy Vans — Луксозен кемперван под наем',
     description: 'Луксозен Mercedes Sprinter кемперван за приключения в България.',
-    images: ['/van/van-image-outside.webp'],
+    images: [socialPreviewImage],
   },
   alternates: { canonical: 'https://gypsyvans.bg' },
   icons: {
-    icon: '/gypsy-van-logo.svg',
-    apple: '/gypsy-van-logo.svg',
+    icon: '/gypsy-van-logo.png',
+    apple: '/gypsy-van-logo.png',
   },
 }
 
