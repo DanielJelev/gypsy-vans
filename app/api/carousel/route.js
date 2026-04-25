@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { fetchDriveFiles } from '../_lib/driveService'
 
+export const revalidate = 3600
+
 const DEFAULT_PAGE_SIZE = 50
 
 export async function GET(request) {
