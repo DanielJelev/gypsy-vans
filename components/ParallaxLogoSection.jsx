@@ -10,8 +10,9 @@ export function ParallaxLogoSection({
   heightVh = 130,
   rotateDeg = 360,
   toScale = 0.5,
-  onCtaClick,
 }) {
+  const handleCtaClick = () =>
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   const { getAsset, loaded } = useLandingAssets();
   const [imgErr, setImgErr] = useState(false);
 
@@ -64,7 +65,7 @@ export function ParallaxLogoSection({
       {/* CTA below logo */}
       <button
         type="button"
-        onClick={onCtaClick}
+        onClick={handleCtaClick}
         className="relative z-10 rounded-full bg-orange border border-orange px-14 py-5 text-white text-lg md:text-xl tracking-widest uppercase"
       >
         Резервирай Сега

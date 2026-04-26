@@ -105,9 +105,12 @@ export function Faq() {
 
     const cardRect = cardRefs.current[index]?.getBoundingClientRect();
     if (cardRect && typeof window !== 'undefined' && window.innerWidth >= 768) {
+      const modalWidth = Math.min(576, window.innerWidth - 32);
+      const halfModal = modalWidth / 2;
+      const rawLeft = cardRect.left + cardRect.width / 2;
+      const left = Math.max(halfModal + 16, Math.min(rawLeft, window.innerWidth - halfModal - 16));
       const top = Math.max(20, Math.min(cardRect.top + 16, window.innerHeight - 420));
-      const left = cardRect.left + (cardRect.width / 2);
-      setModalAnchor({ top, left });
+      setModalAnchor({ top, left, width: modalWidth });
     } else {
       setModalAnchor(null);
     }
@@ -299,7 +302,7 @@ export function Faq() {
               aria-modal="true"
               aria-labelledby={`faq-button-${activeSection}`}
               onClick={(event) => event.stopPropagation()}
-              style={modalAnchor ? { position: 'fixed', top: modalAnchor.top, left: modalAnchor.left, transform: 'translateX(-50%)' } : undefined}
+              style={modalAnchor ? { position: 'fixed', top: modalAnchor.top, left: modalAnchor.left, transform: 'translateX(-50%)', width: modalAnchor.width } : undefined}
               className={`w-full max-w-xl mx-auto rounded-2xl border border-terracotta/20 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.28)] transition-all duration-300 ${
                 isModalVisible && !isClosingModal ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'
               }`}

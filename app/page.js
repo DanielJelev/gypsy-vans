@@ -1,5 +1,3 @@
-'use client'
-
 import { Hero } from '../components/Hero'
 import { BohoIntroSection } from '../components/BohoIntroSection'
 import { ParallaxLogoMarqueeSection } from '../components/ParallaxLogoMarqueeSection'
@@ -8,31 +6,22 @@ import { ParallaxLogoSection } from '../components/ParallaxLogoSection'
 import { BohoServicesGrid } from '../components/BohoServicesGrid'
 import { BohoTestimonial } from '../components/BohoTestimonial'
 import { GalleryCarouselSection } from '../components/GalleryCarouselSection'
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
+import { TermsShell } from '../components/TermsShell'
 import PricePlans from '../components/Plans'
-import { ContactForm, ContactSection } from '../components/ContactForm'
+import { ContactSection } from '../components/ContactForm'
 import { Faq } from '../components/Faq/Faq'
-import { WaveDivider } from '../components/WaveDivider'
-import { WavyOrangeLine } from '../components/WavyOrangeLine'
 import { LandingAssetsProvider } from './contexts/LandingAssetsContext'
 import { jsonLd } from './metadata/jsonLd'
-import { useState } from 'react'
 
 export default function Page() {
-  const [termsOpen, setTermsOpen] = useState(false);
-
   return (
     <LandingAssetsProvider>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
-      <main className="relative">
-      {/* <WavyOrangeLine /> */}
-
-      {/* ── Hero (unchanged) ── */}
+      <TermsShell>
+        <main className="relative">
       <Hero />
 
       {/* ── Intro: arch image + van description on terracotta ── */}
@@ -48,9 +37,6 @@ export default function Page() {
       <ParallaxLogoSection
         rotateDeg={360}
         toScale={0.25}
-        onCtaClick={() =>
-          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-        }
       />
 
       {/* ── What's inside: arch-topped feature cards ── */}
@@ -72,10 +58,8 @@ export default function Page() {
 
       {/* ── Contact ── */}
       <ContactSection />
-
-      {/* ── Footer ── */}
-      <Footer termsOpen={termsOpen} setTermsOpen={setTermsOpen} />
     </main>
+      </TermsShell>
     </LandingAssetsProvider>
   );
 }

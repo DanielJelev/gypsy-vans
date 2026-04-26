@@ -16,6 +16,18 @@ const nextConfig = {
           { key: 'Cache-Control', value: 'public, max-age=86400, s-maxage=86400, immutable' },
         ],
       },
+      {
+        source: '/fonts/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/:path*.(jpg|jpeg|png|webp|svg|ico)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400, s-maxage=86400' },
+        ],
+      },
     ];
   },
 };

@@ -1,23 +1,52 @@
 # Gypsy Vans
 
-> Luxury Mercedes Sprinter campervan rental in Bulgaria. Fully equipped for up to 4 people — sleep anywhere, wake up free.
+> Луксозен Mercedes Sprinter кемперван под наем в България. Напълно оборудван за до 4 души — спи навсякъде, събуди се свободен.
 
-Gypsy Vans offers premium campervan experiences across Bulgaria. We provide a fully equipped Mercedes Sprinter campervan with bedding, kitchen supplies, camping furniture, insurance, and 24/7 roadside assistance.
+Gypsy Vans предлага луксозен кемперван опит в България. Нашият Mercedes Sprinter е оборудван с легло за до 4-ма, оборудвана кухня, газ, слънчева батерия, климатик, камера, хавлии, спално бельо, козметика и всичко необходимо.
 
-## Pages
+## Страници
 
-- [Home](https://gypsyvans.bg): Main landing page with services, pricing plans, testimonials, FAQ, and contact form.
-- [Gallery](https://gypsyvans.bg/gallery): Photo gallery from our campervan adventures.
+- [Начало](https://gypsyvans.bg): Основна страница с услуги, ценови пакети, отзиви, FAQ и контактна форма.
+- [Галерия](https://gypsyvans.bg/gallery): Фотогалерия от пътешествия с кемпервана.
 
-## Key Information
+## Ключова информация
 
-- **Location:** Sofia, Bulgaria
-- **Vehicle:** Mercedes Sprinter luxury campervan
-- **Capacity:** Up to 4 people
-- **Pricing:** €84–€125 per day (progressive discounts for longer rentals)
-- **Requirements:** Valid driving license (category B or higher) and ID
-- **Hours:** 08:00–20:00, 7 days a week
-- **Contact:** Via the contact form on the website
+- **Местоположение:** София, България
+- **Адрес за вземане:** ул. Околовръстен път 82, София
+- **Превозно средство:** Mercedes Sprinter луксозен кемперван (2020)
+- **Капацитет:** До 4 души
+- **Минимален наем:** 2 нощувки
+- **Цени:** 84–125 €/ден (прогресивни отстъпки при по-дълъг наем)
+  - Слаб сезон (Яну, Февр, Март, Дек): 84–105 €/ден
+  - Среден сезон (Апр, Май, Окт, Ноем): 92–115 €/ден
+  - Силен сезон (Юни, Юли, Авг, Септ): 100–125 €/ден
+- **Депозит:** 750 € (напълно възстановим)
+- **Изисквания:** Валидна книжка категория B, минимум 2 години стаж, 25–65 години
+- **Работно време:** 08:00–20:00, всеки ден
+- **Телефони:** +359 887 979 934, +359 886 837 085
+- **Имейл:** info@gypsyvans.bg
+- **Instagram:** https://www.instagram.com/gypsyvans.bg
+- **Facebook:** https://www.facebook.com/gypsyvans.bg
+
+## Включено в цената
+
+- Застраховки ГО и Каско, Зелена карта
+- Спални принадлежности, хавлии, козметика
+- Оборудвана кухня с прибори, подправки, кафе и чай
+- Соларен панел и автономна батерия
+- Климатик, проектор, камера за задно виждане
+- Къмпинг маса и столове
+- Пакет безопасност (аптечка, жилетки, пожарогасител, компресор)
+- Безплатен паркинг за личен автомобил по време на наема
+- Безплатен втори водач
+
+## Забрани
+
+- Пушене в кемпера (глоба 750 €)
+- Домашни любимци (по договаряне)
+- Движение извън договорените държави
+- Участие в автомобилни надбягвания
+
 - **Instagram:** https://www.instagram.com/gypsyvans.bg
 
 ## What's Included
