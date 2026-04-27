@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://gypsyvans.bg'
+  const baseUrl = 'https://www.gypsyvans.bg'
 
   return [
     {

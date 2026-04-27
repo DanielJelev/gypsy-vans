@@ -7,6 +7,6 @@ export default function robots() {
         disallow: '/api/',
       },
     ],
-    sitemap: 'https://gypsyvans.bg/sitemap.xml',
+    sitemap: 'https://www.gypsyvans.bg/sitemap.xml',
   }
 }

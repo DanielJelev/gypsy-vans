@@ -3,12 +3,12 @@ export const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://gypsyvans.bg/#organization',
+      '@id': 'https://www.gypsyvans.bg/#organization',
       name: 'Gypsy Vans',
-      url: 'https://gypsyvans.bg',
+      url: 'https://www.gypsyvans.bg',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://gypsyvans.bg/gypsy-van-logo.png',
+        url: 'https://www.gypsyvans.bg/gypsy-van-logo.png',
       },
       sameAs: [
         'https://www.instagram.com/gypsyvans.bg',
@@ -33,20 +33,20 @@ export const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://gypsyvans.bg/#website',
-      url: 'https://gypsyvans.bg',
+      '@id': 'https://www.gypsyvans.bg/#website',
+      url: 'https://www.gypsyvans.bg',
       name: 'Gypsy Vans',
       inLanguage: 'bg',
-      publisher: { '@id': 'https://gypsyvans.bg/#organization' },
+      publisher: { '@id': 'https://www.gypsyvans.bg/#organization' },
     },
     {
       '@type': 'LocalBusiness',
-      '@id': 'https://gypsyvans.bg/#localbusiness',
+      '@id': 'https://www.gypsyvans.bg/#localbusiness',
       name: 'Gypsy Vans',
       description: 'Луксозен кемперван Mercedes Sprinter под наем в България. Пълно оборудване и комфорт за до 4 души.',
-      url: 'https://gypsyvans.bg',
-      logo: 'https://gypsyvans.bg/gypsy-van-logo.png',
-      image: 'https://gypsyvans.bg/van/van-image-inside.webp',
+      url: 'https://www.gypsyvans.bg',
+      logo: 'https://www.gypsyvans.bg/gypsy-van-logo.png',
+      image: 'https://www.gypsyvans.bg/van/van-image-inside.webp',
       address: { '@type': 'PostalAddress', addressLocality: 'София', addressCountry: 'BG' },
       telephone: '+359887979934',
       priceRange: '€84–€125/ден',
