@@ -2,7 +2,7 @@ import './globals.css'
 import { Providers } from './providers'
 import CookieConsent from '../components/CookieConsent'
 
-const siteUrl = 'https://www.gypsyvans.bg'
+const siteUrl = 'https://gypsyvans.bg'
 const socialPreviewImage = `${siteUrl}/gypsy-van-logo.jpg`
 
 export const metadata = {
