@@ -2,9 +2,13 @@ export const metadata = {
   title: 'Галерия',
   description:
     'Разгледайте снимки от пътешествия с Gypsy Vans — луксозен кемперван Mercedes Sprinter. Вдъхновете се за вашето следващо приключение.',
+  alternates: {
+    canonical: '/gallery',
+  },
   openGraph: {
     title: 'Галерия | Gypsy Vans',
     description: 'Снимки от пътешествия с луксозен кемперван Gypsy Vans.',
+    url: 'https://gypsyvans.bg/gallery',
     images: [
       {
         url: 'https://gypsyvans.bg/gypsy-van-logo.jpg',
