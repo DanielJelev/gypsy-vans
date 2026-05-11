@@ -112,7 +112,7 @@ const PricePlans = () => {
 
         {/* Decorative large number */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-          <span className="text-earth/[0.04] text-[180px] md:text-[250px] font-bold leading-none select-none">2</span>
+          <span className="text-earth/[0.04] text-[180px] md:text-[250px] font-bold leading-none select-none">3</span>
         </div>
 
         <div className="container-page relative z-10">
@@ -120,7 +120,7 @@ const PricePlans = () => {
             <p className="script-head text-2xl md:text-3xl text-earth leading-snug">
               Минималният брой нощувки за наемане на кемпервана e
             </p>
-            <span className="serif-head text-5xl md:text-6xl text-orange font-black leading-none block mt-3" style={{ WebkitTextStroke: '2px' }}>2</span>
+            <span className="serif-head text-5xl md:text-6xl text-orange font-black leading-none block mt-3" style={{ WebkitTextStroke: '2px' }}>3</span>
           </div>
         </div>
 
